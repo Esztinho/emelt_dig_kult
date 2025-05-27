@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixelgrafika</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: #d7dbd9;;
+        }
+        .sidebar {
+      width: 20%; 
+      background: #e9ecef;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      height: fit-content;
+      position: sticky;
+      top: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      float: right;
+    }
+    .sidebar h3 {
+      margin-top: 0;
+      margin-bottom: 1rem;
+      font-size: 1.2rem;
+      color: #386f6c;
+    }
+    .sidebar a {
+      display: block;
+      margin-bottom: 0.75rem;
+      color: #0b3d26;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+      color: #2d8e5a;
+      text-decoration: underline;
+    }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+    <h3>Tartalomjegyzék</h3>
+    <a href="#pixelgrafika">Pixelgrafika fogalma</a>
+    <a href="#rasztergrafika">Rasztergrafika és színkódok</a>
+    <a href="#szinkodok">Színkódok és színmélység</a>
+    <a href="#felbontas">Felbontás számítása</a>
+    <a href="#szerkesztok">Pixelgrafikus szerkesztőprogramok</a>
+    <a href="#eszkozcsoportok">Eszközcsoportok</a>
+    <a href="#retegek">Rétegek</a>
+    <a href="#alfacsatorna">Alfa-csatorna</a>
+    <a href="#szovegbeallitasok">Szövegbeállítások</a>
+    <a href="#ellenorzokerdesek">Ellenőrző kérdések</a>
+  </nav>
+    <div class="tartalom">
+        <h1>Pixelgrafika alapjai</h1>
+
+  <section id="pixelgrafika">
+    A <strong>pixelgrafika</strong> – olyan képek előállításával és szerkesztésével foglalkozik, 
+    amelyek <strong>képpontonként (pixelenként)</strong> kerülnek ábrázolásra a számítógép memóriájában, illetve a háttértáron tárolt fájlokban.
+  </section>
+
+  <section id="rasztergrafika">
+    A <strong>rasztergrafikus</strong>, vagy más néven pixelgrafikus állományok lényegében nem mások, mint az egyes képpontokhoz rendelt <strong>színkódok sorozatai</strong>. 
+    A színkódolás során többféle színmód alkalmazható – például szürkeárnyalatos, indexelt vagy RGB –, ezek közül a legelterjedtebb az <strong>RGB-színmód</strong>. 
+    Ebben az esetben minden képpont színét három alapszín – <em>vörös (Red), zöld (Green) és kék (Blue)</em> – külön-külön megadott intenzitása határozza meg.
+  </section>
+
+  <section >
+    A modern számítástechnikai rendszerekben leggyakrabban alkalmazott <strong>true color</strong> (valódi színek) színmélység esetén minden egyes színcsatorna <strong>8 biten</strong> kerül tárolásra, 
+    ami azt jelenti, hogy az egyes komponensek <strong>0 és 255</strong> közötti értékeket vehetnek fel. Mivel három alapszínről van szó, egyetlen képpont tárolásához <strong>összesen 24 bitnyi</strong> adat szükséges.
+  </section>
+
+  <section id="felbontas">
+    Ennek megfelelően egy manapság alapvetőnek számító <strong>Full HD felbontású kép</strong> (1920 × 1080 képpont) tárolásához 
+    <strong>1920 × 1080 × 24 bit</strong>, azaz több mint <strong>49 millió bit</strong>, vagyis körülbelül <strong>6 megabájt</strong> információ szükséges – <em>tömörítetlen formátumban</em>.
+  </section>
+  <section>
+    <details><summary>🔍 Válasz megjelenítése
+    <h2>Mi az a pixelgrafikus kép?</h2></summary>
+    
+        <p>
+      A <strong>pixelgrafikus kép</strong> (vagy raszteres kép) apró négyzetekből, ún. pixelekből áll össze. Minden pixel egyetlen színt tárol, és a sok pixel együtt alkotja a teljes képet.
+    </p>
+    <p>
+      A kép <strong>felbontása</strong> határozza meg annak részletességét, melyet a szélesség és magasság pixelben való megadásával írunk le, például: <code>1920 × 1080</code>.
+    </p>
+    </details>
+  </section>
+
+  <section id="szinkodok">
+    <h2>Színkódok és színmélység</h2>
+    <p><strong>Színkódok:</strong></p>
+    <ul>
+      <li><strong>Hexadecimális kód:</strong> Hatjegyű forma, pl. <code>#FF5733</code> (R: FF, G: 57, B: 33).</li>
+      <li><strong>RGB-kód:</strong> Három szám, pl. <code>rgb(255, 87, 51)</code>, az egyes színösszetevők intenzitását jelöli.</li>
+    </ul>
+    <p><strong>Színmélység:</strong></p>
+    <ul>
+      <li><strong>1-bit:</strong> Fekete-fehér kép (2 szín).</li>
+      <li><strong>8-bit:</strong> 256 szín (indexelt paletta).</li>
+      <li><strong>24-bit:</strong> True color, 16,7 millió szín (RGB: 8-8-8 bit).</li>
+      <li><strong>32-bit:</strong> 24-bit szín + 8-bit alfa csatorna (átlátszóság).</li>
+    </ul>
+  </section>
+
+  <section id="szerkesztok">
+    <h2>Pixelgrafikus szerkesztőprogramok</h2>
+    <ul>
+      <li><strong>Adobe Photoshop:</strong> Professzionális, rétegkezelés, szűrők, retusálás.</li>
+      <li><strong>GIMP:</strong> Ingyenes, nyílt forráskódú alternatíva, sokoldalú eszközökkel.</li>
+      <li><strong>Paint.NET:</strong> Egyszerűbb, de hatékony Windows-alapú képszerkesztő.</li>
+      <li><strong>Corel Painter:</strong> Digitális festőprogram, valósághű ecsetekkel.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Pixelgrafikus fájlformátumok</h2>
+    <ul>
+      <li><strong>JPEG (.jpg, .jpeg):</strong> Veszteséges tömörítés, kis fájlméret. Főként fényképekhez.</li>
+      <li><strong>PNG (.png):</strong> Veszteségmentes tömörítés, átlátszóság támogatott. Webes grafikákhoz ideális.</li>
+      <li><strong>GIF (.gif):</strong> 256 szín, támogatja az animációt és átlátszóságot. Egyszerű animációkhoz.</li>
+      <li><strong>BMP (.bmp):</strong> Egyszerű, tömörítés nélküli formátum. Nagy fájlméret.</li>
+      <li><strong>TIFF (.tiff):</strong> Professzionális, veszteségmentes formátum, nyomdai célokra.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Mire használhatók pixelgrafikus szerkesztők?</h2>
+    <ul>
+      <li><strong>Fényképek szerkesztése:</strong> Retusálás, színkorrekció, hibák javítása.</li>
+      <li><strong>Grafikai tervezés:</strong> Logók, ikonok, bannerek készítése.</li>
+      <li><strong>Digitális festészet:</strong> Művészi jellegű rajzok és festmények digitálisan.</li>
+      <li><strong>Webdesign:</strong> Weboldal elemek (pl. gombok, hátterek) tervezése.</li>
+      <li><strong>Nyomdai előkészítés:</strong> Plakátok, szórólapok, kiadványok készítése.</li>
+    </ul>
+  </section>
+
+   <h1>Pixelgrafikus szerkesztőprogram eszközei – GIMP</h1>
+    <h3 style="font-style: italic;">Pixelgrafikus szerkesztőprogram eszközei </h3>
+    <p>Bemutatom a GIMP (GNU Image Manipulation Program) eszközeit, mivel ez az egyik legnépszerűbb és legátfogóbb 
+ingyenes pixelgrafikus szerkesztőprogram.     </p>
+    <section id="eszkozcsoportok">
+    <h2>🎨1. Eszközcsoportok a GIMP-ben</h2>
+    <p>A GIMP pixelgrafikus szerkesztőprogram eszközei funkcióik szerint az alábbi főbb csoportokba sorolhatók:</p>
+    <ul>
+      <li><span class="highlight">Kiválasztó eszközök:</span> Téglalap, ellipszis, lasso, gyors kijelölés.</li>
+      <li><span class="highlight">Retusáló eszközök:</span> Ecset, klón, gyógyító és javító ecset.</li>
+      <li><span class="highlight">Képszerkesztő eszközök:</span> Mozgatás, radír, árnyék/fény eszközök.</li>
+      <li><span class="highlight">Szöveg eszközök:</span> Vízszintes és függőleges szövegbevitel.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🖌️ 2. Néhány eszköz használatának bemutatása</h2>
+    <ul>
+      <li><span class="highlight">Ecset eszköz (Paintbrush Tool):</span> Szabadkézi rajzoláshoz használható. Beállítható ecsetméret és keménység. <br>
+      <em>Példa:</em> Portré árnyékolása vagy részleteinek kidolgozása.</li>
+
+      <li><span class="highlight">Klonozó bélyegző (Clone Tool):</span> Forráspont megjelölése <code>Alt</code> lenyomásával, majd átfestés. <br>
+      <em>Példa:</em> Vezetékek eltüntetése egy tájképről.</li>
+
+      <li><span class="highlight">Radír (Eraser Tool):</span> Területek törlése. Hasznos háttér eltávolításnál. <br>
+      <em>Példa:</em> Egy tárgy körüli háttér törlése.</li>
+    </ul>
+  </section>
+
+  <section id="retegek">
+    <h2>📂 3. Rétegek szerepe és előnyei</h2>
+    <p>A <strong>rétegek</strong> a pixelgrafikus képszerkesztés egyik alapvető elemei. Minden réteg külön szinten helyezkedik el, és önállóan szerkeszthető.</p>
+    <ul>
+      <li><span class="highlight">Függetlenség:</span> Egyes rétegek módosítása nem befolyásolja a többit.</li>
+      <li><span class="highlight">Rugalmasság:</span> Rétegek sorrendje, áttetszősége, maszkolása módosítható.</li>
+      <li><span class="highlight">Kompozíció:</span> Elemtípusok (szöveg, kép, effekt) kombinálása lehetséges.</li>
+    </ul>
+  </section>
+
+  <section id="alfacsatorna">
+    <h2>🔲 4. Alfa-csatorna szerepe</h2>
+    <p>Az <strong>alfa-csatorna</strong> az átlátszóság információját tárolja minden pixelhez.</p>
+    <ul>
+      <li><span class="highlight">Maszkolás:</span> Egyes részek elrejthetők anélkül, hogy törlésre kerüljenek.</li>
+      <li><span class="highlight">Átlátszóság szabályozása:</span> Rétegek és objektumok áttetszősége állítható.</li>
+    </ul>
+  </section>
+
+  <section id="szovegbeallitasok">
+    <h2>🆎 5. Szöveg elhelyezése és beállításai</h2>
+    <ul>
+      <li><span class="highlight">Szöveg eszköz:</span> A kívánt pontra kattintva szöveg írható a képre.</li>
+      <li><span class="highlight">Beállítási lehetőségek:</span>
+        <ul>
+          <li><strong>Betűtípus:</strong> Pl. Arial, Times New Roman</li>
+          <li><strong>Betűméret:</strong> Például: 12 pt, 48 pt</li>
+          <li><strong>Szín:</strong> Bármilyen RGB szín beállítható</li>
+          <li><strong>Stílus:</strong> Félkövér, dőlt, aláhúzott</li>
+          <li><strong>Igazítás:</strong> Balra, középre, jobbra</li>
+          <li><strong>Effektek:</strong> Árnyék, kontúr, ragyogás</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <section id="ellenorzokerdesek">
+    <h2>📋 Ellenőrző kérdések</h2>
+    <ul>
+      <li>Milyen eszközcsoportokat ismerünk a GIMP-ben?</li>
+      <li>Mire használható a klónozó bélyegző eszköz?</li>
+      <li>Miért hasznosak a rétegek pixelgrafikus képszerkesztés során?</li>
+      <li>Mi az alfa-csatorna szerepe egy képen?</li>
+      <li>Milyen beállításokat alkalmazhatunk egy szöveg elhelyezésekor?</li>
+      <li>Hogyan törlünk egy képrészletet a radír eszközzel?</li>
+      <li>Mi a különbség a gyógyító és a klón eszköz között?</li>
+    </ul>
+  </section>
+    </div>
+</body>
+</html>

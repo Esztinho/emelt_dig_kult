@@ -2,6 +2,7 @@ body {
       font-family: Arial, sans-serif;
       background: #f9f9f9;
       margin: 30px;
+      font-size: medium;
     }
 section {
       background: #fff;
@@ -127,4 +128,8 @@ button:hover {
   font-weight: 700;
   font-size: 1.1rem;
   color: #2c7be5;
+}
+
+.tartalom {
+  width: 70%;
 }
