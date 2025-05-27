@@ -1,0 +1,258 @@
+[
+  {
+    "id": 1,
+    "cim": "1. tétel: Betű és bekezdésformázás",
+    "kerdesek": [
+      "Milyen betűtípusokat különböztetünk meg?",
+      "Milyen betűstílusokat ismersz?",
+      "Milyen speciális betűformázási beállításokat ismersz?",
+      "Mit tudsz a szimbólum karakterekről?",
+      "Milyen mértékegységeket használunk szövegszerkesztőben?",
+      "Mondj példákat bekezdésformázásokra!",
+      "Mit tudsz a listákról, felsorolásokról?",
+      "Mit tudsz az iniciáléról?"
+    ]
+  },
+  {
+    "id": 2,
+    "cim": "2. tétel: Táblázatok és tabulátorok",
+    "kerdesek": [
+        "A táblázatokon milyen elrendezésbeállításokat tudunk eszközölni?",
+        " Milyen lehetőségeink vannak táblázatok formázására?",
+        " Mi a funkciója a tabulátor gombnak?",
+        "Mit tudsz a tabulátorpozíciókról? ",
+        " Milyen egyéni tabulátorokat tudunk felvenni?"
+    ]
+  },
+  {
+    "id": 3,
+    "cim": "3. tétel: Objektumok beszúrása",
+    "kerdesek": [
+  "Milyen objektumokat lehet szövegszerkesztőbe beszúrni?",
+  "Alakzatok esetében mit nevezünk csomópontnak?",
+  "Milyen lépései vannak egy kép beillesztésének?",
+  "Milyen hasonló, és milyen egyedi beállításokat lehet egy beszúrt képen, illetve egy beszúrt alakzaton eszközölni?",
+  "Mit tudsz a szövegdobozokról?",
+  "Mit tudsz a hivatkozások beszúrásáról?"
+]
+
+  },
+  {
+    "id": 4,
+    "cim": "4. tétel: Oldalbeállítások, fájlműveletek",
+    "kerdesek": [
+  "Miért fontosak a nyelvi beállítások (nyelvi ellenőrzés, elválasztás)?",
+  "Ismertesd a keresés és csere funkció használatát!",
+  "Milyen oldalbeállításokat tudunk szövegszerkesztőben végrehajtani?",
+  "Hogyan készíthetjük elő dokumentumunkat nyomtatásra, PDF-be exportálásra?",
+  "Mik az előnyei a PDF fájlformátumnak?"
+]
+
+  },
+  {
+    "id": 5,
+    "cim": "5. tétel: Kördokumentum",
+    "kerdesek": [
+  "Mit nevezünk kördokumentumnak?",
+  "Milyen formáit ismered?",
+  "Ismertesd egy kördokumentum összetevőit!",
+  "Hogyan készítünk el egy kördokumentumot?",
+  "Készíts el egy kördokumentumot! (Kapsz laptopot és forrást hozzá.)"
+]
+
+  },
+  {
+    "id": 6,
+    "cim": "6. tétel: Nagy dokumentumok formázása",
+    "kerdesek": [
+  "Mit nevezünk stílusnak?",
+  "Hogyan használjuk őket?",
+  "Hogyan kapcsolódnak a tartalomjegyzékhez?",
+  "Mit tudsz az élőfejről, élőlábról?",
+  "Mondj gyakorlati példákat alkalmazásukra!",
+  "Milyen speciális beállításokat lehet beállítani élőfejre élőlábra vonatkozóan?",
+  "Mi a különbség a lábjegyzet és a végjegyzet között?",
+  "Mit nevezünk szakasznak?"
+]
+
+  },
+  {
+    "id": 7,
+    "cim": "7. tétel: Betű és bekezdésformázások",
+    "kerdesek": [
+  "Milyen hasznos funkciói vannak egy kódszerkesztőnek?",
+  "Ismertesd a HTML5 alapstruktúráját!",
+  "Milyen betűformázáshoz kapcsolódó tageket ismersz?",
+  "Mutasd be a &lt;p&gt;, &lt;h1&gt;, &lt;h2&gt;… tagek használatát, sajátosságait!",
+  "Milyen listákat szúrhatunk be?"
+]
+
+  },
+  {
+    "id": 8,
+    "cim": "8. tétel: Objektumok beszúrása",
+    "kerdesek": [
+  "Milyen paraméterek adhatók meg képek beszúrásánál?",
+  "Hogyan szúrhatunk be hivatkozásokat?",
+  "Mit tudsz az oldalon belüli hivatkozásokról?",
+  "Miben különbözik a képek beszúrása a videók és hangok beszúrásától?",
+  "Mutasd be röviden a táblázatok struktúráját!"
+]
+
+  },
+  {
+    "id": 9,
+    "cim": "9. tétel: Stíluslapok használata",
+    "kerdesek": [
+  "Mit nevezünk CSS-szabálynak?",
+  "Mondj példákat a használatára!",
+  "Hogyan adhatunk meg CSS szabályokat több deklarációval?",
+  "Milyen betűformázó CSS deklarációkat ismersz?",
+  "Milyen bekezdésformázó CSS deklarációt ismersz?",
+  "Mit tudsz az osztály, illetve azonosító kijelölőkről?",
+  "Hogyan csatolhatunk stíluslapot HTML dokumentumunkhoz?"
+]
+
+  },
+  {
+    "id": 10,
+    "cim": "10. tétel: Dobozmodell",
+    "kerdesek": [
+  "Ismertesd a CSS dobozmodelljét!",
+  "Milyen szegélybeállításokat ismersz?",
+  "Hogyan, milyen módokon adhatjuk meg objektumok méreteit?",
+  "Hogyan igazíthatunk blokkokon belül, illetve blokkokat?",
+  "Hogyan állíthatunk be „dobozunknak” háttérképet?",
+  "Mit tudsz egy weboldal szabványosságáról, illetve publikálásáról?"
+]
+
+  },
+  {
+    "id": 11,
+    "cim": "11. tétel: A bemutatókészítés alapjai",
+    "kerdesek": [
+  "Mit nevezünk bemutatónak?",
+  "Milyen érveket tudsz felhozni a bemutató használata mellett, illetve ellen?",
+  "Mik egy előadáshoz készült bemutató elkészítésének lépései?",
+  "Miben különböznek az előadásra készült bemutatók az egyéni feldolgozásra készült bemutatóktól?"
+]
+
+  },
+  {
+    "id": 12,
+    "cim": "12. tétel: A bemutatókészítéshez használható eszközök",
+    "kerdesek": [
+  "Milyen vizuális eszközöket használhatunk a bemutatónk szerkezetének kialakítására?",
+  "Milyen hasonlóságok, illetve különbségek vannak szövegszerkesztőbe beszúrható objektumok és bemutatókészítőben beszúrható objektumok között? Sorolj fel példákat!",
+  "Mit tudsz az áttűnésekről, illetve az animációkról?"
+]
+
+  },
+  {
+    "id": 13,
+    "cim": "13. tétel: A pixelgrafikus ábrázolás alapjai",
+    "kerdesek": [
+  "Mit nevezünk pixelgrafikus képnek?",
+  "Mit tudsz a színkódokról, illetve a színmélységről?",
+  "Milyen pixelgrafikus szerkesztőket ismersz?",
+  "Milyen pixelgrafikus fájlformátumokat ismersz? Mutasd is be őket!",
+  "Milyen esetekben használhatunk pixelgrafikus szerkesztőprogramot?"
+]
+
+  },
+  {
+    "id": 14,
+    "cim": "14. tétel: Pixelgrafikus szerkesztés",
+    "kerdesek": [
+  "Mutasd be egy pixelgrafikus szerkesztőprogram eszközeit!",
+  "Milyen csoportba sorolhatod őket?",
+  "Szemléltesd néhány eszköz használatát!",
+  "Mit tudsz a rétegekről?",
+  "Mire jó az alfa-csatorna?",
+  "Ismertesd egy szöveg elhelyezésének módjait, lehetséges beállításait!"
+]
+
+  },
+  {
+    "id": 15,
+    "cim": "15. tétel: A vektorgrafikus ábrázolás alapjai",
+    "kerdesek": [
+  "Mi a vektorgrafikus ábrázolás központi fogalma?",
+  "Jellemezd a tulajdonságait!",
+  "Miben különbözik a vektorgrafikus tárolás a rasztergrafikus tárolástól?",
+  "Milyen vektorgrafikus szerkesztőprogramokat ismersz?",
+  "Mutasd be az előnyét, illetve hátrányát az önálló vektorgrafikai szerkesztőprogramoknak az irodai programokhoz képest!"
+]
+
+  },
+  {
+    "id": 16,
+    "cim": "16. tétel: Vektorgrafikus szerkesztés",
+    "kerdesek": [
+  "Mutasd be egy vektorgrafikus szerkesztőprogram felhasználói felületét!",
+  "Hogyan kategorizálnád a szerkesztőprogram eszközeit?",
+  "Szemléltesd néhány eszköz használatát!",
+  "Mit tudsz a klónok használatáról?",
+  "Ismertesd az unió, metszet, különbség műveleteket!",
+  "Mit tudsz az útvonalakról?"
+]
+
+  },
+  {
+    "id": 17,
+    "cim": "17. tétel: A táblázatkezelés alapjai",
+    "kerdesek": [
+  "Mit nevezünk adatnak?",
+  "Milyen adattípusokat ismersz?",
+  "Mit tudsz a dátum és idő adatokról?",
+  "Mit nevezünk cellahivatkozásnak, milyen fajtái vannak?",
+  "Hogyan tudunk kifejezéseket összeállítani?",
+  "Milyen formázási beállításokat ismersz táblázatkezelőben?",
+  "Mire jók a diagramok, illetve milyen diagramfajtákat ismersz? Jellemezd őket röviden!"
+]
+
+  },
+  {
+    "id": 18,
+    "cim": "18. tétel: Függvények",
+    "kerdesek": [
+  "Mit nevezünk függvénynek?",
+  "Mutasd be egy függvény használatát általánosan!",
+  "Milyen függvénytípusokat ismersz?",
+  "Jellemezd az egyes típusokat!",
+  "Magyarázd el az alábbi függvények használatát: HATVÁNY(), SZUMHATÖBB(), BAL(), INDEX(), ÉV().",
+  "Milyen eszközeink vannak nagy adathalmazok átláthatóvá tételére?",
+  "Milyen kapcsolat van a képletek és a feltételes formázás között?"
+]
+
+  },
+  {
+    "id": 19,
+    "cim": "19. tétel: Az adatbázis-kezelés alapjai",
+    "kerdesek": [
+  "Mit nevezünk adatbázisnak?",
+  "Mit nevezünk adattáblának?",
+  "Hogyan kapcsolódhatnak egymáshoz?",
+  "Mit nevezünk mezőnek, rekordnak, adatnak?",
+  "Milyen kulcsokat ismersz? Ismertesd őket!",
+  "Mit nevezünk kapcsolótáblának?",
+  "Milyen adattípusokat használunk adatbázis-kezelőben?"
+]
+
+  },
+  {
+    "id": 20,
+    "cim": "20. tétel: SQL utasítások és függvények",
+    "kerdesek": [
+  "Ismertesd az adatbázis létrehozásához szükséges utasítást!",
+  "Ismertesd a táblák importáláshoz szükséges SQL utasításokat!",
+  "Mutasd be a táblák bővítéséhez, frissítéséhez, törléséhez szükséges utasításokat!",
+  "Ismertesd a lekérdezések szintaxisát!",
+  "Milyen aggregáló függvényeket ismersz?",
+  "Milyen dátum- és időfüggvényeket ismersz?",
+  "Mit tudsz a szövegek kezeléséről SQL-ben?",
+  "Mit tudsz az allekérdezésekről?"
+]
+
+  }
+]

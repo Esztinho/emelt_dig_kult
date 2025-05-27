@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <title>HTML5  – Weblap Készítés</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Weblap készítése HTML5 nyelven</h1>
+  </header>
+
+  <section>
+    <h2><h1>HTML5 alapstruktúra</h1></h2>
+    <p>
+      A weblap tartalmának elkészítéséhez szükséges címkéket (tageket) a HTML5 szabvány szerinti alapstruktúrában kell elhelyezni, amely a következő:
+    </p>
+    <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="hu"&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+    </pre>
+  </section>
+
+  <section>
+    <h2>Dokumentumtípus</h2>
+    <p>
+      Az első sor <code>&lt;!DOCTYPE html&gt;</code> tartalmazza a dokumentumtípust, amely megadja, hogy melyik szabvány szerint írja le a tartalmat – jelen esetben a HTML5 szabvány szerint.
+    </p>
+  </section>
+
+  <section>
+    <h2>HTML és nyelvi beállítás</h2>
+    <p>
+      A <code>&lt;html lang="hu"&gt;</code> tag jelzi, hogy HTML-dokumentumról van szó, a <code>lang</code> attribútumban pedig az oldal nyelvét kell megadni (pl. <code>hu</code> magyar, <code>en</code> angol).
+    </p>
+  </section>
+
+  <section>
+    <h2>Tag-ek típusai</h2>
+    <p>
+      A HTML-címkék többségét kötelező lezárni zárócímkével – ezeket páros tageknek nevezzük. Léteznek azonban páratlan vagy üres tagek is, amelyeknek nincs zárópárjuk (pl. <code>&lt;br&gt;</code>).
+    </p>
+  </section>
+
+  <section>
+    <h2>Dokumentum felépítése</h2>
+    <p>
+      A teljes dokumentum a <code>&lt;html&gt;</code> tagben helyezkedik el, két fő részre tagolva:
+    </p>
+    <ul>
+      <li><strong>Fej (<code>&lt;head&gt;</code>)</strong>: Beállítások, mint például karakterkódolás (pl. <code>&lt;meta charset="utf-8"&gt;</code>), cím (<code>&lt;title&gt;</code>) stb.</li>
+      <li><strong>Törzs (<code>&lt;body&gt;</code>)</strong>: A tényleges tartalom (címsorok, szövegek, képek, videók stb.).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Megjegyzések elhelyezése</h2>
+    <p>
+      A HTML-kódban megjegyzéseket lehet elhelyezni a <code>&lt;!--</code> és <code>--&gt;</code> jelek között. Ezek nem jelennek meg a böngészőben.
+    </p>
+  </section>
+
+  <section>
+    <h2>Fájl mentése</h2>
+    <p>
+      A kész HTML-kódot <strong>.html</strong> kiterjesztéssel kell elmenteni. A kezdőlapot minden esetben <strong>index.html</strong> néven mentsük el, mivel ez a böngészők és szerverek által alapértelmezett belépési pontként szolgál.
+    </p>
+  </section>
+
+  <section>
+    <h2>Milyen hasznos funkciói vannak egy kódszerkesztőnek?</h2>
+    <ul>
+      <li><strong>Kiemelés (syntax highlighting):</strong> a különböző HTML tagek, attribútumok, értékek színezése az átláthatóság érdekében.</li>
+      <li><strong>Kód-kiegészítés:</strong> automatikusan felajánlja a lehetséges tageket vagy attribútumokat.</li>
+      <li><strong>Hibakeresés támogatása:</strong> figyelmeztet a szintaktikai hibákra.</li>
+      <li><strong>Előnézet (Live Preview):</strong> azonnali visszajelzés a szerkesztett HTML megjelenéséről.</li>
+      <li><strong>Verziókezelés integráció (pl. Git):</strong> egyszerűbb együttműködés másokkal és visszalépés a korábbi állapotokhoz.</li>
+    </ul>
+    <p>További kényelmi funkció lehet az úgynevezett emmet rövidítések használatának támogatása, ami gyakorlatilag egy automatikus kódkiegészítést jelent. Rövid kódok begépelésével akár nagyon hosszú kódot is előállíthat, ami hatékonnyá teszi a munkáját.</p>
+  </section>
+
+  <section>
+    <h2>Betűformázáshoz kapcsolódó HTML tagek</h2>
+    <ul>
+      <li><code>&lt;b&gt;</code> – félkövér betű (megjelenítési cél, nem szemantikus)</li>
+      <li><code>&lt;strong&gt;</code> – fontos, erőteljesen kiemelt szöveg</li>
+      <li><code>&lt;i&gt;</code> – dőlt betű (megjelenítés céljára)</li>
+      <li><code>&lt;em&gt;</code> – hangsúlyos dőlt szöveg (szemantikus kiemelés)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Bekezdés és címsor tagek</h2>
+    <p>A <code>&lt;p&gt;</code> tag bekezdést jelöl. Minden új gondolatot, témát ezzel célszerű elválasztani.</p>
+    <p>A címsor tagek <code>&lt;h1&gt;</code> és <code>&lt;h6&gt;</code> között helyezkednek el. A <code>&lt;h1&gt;</code> a legnagyobb szintű cím, míg a <code>&lt;h6&gt;</code> a legkisebb.</p>
+
+    <h3>Példák:</h3>
+    <p><code>&lt;h1&gt;Főcím&lt;/h1&gt;</code> → <h1 style="color: black;">Főcím</h1></p>
+    <p><code>&lt;h2&gt;Alcím&lt;/h2&gt;</code> → <h3>Alcím</h3></p>
+    
+  </section>
+
+  <section>
+    <h2>Listák HTML-ben</h2>
+    <p>Kétféle lista típust különböztetünk meg:</p>
+
+    <h3>Felsoroláslista (unordered list):</h3>
+    <pre>
+&lt;ul&gt;
+  &lt;li&gt;Első elem&lt;/li&gt;
+  &lt;li&gt;Második elem&lt;/li&gt;
+&lt;/ul&gt;
+    </pre>
+    <ul>
+      <li>Első elem</li>
+      <li>Második elem</li>
+    </ul>
+
+    <h3>Sorszámozott lista (ordered list):</h3>
+    <pre>
+&lt;ol&gt;
+  &lt;li&gt;Első lépés&lt;/li&gt;
+  &lt;li&gt;Második lépés&lt;/li&gt;
+&lt;/ol&gt;
+    </pre>
+    <ol>
+      <li>Első lépés</li>
+      <li>Második lépés</li>
+    </ol>
+  </section>
+
+  <section>
+  <h2>Képek beszúrása</h2>
+  <p>A HTML-ben a képek beszúrásához az <code>&lt;img&gt;</code> elemet használjuk, amely önzáró (páratlan) tag, nincs zárócíme.</p>
+  <p>Legfontosabb attribútumai:</p>
+  <ul>
+    <li><code>src</code>: a kép elérési útja vagy URL-je</li>
+    <li><code>alt</code>: alternatív szöveg, amely megjelenik, ha a kép nem tölt be, és segíti a képernyőolvasókat</li>
+    <li><code>width</code>, <code>height</code>: a kép szélessége és magassága pixelben vagy százalékban</li>
+    <p>- azonban a modern webfejlesztésben általában ajánlott ezeket a méretezéseket külön CSS stíluslapban kezelni</p>
+    <li><code>title</code>: rámutatáskor megjelenő kiegészítő szöveg</li>
+  </ul>
+  <p><strong>Példa:</strong></p>
+  <pre><code>&lt;img src="kep.jpg" alt="Tájkép a hegyekben" width="400" height="300"&gt;</code></pre>
+
+  <h2>Hivatkozások beszúrása</h2>
+  <p>A hivatkozások létrehozásához az <code>&lt;a&gt;</code> taget használjuk, amelynek kötelező attribútuma a <code>href</code>.</p>
+  <p>Alapvető használat:</p>
+  <pre><code>&lt;a href="https://www.pelda.hu"&gt;Látogasd meg a weboldalt&lt;/a&gt;</code></pre>
+  <p><strong>Fontos attribútumok:</strong></p>
+  <ul>
+    <li><code>href</code>: a cél URL vagy fájl elérési útja</li>
+    <li><code>target</code>: megadja, hogy a hivatkozás új lapon (<code>_blank</code>) vagy ugyanazon a lapon (<code>_self</code>) nyíljon meg</li>
+  </ul>
+  <p><strong>Példa új lapon nyíló hivatkozásra:</strong></p>
+  <pre><code>&lt;a href="https://www.pelda.hu" target="_blank"&gt;Nyisd meg új lapon&lt;/a&gt;</code></pre>
+
+  <h2>Oldalon belüli hivatkozások</h2>
+  <p>Oldalon belüli hivatkozások (horgonylinkek) segítségével egy adott oldalrészre ugrhatunk.</p>
+  <ol>
+    <li>Adjunk egyedi <code>id</code> attribútumot a cél elemnek.</li>
+    <li>Készítsünk hivatkozást <code>href="#id"</code> formában.</li>
+  </ol>
+  <p><strong>Példa:</strong></p>
+  <pre><code>&lt;h2 id="szakasz1"&gt;1. szakasz&lt;/h2&gt;
+&lt;a href="#szakasz1"&gt;Ugrás az 1. szakaszhoz&lt;/a&gt;</code></pre>
+
+  <h2>Kép, videó és hang beszúrásának különbségei</h2>
+  <table border="1" cellpadding="5" cellspacing="0">
+    <thead>
+      <tr>
+        <th>Elem</th>
+        <th>HTML tag</th>
+        <th>Jellemzők</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Kép</td>
+        <td><code>&lt;img&gt;</code></td>
+        <td>Önzáró tag, egyszerű használat, nincs zárótag.</td>
+      </tr>
+      <tr>
+        <td>Videó</td>
+        <td><code>&lt;video&gt;</code></td>
+        <td>Zárópárral rendelkezik, lejátszásvezérlőkkel, több forrás megadható.</td>
+      </tr>
+      <tr>
+        <td>Hang</td>
+        <td><code>&lt;audio&gt;</code></td>
+        <td>Hasonló a videóhoz, hangállományok lejátszására szolgál.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Hang és videó beillesztése HTML-ben</h2>
+
+  <h3>Hangfájl beillesztése</h3>
+  <p>
+    Hangot nagyon hasonló módon illeszthet be az oldalra, mint videót. Ehhez az <code>&lt;audio&gt;</code> taget kell használnia, amely képes lejátszani a hangfájlt a böngészőben. A legelterjedtebb és legjobban támogatott formátum az MP3, így célszerű azt használni.
+  </p>
+  <p>
+    A forrásfájlt a <code>&lt;source&gt;</code> tag segítségével adhatjuk meg. Fontos a <code>type="audio/mpeg"</code> paraméter megadása is.
+  </p>
+  <pre><code>&lt;audio controls&gt;
+  &lt;source src="hang.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+</code></pre>
+
+  <h3>Videó beillesztése</h3>
+  <p>
+    Videót a <code>&lt;video&gt;</code> tag segítségével szúrhatunk be. A videók esetén az MP4 formátum ajánlott, mivel ez szintén széles körű támogatottsággal rendelkezik. A <code>controls</code> attribútum lehetővé teszi a lejátszás, szünet, hangerő és egyéb funkciók elérését a felhasználó számára.
+  </p>
+  <pre><code>&lt;video width="640" height="360" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+  A böngésző nem támogatja a videó lejátszását.
+&lt;/video&gt;
+</code></pre>
+</section>
+
+
+
+
+</body>
+</html>

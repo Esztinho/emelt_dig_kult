@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Random tétel generátor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f5f5f5;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    #tetel {
+      font-weight: bold;
+      margin-top: 1.5rem;
+      background-color: #e0f0ff;
+      padding: 1rem;
+      border-radius: 8px;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Random tétel generálása</h2>
+    <button onclick="generaljTetelt()">Tétel generálása</button>
+    <div id="tetel">Itt fog megjelenni a véletlen tétel.</div>
+  </div>
+
+  <script>
+    let tetelek = [];
+
+    // JSON betöltése
+    fetch('tetelek.json')
+      .then(response => response.json())
+      .then(data => {
+        tetelek = data;
+      });
+
+    function generaljTetelt() {
+      if (tetelek.length === 0) {
+        document.getElementById('tetel').innerText = 'Adatok betöltése folyamatban...';
+        return;
+      }
+
+      const randomIndex = Math.floor(Math.random() * tetelek.length);
+      const tetel = tetelek[randomIndex];
+
+      let html = `<h3>${tetel.cim}</h3>`;
+      if (tetel.kerdesek && tetel.kerdesek.length > 0) {
+        html += `<ul>${tetel.kerdesek.map(k => `<li>${k}</li>`).join('')}</ul>`;
+      } else {
+        html += `<p>Nincsenek kérdések ehhez a tételhez.</p>`;
+      }
+
+      document.getElementById('tetel').innerHTML = html;
+    }
+  </script>
+  
+</body>
+</html>
