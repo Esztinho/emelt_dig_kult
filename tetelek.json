@@ -22,7 +22,14 @@
         " Mi a funkciója a tabulátor gombnak?",
         "Mit tudsz a tabulátorpozíciókról? ",
         " Milyen egyéni tabulátorokat tudunk felvenni?"
-    ]
+    ],
+    "kulcsszavak": [
+  "Táblázat elrendezés: sor, oszlop, cellaegyesítés",
+  "Táblázatformázás: szegély, háttérszín, cellaméret",
+  "Tabulátor: igazítás (balra, jobbra, középre, tizedes)",
+  "Tabulátorpozíció: egyéni pozíciók, vonal",
+  "Tabulátor típusok: alapértelmezett, egyéni, kitöltő karakter"
+]
   },
   {
     "id": 3,
@@ -85,7 +92,14 @@
   "Milyen betűformázáshoz kapcsolódó tageket ismersz?",
   "Mutasd be a &lt;p&gt;, &lt;h1&gt;, &lt;h2&gt;… tagek használatát, sajátosságait!",
   "Milyen listákat szúrhatunk be?"
-]
+    ],
+    "kulcsszavak": [
+    "Kódszerkesztő: szintaxiskiemelés, automatikus kiegészítés",
+    "HTML5: doctype, html, head, body",
+    "Betűformázó tagek: <b>, <i>, <u>, <em>, <strong>",
+    "Bekezdés és fejlécek: <p>, <h1>-<h6> hierarchia és jelentés",
+    "Listák: rendezetlen (<ul>), rendezett (<ol>), definíciós (<dl>)"
+  ]
 
   },
   {
