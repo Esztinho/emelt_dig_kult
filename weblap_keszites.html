@@ -226,6 +226,209 @@
 </code></pre>
 </section>
 
+<section>
+  <h2>Táblázatok struktúrája</h2>
+  <p>
+    A HTML-ben a <code>&lt;table&gt;</code> elem segítségével hozhatunk létre táblázatokat. Egy táblázat jellemzően sorokból (<code>&lt;tr&gt;</code>) és oszlopokból, azaz cellákból áll. A fejléc cellákhoz a <code>&lt;th&gt;</code> elemet, míg az adatokhoz a <code>&lt;td&gt;</code> elemet használjuk.
+  </p>
+  <p>
+    A <code>&lt;caption&gt;</code> elem a táblázat címsorát vagy feliratát jeleníti meg, jellemzően a táblázat felett. Ez különösen hasznos a tartalom jobb értelmezéséhez.
+  </p>
+  <ul>
+    <li><code>&lt;table&gt;</code> – a táblázatot definiálja.</li>
+    <li><code>&lt;caption&gt;</code> – a táblázat felirata.</li>
+    <li><code>&lt;tr&gt;</code> – egy sort jelöl a táblázatban.</li>
+    <li><code>&lt;th&gt;</code> – fejléc cella, jellemzően félkövér és középre igazított.</li>
+    <li><code>&lt;td&gt;</code> – normál adatcella.</li>
+  </ul>
+
+  <p>Az alábbi példában egy egyszerű, 4 oszlopos táblázat látható néhány mintaadattal:</p>
+
+  <pre><code>
+  &lt;table border="1"&gt;
+  &lt;caption&gt;Felhasználók adatai&lt;/caption&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Név&lt;/th&gt;
+    &lt;th&gt;Kor&lt;/th&gt;
+    &lt;th&gt;Város&lt;/th&gt;
+    &lt;th&gt;Email&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;János&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+    &lt;td&gt;Budapest&lt;/td&gt;
+    &lt;td&gt;janos@example.com&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Anna&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+    &lt;td&gt;Szeged&lt;/td&gt;
+    &lt;td&gt;anna@example.com&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Béla&lt;/td&gt;
+    &lt;td&gt;28&lt;/td&gt;
+    &lt;td&gt;Debrecen&lt;/td&gt;
+    &lt;td&gt;bela@example.com&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+</code></pre>
+<h3>Előnézet:</h3>
+
+  <table border="1">
+  <caption>Felhasználók adatai</caption>
+  <tr>
+    <th>Név</th>
+    <th>Kor</th>
+    <th>Város</th>
+    <th>Email</th>
+  </tr>
+  <tr>
+    <td>János</td>
+    <td>25</td>
+    <td>Budapest</td>
+    <td>janos@example.com</td>
+  </tr>
+  <tr>
+    <td>Anna</td>
+    <td>30</td>
+    <td>Szeged</td>
+    <td>anna@example.com</td>
+  </tr>
+  <tr>
+    <td>Béla</td>
+    <td>28</td>
+    <td>Debrecen</td>
+    <td>bela@example.com</td>
+  </tr>
+  </table>
+
+
+  <p>
+    A <code>border="1"</code> attribútum egyszerű keretet ad a táblázatnak. Modern webfejlesztésben azonban inkább CSS-t használunk a megjelenés testreszabására.
+  </p>
+</section>
+<section>
+  <h2>Stíluslapok használata </h2>
+  <p>A honlap arculatának megadásához a CSS- (Cascading Style Sheets, magyarul: lépcsőzetes stíluslapok) szabványt kell használnia</p>
+<h3>Mi az a CSS szabály?</h3>
+  <p>A CSS-szabály segítségével megadhatja, hogy az egyes elemek milyen módon legyenek formázva.Tehát egy olyan utasítás, amely meghatározza, hogyan jelenjen meg egy adott HTML 
+elem. </p>
+<p>A CSS-szabály két részből áll. Az első rész a <strong>kijelölő, vagyis a szelektor</strong>. Ahogy a neve is mutatja, segítségével kijelölheti azokat az elemeket, amelyeket formázni szeretne.</p>
+<p>A második rész a <strong>deklarációs blokk</strong>, amely kapcsos zárójelek között helyezkedik el. A deklarációs blokkban deklarációkat helyezhet el, amelyek tulajdonságokat és azok értékeit tartalmazzák. A tulajdonságot kettősponttal kell elválasztani az értéktől.</p>
+<img width=400px src="szelektor.png" alt="CSS-szabály (egy deklarációt tartalmazó blokkal)">
+<p>Amikor a deklarációs blokk több deklarációt tartalmaz, a deklarációk végére pontosvesszőt kell tenni. Ez alól kivétel az utolsó deklaráció. Az alábbi kódban erre láthat példát:</p>
+</section>
+<section> <h2>Betűformázó CSS deklarációk</h2> <p>A CSS segítségével a szöveg megjelenését részletesen szabályozhatjuk. Az alábbiakban néhány gyakran használt betűformázó tulajdonságot mutatunk be:</p> <ul> <li><code>color</code>: A szöveg színének beállítása. Például: <code>color: #333333;</code></li> <li><code>font-size</code>: A betűméret meghatározása, például pixelben vagy relatív mértékegységekben (<code>font-size: 16px;</code>, <code>font-size: 1.2em;</code>)</li> <li><code>font-family</code>: A betűtípus megadása, például: <code>font-family: Arial, sans-serif;</code></li> <li><code>font-weight</code>: A betű vastagságának szabályozása, például <code>normal</code>, <code>bold</code> vagy numerikus értékekkel (<code>font-weight: 700;</code>)</li> <li><code>font-style</code>: A betű stílusa, például <code>normal</code>, <code>italic</code> vagy <code>oblique</code></li> <li><code>text-decoration</code>: Szöveg dekorációk, például <code>underline</code> (aláhúzás), <code>line-through</code> (áthúzás) vagy <code>none</code></li> <li><code>text-align</code>: A szöveg igazítása, például <code>left</code>, <code>center</code>, <code>right</code> vagy <code>justify</code></li> </ul> <h2>Bekezdésformázó CSS deklarációk</h2> <p>A bekezdések megjelenését is számos tulajdonsággal lehet szabályozni:</p> <ul> <li><code>text-align</code>: A bekezdés szövegének igazítása (balra, középre, jobbra, sorkizárt).</li> <li><code>line-height</code>: Sortávolság, amely meghatározza a sorok közötti távolságot (<code>line-height: 1.5;</code> például 1,5-szeres sortávolság).</li> <li><code>text-indent</code>: A bekezdés első sorának behúzása, például: <code>text-indent: 30px;</code></li> <li><code>margin</code>: Külső margó, amely a bekezdés és más elemek közötti térközt szabályozza.</li> <li><code>padding</code>: Belső margó, amely a bekezdés tartalma és a határa közötti távolság.</li> </ul> </section>
+<section>
+  <h2>Osztály és azonosító kijelölők, valamint stíluslap csatolása HTML-ben</h2>
+
+  <h3>Osztály (<code>class</code>) és azonosító (<code>id</code>) kijelölők a CSS-ben</h3>
+  <p>A CSS-ben az elemek célzott formázásához használhatjuk az <strong>osztály</strong> és <strong>azonosító</strong> kijelölőket.</p>
+  <ul>
+    <li><strong>Osztály kijelölő (<code>class</code>)</strong><br>
+      Egy vagy több HTML elemhez rendelhető, csoportos formázást tesz lehetővé.<br>
+      CSS szintaxis: <code>.osztalynev { /* stílusok */ }</code><br>
+      Példa:
+      <pre><code>&lt;p class="kiemelt"&gt;Ez egy kiemelt bekezdés.&lt;/p&gt;</code></pre>
+    </li>
+    <li><strong>Azonosító kijelölő (<code>id</code>)</strong><br>
+      Egyedi azonosító, amely egyetlen elemhez tartozhat.<br>
+      CSS szintaxis: <code>#azonosito { /* stílusok */ }</code><br>
+      Példa:
+      <pre><code>&lt;div id="fejlec"&gt;Ez az oldal fejléc része.&lt;/div&gt;</code></pre>
+    </li>
+  </ul>
+
+  <h3>Stíluslap csatolása HTML dokumentumhoz</h3>
+  <p>A CSS stílusokat többféleképpen is csatolhatjuk egy HTML dokumentumhoz:</p>
+  <ol>
+    <li><strong>Külső CSS fájl</strong><br>
+      A legelterjedtebb módszer, külön <code>.css</code> fájl csatolása a <code>&lt;head&gt;</code> szekcióban:
+      <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
+    </li>
+    <li><strong>Beágyazott stíluslap (Internal CSS)</strong><br>
+      CSS szabályok elhelyezése közvetlenül a <code>&lt;head&gt;</code> részben:
+      <pre><code>&lt;style&gt;
+body {
+  background-color: #fafafa;
+}
+&lt;/style&gt;</code></pre>
+    </li>
+    <li><strong>Inline stílusok</strong><br>
+      Egyedi elemekhez közvetlenül a <code>style</code> attribútumban:
+      <pre><code>&lt;p style="color: blue; font-weight: bold;"&gt;Kék és félkövér szöveg.&lt;/p&gt;</code></pre>
+    </li>
+  </ol>
+</section>
+
+<section>
+  <h2>CSS dobozmodell (Box Model)</h2>
+  <p>
+    A honlapot alkotó elemek a böngészőprogramban úgynevezett dobozokban helyezkednek el. A legbelső dobozban a tartalom (például szöveg, kép, videó) helyezkedik el. Amikor egy elemnek megadjuk a szélességét <strong>(width)</strong>, akkor azzal a valójában a tartalom szélességét adjuk meg. Ugyanez igaz a magasságra <strong>(height)</strong> is, vagyis az is a tartalomra vonatkozik.
+
+A belső dobozt körülvevő doboz a kitöltés, vagy más néven belső margó <strong>(padding)</strong>, amely a tartalom és a szegély <strong>(border)</strong> között helyezkedik el. A szegély és a többi elem közötti térköz pedig a margó <strong>(margin)</strong>. Az értékek mind a négy oldalra (felső, jobb, alsó, bal) egyedileg beállíthatók.
+   </p>
+   <h3>Röviden tehát:</h3>
+  <p>
+    Minden HTML elem egy dobozként jelenik meg, amely négy fő részből áll:
+  </p>
+  <ul>
+    <li><strong>Content (Tartalom):</strong> Az elem tényleges tartalma, például szöveg vagy kép.</li>
+    <li><strong>Padding (Belső margó):</strong> A tartalom és a keret közötti tér, amely kitölti a doboz belsejét, növeli az elem méretét.</li>
+    <li><strong>Border (Keretszegély):</strong> Az elem körül elhelyezkedő vonal, amely vizuálisan elkülöníti a dobozt.</li>
+    <li><strong>Margin (Külső margó):</strong> Az elem és a környező elemek közötti távolság, amely nem része az elem hátterének vagy keretének.</li>
+  </ul>
+
+  <p>
+    A dobozmodell struktúráját az alábbi ábra szemlélteti:
+  </p>
+  <p style="text-align:center;">
+    <img src="dobozmodell.png" alt="CSS dobozmodell ábra" width="300">
+  </p>
+
+  <h3>Példa CSS kód a dobozmodell beállítására:</h3>
+  <pre><code>div {
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 15px;
+}
+</code></pre>
+
+  <p>
+    Ebben a példában az elem tényleges teljes szélessége a következőképpen számítható ki:
+  </p>
+  <p><strong>Teljes szélesség = margin (15px * 2) + border (5px * 2) + padding (20px * 2) + tartalom szélessége (200px)</strong></p>
+  <p>Azaz összesen: <code>15*2 + 5*2 + 20*2 + 200 = 300px</code>.</p>
+
+  <h3><code>box-sizing</code> tulajdonság</h3>
+  <p>
+    A <code>box-sizing</code> CSS tulajdonság lehetővé teszi a dobozmodell viselkedésének megváltoztatását. Alapértelmezés szerint a <code>content-box</code> érték érvényesül, amely szerint a <code>width</code> és <code>height</code> csak a tartalom méretét határozza meg.
+  </p>
+  <p>
+    Ha beállítjuk a <strong>box-sizing: border-box;</strong> értéket, akkor a megadott width (pl. 200px) már a teljes doboz szélességére vonatkozik, azaz a tartalom + padding + border együtt nem haladja meg a 200px-t.
+Ebben az esetben a padding és border beleértendő a megadott szélességbe, tehát a tartalom szélessége automatikusan kisebb lesz, hogy az egész doboz pontosan 200px szélességű legyen.</p>
+
+  <pre><code>div {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+  margin: 15px;
+}
+</code></pre>
+
+  <p>
+    Tehát ebben az esetben az elem teljes szélessége 200px lesz, mivel a padding és border ezen belül kerülnek elszámolásra.
+  </p>
+  
+</section>
+
+
+
 
 
 
