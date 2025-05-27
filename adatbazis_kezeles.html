@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Alapvető SQL Kérdések</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Alapvető SQL Kérdések</h1>
+  <ol>
+  <li>
+    <details>
+      <summary><strong>Mi az SQL?</strong></summary>
+      <p>Az SQL (Structured Query Language) egy adatbázis-kezelő nyelve, amelyet az adatok lekérdezésére és manipulálására használnak.</p>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary><strong>Mik a leggyakoribb SQL utasítások?</strong></summary>
+      <p>A leggyakoribb SQL utasítások közé tartozik a SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER és DROP.</p>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary><strong>Mi a különbség a WHERE és a HAVING között?</strong></summary>
+      <p>A WHERE a sorok szűrésére szolgál a GROUP BY előtt, míg a HAVING a csoportosított adatok szűrésére használható a GROUP BY után.</p>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary><strong>Mi az a PRIMARY KEY?</strong></summary>
+      <p>A PRIMARY KEY egy vagy több oszlop, amely egyedileg azonosítja a rekordokat egy táblában, és nem tartalmazhat NULL értékeket.</p>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary><strong>Mi az a subquery, és mikor használják?</strong></summary>
+      <p>A subquery (al-lekérdezés) egy lekérdezés, amely egy másik lekérdezésen belül található. Gyakran használják összetett lekérdezésekhez, ahol egy lekérdezés eredményére van szükség a másikban.</p>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary><strong>Hogyan használhatók az aggregáló függvények SQL-ben?</strong></summary>
+      <p>Az aggregáló függvények, mint például COUNT(), SUM(), AVG(), MAX(), és MIN(), az adatok csoportosítására és összesítésére szolgálnak. Ezeket a GROUP BY klauzulával együtt használják.</p>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary><strong>Mi az a NULL érték, és hogyan kezelhető az SQL-ben?</strong></summary>
+      <p>A NULL érték az adat hiányát jelzi. Az SQL-ben a NULL értékeket az IS NULL vagy IS NOT NULL operátorokkal kezeljük.</p>
+    </details>
+  </li>
+  <li>
+    <details>
+      <summary><strong>Hogyan kérdeznéd le a legmagasabb árú terméket egy termékek táblájából?</strong></summary>
+      <p><code>SELECT * FROM products ORDER BY price DESC LIMIT 1;</code></p>
+    </details>
+  </li>
+</ol>
+
+
+  <h2>További alapfogalmak</h2>
+  <ul>
+    <li><strong>Mit nevezünk adatbázisnak?</strong><br>
+      Egy strukturált adatgyűjtemény, amelyben az adatok rendszerezett formában, táblákban vannak tárolva.
+    </li>
+    <li><strong>Mit nevezünk adattáblának?</strong><br>
+      Az adattábla egy adatbázison belüli struktúra, amely sorokat (rekordokat) és oszlopokat (mezőket) tartalmaz.
+    </li>
+    <li><strong>Hogyan kapcsolódhatnak egymáshoz?</strong><br>
+      Az adattáblák közötti kapcsolatok általában kulcsok segítségével jönnek létre. Ezek a kapcsolatok lehetnek: 
+<ol>        <li><strong>Egy-egy (One-to-One):</strong> Egy rekord csak egy másik rekordhoz kapcsolódik egy másik táblában. </li>
+        <li><strong>Egy-több (One-to-Many):</strong> Egy rekord több rekordhoz kapcsolódik egy másik táblában. </li>
+        <li><strong>Több-több (Many-to-Many):</strong> Több rekord több rekordhoz kapcsolódik egy másik táblában, amelyhez kapcsolótáblára van szükség.</li></ol>
+
+    </li>
+    <li><strong>Mit nevezünk mezőnek, rekordnak, adatnak?</strong><br>
+      Mező: az adattábla egy oszlopa (pl. név, életkor).<br>
+      Rekord: az adattábla egy sora, amely egy entitás adatait tartalmazza.<br>
+      Adat: az egyes mezők értékei a rekordokon belül.
+    </li>
+    <li><strong>Milyen kulcsokat ismersz? Ismertesd őket!</strong><br>
+      <ul>
+        <li><strong>PRIMARY KEY:</strong> Egyedi azonosító minden rekordhoz, nem lehet NULL.</li>
+        <li><strong>FOREIGN KEY:</strong> Másik tábla elsődleges kulcsára hivatkozik, kapcsolatot teremt.</li>
+        <li><strong>UNIQUE:</strong> Biztosítja, hogy az értékek egyediek legyenek egy oszlopban.</li>
+      </ul>
+    </li>
+    <li><strong>Mit nevezünk kapcsolótáblának?</strong><br>
+      Egy olyan táblát, amely két másik tábla közötti több-a-többhöz kapcsolatot valósít meg, gyakran két idegen kulcsot tartalmaz.
+    </li>
+    <li><strong>Milyen adattípusokat használunk adatbázis-kezelőben?</strong><br>
+      <ul>
+        <li><strong>Szöveg típusok:</strong> VARCHAR, TEXT</li>
+        <li><strong>Szám típusok:</strong> INT, FLOAT, DOUBLE</li>
+        <li><strong>Dátum/idő:</strong> DATE, TIME, DATETIME</li>
+        <li><strong>Logikai:</strong> BOOLEAN</li>
+      </ul>
+    </li>
+  </ul>
+  <h2>Mintatétel kérdésekkel:</h2>
+  <h3>Tétel: SQL utasítások és függvények </h3>
+  <ol>
+  <li>
+    <details>
+      <summary><strong>Ismertesd az adatbázis létrehozásához szükséges utasítást!</strong></summary>
+      <p>Az adatbázis létrehozásához az SQL <code>CREATE DATABASE</code> utasítást használjuk.</p>
+      <p><strong>Szintaxis:</strong><br>
+        <code>CREATE DATABASE adatbazis_neve;</code>
+      </p>
+      <p><strong>Példa:</strong><br>
+        <code>CREATE DATABASE tanuloi_adatbazis;</code>
+      </p>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary><strong>Ismertesd a táblák importálásához szükséges SQL utasításokat!</strong></summary>
+      <p>A táblák adatainak importálására különböző módszerek léteznek, a leggyakoribbak az <code>INSERT INTO</code> utasítás használata vagy külső fájlok betöltése speciális SQL parancsokkal.</p>
+      <p><strong>INSERT INTO szintaxis:</strong><br>
+        <code>INSERT INTO tabla_neve (oszlop1, oszlop2, ...) VALUES (ertek1, ertek2, ...);</code>
+      </p>
+      <p><strong>Példa:</strong><br>
+        <code>INSERT INTO hallgatok (hallgato_id, nev, születési_dátum) VALUES (1, 'Kiss Péter', '2000-04-15');</code></p>
+      <p>Külső fájlok importálására adatbázis-kezelő függően használható például a <code>LOAD DATA INFILE</code> (MySQL), vagy az adatbázis adminisztrációs eszközeiben elérhető import funkciók.</p>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary><strong>Mutasd be a táblák bővítéséhez, frissítéséhez, törléséhez szükséges utasításokat!</strong></summary>
+      <p><strong>Táblák bővítése (oszlop hozzáadása):</strong><br>
+        Az oszlop hozzáadásához az <code>ALTER TABLE</code> utasítást használjuk.</p>
+      <p><strong>Szintaxis:</strong><br>
+        <code>ALTER TABLE tabla_neve ADD oszlop_neve adat_tipus;</code></p>
+      <p><strong>Példa:</strong><br>
+        <code>ALTER TABLE hallgatok ADD email VARCHAR(255);</code></p>
+
+      <p><strong>Adatok frissítése:</strong><br>
+        Az adatok módosítására a <code>UPDATE</code> utasítást alkalmazzuk.</p>
+      <p><strong>Szintaxis:</strong><br>
+        <code>UPDATE tabla_neve SET oszlop_neve = új_érték WHERE feltétel;</code></p>
+      <p><strong>Példa:</strong><br>
+        <code>UPDATE hallgatok SET email = 'kiss.peter@example.com' WHERE hallgato_id = 1;</code></p>
+
+      <p><strong>Adatok törlése:</strong><br>
+        Az adatok törléséhez a <code>DELETE FROM</code> utasítást használjuk.</p>
+      <p><strong>Szintaxis:</strong><br>
+        <code>DELETE FROM tabla_neve WHERE feltétel;</code></p>
+      <p><strong>Példa:</strong><br>
+        <code>DELETE FROM hallgatok WHERE hallgato_id = 1;</code></p>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary><strong>Ismertesd a lekérdezések szintaxisát!</strong></summary>
+      <p>Az SQL lekérdezések alapvető szerkezete a <code>SELECT</code> utasításon alapul, amely az adatbázisból adatokat kérdez le.</p>
+      <p><strong>Szintaxis:</strong><br>
+        <code>SELECT oszlop1, oszlop2, ... FROM tabla_neve WHERE feltétel GROUP BY oszlop HAVING feltétel ORDER BY oszlop LIMIT szám;</code></p>
+      <p><strong>Példa:</strong><br>
+        <code>SELECT nev, születési_dátum FROM hallgatok WHERE születési_dátum > '2000-01-01' ORDER BY nev ASC;</code></p>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary><strong>Milyen aggregáló függvényeket ismersz?</strong></summary>
+      <p>Az SQL leggyakoribb aggregáló függvényei:</p>
+      <ul>
+        <li><code>COUNT()</code> – rekordok számának megszámlálása</li>
+        <li><code>SUM()</code> – értékek összegzése</li>
+        <li><code>AVG()</code> – értékek átlagolása</li>
+        <li><code>MAX()</code> – legnagyobb érték</li>
+        <li><code>MIN()</code> – legkisebb érték</li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary><strong>Milyen dátum- és időfüggvényeket ismersz?</strong></summary>
+      <p>SQL-ben különböző dátum- és időfüggvények állnak rendelkezésre, például:</p>
+      <ul>
+        <li><code>NOW()</code> – aktuális dátum és idő</li>
+        <li><code>CURRENT_DATE()</code> – aktuális dátum</li>
+        <li><code>CURRENT_TIME()</code> – aktuális idő</li>
+        <li><code>DATE()</code> – dátum kivonása időbélyegből</li>
+        <li><code>DATEDIFF()</code> – két dátum közti napok száma</li>
+        <li><code>DATE_ADD()</code>, <code>DATE_SUB()</code> – dátumhoz hozzáadás, vagy levonás</li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary><strong>Mit tudsz a szövegek kezeléséről SQL-ben?</strong></summary>
+      <p>SQL-ben különféle függvények segítik a szöveges adatok kezelését:</p>
+      <ul>
+        <li><code>CONCAT()</code> – szövegek összefűzése</li>
+        <li><code>SUBSTRING()</code> vagy <code>SUBSTR()</code> – szöveg egy részének kivágása</li>
+        <li><code>LENGTH()</code> – szöveg hosszának meghatározása</li>
+        <li><code>UPPER()</code> és <code>LOWER()</code> – szöveg nagy- vagy kisbetűssé alakítása</li>
+        <li><code>TRIM()</code> – szóközök eltávolítása a szöveg elejéről és végéről</li>
+      </ul>
+    </details>
+  </li>
+
+  <li>
+    <details>
+      <summary><strong>Mit tudsz az allekérdezésekről (subqueries)?</strong></summary>
+      <p>Az allekérdezés egy olyan SQL lekérdezés, amely egy másik lekérdezésen belül található, és eredménye felhasználható a külső lekérdezésben.</p>
+      <p>Használatuk lehetőséget ad összetett adatkiválasztási műveletek elvégzésére, például feltételek ellenőrzésére vagy aggregált adatok beillesztésére.</p>
+      <p><strong>Példa:</strong><br>
+        <code>SELECT nev FROM hallgatok WHERE hallgato_id IN (SELECT hallgato_id FROM jegyek WHERE tantargy = 'Matematika' AND jegy = 5);</code></p>
+    </details>
+  </li>
+</ol>
+<section>
+  <h2>SQL JOIN típusok</h2>
+  <p>Az SQL JOIN műveletek célja, hogy két vagy több táblából adatokat kapcsoljanak össze közös mezők alapján.</p>
+  <p>Ezt írásbelin elegendő volt megadni a WHERE záradékban, viszont szóbelin rákérdezhetnek.</p>
+  <h3>INNER JOIN</h3>
+  <p>Az <strong>INNER JOIN</strong> csak azokat a rekordokat adja vissza, ahol mindkét táblában van egyező érték a csatlakoztatott mezőkön. Ha nincs egyezés, a sorok nem jelennek meg az eredményben.</p>
+  <h3>LEFT JOIN </h3>
+  <p>A <strong>LEFT JOIN</strong> visszaadja a bal oldali tábla összes rekordját, valamint a jobb oldali tábla egyező sorait. Ha a jobb oldalon nincs megfelelő egyezés, akkor az eredményben a jobb oldali tábla mezői NULL értéket kapnak.</p>
+  <h3>RIGHT JOIN</h3>
+  <p>A <strong>RIGHT JOIN</strong> visszaadja a jobb oldali tábla összes rekordját, valamint a bal oldali tábla egyező sorait. Ha a bal oldalon nincs megfelelő egyezés, akkor az eredményben a bal oldali tábla mezői NULL értéket kapnak.</p>
+</section>
+<section>
+<h2>SQL Alapok teszt</h2>
+  <form name="quizForm">
+  <p>1. Mi a különbség az INNER JOIN és a LEFT JOIN között?</p>
+  <input type="radio" id="q1a1" name="q1" value="helytelen" />
+  <label for="q1a1">INNER JOIN minden rekordot visszaad, LEFT JOIN csak egyezőket</label><br>
+  <input type="radio" id="q1a2" name="q1" value="helyes" />
+  <label for="q1a2">LEFT JOIN visszaad minden rekordot a bal táblából, INNER JOIN csak az egyezőket</label><br>
+  <input type="radio" id="q1a3" name="q1" value="helytelen" />
+  <label for="q1a3">Nincs különbség</label>
+
+  <p>2. Mire szolgál a PRIMARY KEY?<br>
+    <input type="radio" id="q2a1" name="q2" value="helytelen" />
+    <label for="q2a1">Több rekord azonosítására</label><br>
+    <input type="radio" id="q2a2" name="q2" value="helyes" />
+    <label for="q2a2">Egyedi rekord azonosítására</label><br>
+    <input type="radio" id="q2a3" name="q2" value="helytelen" />
+    <label for="q2a3">Adatok törlésére</label>
+  </p>
+
+  <p>3. Mit nevezünk adattáblának az adatbázis-kezelésben?</p>
+  <input type="radio" id="q3a1" name="q3" value="helyes" />
+  <label for="q1a1">Olyan struktúrált tároló, amely sorokból és oszlopokból áll, és adatokat tárol</label><br>
+  <input type="radio" id="q3a2" name="q3" value="helytelen" />
+  <label for="q1a2">Egy program, amely adatokat kezel</label><br>
+  <input type="radio" id="q3a3" name="q3" value="helytelen" />
+  <label for="q1a3">Adatbázis-kezelő nyelv</label>
+
+  <p>4. Mire használjuk az ORDER BY klauzulát SQL-ben?</p>
+  <input type="radio" id="q4a1" name="q4" value="helyes" />
+  <label for="q4a1">Az eredményhalmaz rendezésére</label><br>
+  <input type="radio" id="q4a2" name="q4" value="helytelen" />
+  <label for="q4a2">Adatok szűrésére</label><br>
+  <input type="radio" id="q4a3" name="q4" value="helytelen" />
+  <label for="q4a3">Új adatok hozzáadására</label>
+
+  <p>5. Melyik SQL utasítással tudsz rekordot frissíteni egy táblában?</p>
+  <input type="radio" id="q5a1" name="q5" value="helyes" />
+  <label for="q4a1">UPDATE</label><br>
+  <input type="radio" id="q5a2" name="q5" value="helytelen" />
+  <label for="q4a2">DELETE</label><br>
+  <input type="radio" id="q5a3" name="q5" value="helytelen" />
+  <label for="q4a3">SELECT</label>
+
+  <button type="button" onclick="checkAnswers()">Ellenőrzés</button>
+</form>
+
+<p id="result"></p>
+
+<script>
+  function checkAnswers() {
+    let form = document.forms['quizForm'];
+    let score = 0;
+    if (form['q1'].value === 'helyes') score++;
+    if (form['q2'].value === 'helyes') score++;
+    if (form['q3'].value === 'helyes') score++;
+    if (form['q4'].value === 'helyes') score++;
+    if (form['q5'].value === 'helyes') score++;
+    document.getElementById('result').innerText = 'Pontszám: ' + score + ' / 5';
+  }
+</script>
+
+</section>
+</body>
+</html>
