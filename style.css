@@ -1,6 +1,6 @@
 body {
       font-family: Arial, sans-serif;
-      background: #f9f9f9;
+      background: #e2e4dd;
       margin: 30px;
       font-size: medium;
     }
@@ -59,14 +59,14 @@ li {
 
 .welcome-section {
     padding: 2rem;
-    background-color: #ffffff;
+    background-color: #6c8269;
     border-bottom: 1px solid #cce0f5;
   }
 
   .welcome-box {
     max-width: 800px;
     margin: auto;
-    background: rgb(196, 221, 228);
+    background: #e2e4dd;
     padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 0 12px rgba(59, 53, 53, 0.1);
@@ -78,13 +78,13 @@ li {
   .welcome-box h2 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #1b456f;
+    color: #0f5343;
   }
 
   .welcome-box .good-luck {
     font-weight: bold;
     font-size: 1.1rem;
-    color: #254364;
+    color: #0f5343;
     margin-top: 1.5rem;
   }
 
@@ -169,3 +169,11 @@ button:hover {
   text-decoration: underline;
 }
 
+.content {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #b3c6b1;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }

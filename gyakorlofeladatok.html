@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Űrlap kvízek</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .form-container {
+      display: none;
+      margin-top: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    button {
+      background-color: #4285f4;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h2>Gyakorló kvízek</h2>
+
+<!-- Gombok -->
+<button onclick="showForm('htmlcss')">Weblap: HTML + CSS</button>
+<button onclick="showForm('sql')">Adatbázis-kezelés</button>
+
+<!-- HTML + CSS kvíz -->
+<div id="form-htmlcss" class="form-container">
+  <h3>HTML + CSS kvíz</h3>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScw4GjftwDiRoD04JJmrvcTCP9QJsT0emY_6WinrQoRfCOjIg/viewform?embedded=true"
+          width="640" height="1200" frameborder="0" marginheight="0" marginwidth="0">Betöltés…</iframe>
+</div>
+
+
+<div id="form-sql" class="form-container">
+  <h3>SQL kvíz</h3>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScYSjkopvT0a39mmR7LrF4dRTBX00TZwHLdwv4TLSw8lkmLSQ/viewform?embedded=true" width="640" height="4312" frameborder="0" marginheight="0" marginwidth="0">Betöltés…</iframe></div>
+
+<script>
+  function showForm(formId) {
+    // Először elrejtjük az összes formot
+    const containers = document.querySelectorAll('.form-container');
+    containers.forEach(container => container.style.display = 'none');
+
+    // Csak a kiválasztott formot jelenítjük meg
+    const selected = document.getElementById('form-' + formId);
+    if (selected) {
+      selected.style.display = 'block';
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -446,6 +446,80 @@ Ebben az esetben a padding és border beleértendő a megadott szélességbe, te
 
 
 
+<section id="quiz" style="max-width: 600px; margin: 40px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f9f4; padding: 30px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);">
+  <h2 style="color: #2e7d32; margin-bottom: 20px; text-align: center;">HTML & CSS ellenőrző kérdések</h2>
+
+  <form id="quiz-form">
+    <div class="question" style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 3px 8px rgba(46, 125, 50, 0.1);">
+      <p style="font-weight: 600; margin-bottom: 10px;">1. Melyik HTML elem használatos a legfontosabb címsorhoz?</p>
+      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+        <input type="radio" name="q1" value="a" style="margin-right: 10px;"> &lt;header&gt;
+      </label>
+      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+        <input type="radio" name="q1" value="b" style="margin-right: 10px;"> &lt;h1&gt;
+      </label>
+      <label style="display: block; cursor: pointer;">
+        <input type="radio" name="q1" value="c" style="margin-right: 10px;"> &lt;title&gt;
+      </label>
+    </div>
+
+    <div class="question" style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 3px 8px rgba(46, 125, 50, 0.1);">
+      <p style="font-weight: 600; margin-bottom: 10px;">2. Hogyan adhatunk meg háttérszínt CSS-ben?</p>
+      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+        <input type="radio" name="q2" value="a" style="margin-right: 10px;"> background-color: red;
+      </label>
+      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+        <input type="radio" name="q2" value="b" style="margin-right: 10px;"> color: red;
+      </label>
+      <label style="display: block; cursor: pointer;">
+        <input type="radio" name="q2" value="c" style="margin-right: 10px;"> bg-color: red;
+      </label>
+    </div>
+
+    <div class="question" style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 3px 8px rgba(46, 125, 50, 0.1);">
+      <p style="font-weight: 600; margin-bottom: 10px;">3. Melyik CSS tulajdonság felel a betűméret beállításáért?</p>
+      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+        <input type="radio" name="q3" value="a" style="margin-right: 10px;"> font-style
+      </label>
+      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
+        <input type="radio" name="q3" value="b" style="margin-right: 10px;"> font-size
+      </label>
+      <label style="display: block; cursor: pointer;">
+        <input type="radio" name="q3" value="c" style="margin-right: 10px;"> font-weight
+      </label>
+    </div>
+
+    <button type="button" onclick="checkAnswers()" style="display: block; width: 100%; background-color: #2e7d32; color: white; font-weight: 700; font-size: 1.1rem; padding: 12px 0; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;">
+      Ellenőrzés
+    </button>
+  </form>
+
+  <div id="result" style="margin-top: 20px; font-weight: 700; font-size: 1.2rem; color: #388e3c; text-align: center;"></div>
+</section>
+
+
+<script>
+  function checkAnswers() {
+    const answers = {
+      q1: 'b',
+      q2: 'a',
+      q3: 'b'
+    };
+
+    let score = 0;
+    for (const [key, value] of Object.entries(answers)) {
+      const selected = document.querySelector(`input[name="${key}"]:checked`);
+      if (selected && selected.value === value) {
+        score++;
+      }
+    }
+
+    const result = document.getElementById('result');
+    result.textContent = `Helyes válaszok száma: ${score} / 3`;
+  }
+</script>
+
+
 
 
 
