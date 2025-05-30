@@ -1,0 +1,137 @@
+body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #333;
+      
+    }
+    h1, h2, h3 {
+      color: #2c6f2c;
+    }
+    section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+    }
+    p {
+      margin: 12px 0;
+    }
+    ul {
+      margin-left: 20px;
+    }
+    .color-box {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      vertical-align: middle;
+      border: 1px solid #ccc;
+      margin-left: 10px;
+      border-radius: 3px;
+    }
+    .color-yellow {
+      background-color: rgb(246, 226, 123);
+    }
+    .color-green {
+      background-color: rgb(0, 176, 80);
+    }
+    .note {
+      background-color: #e0f7e9;
+      border-left: 5px solid #2c6f2c;
+      padding: 10px 15px;
+      margin: 15px 0;
+      border-radius: 4px;
+      font-style: italic;
+    }
+     .task-box {
+      background-color: #dfe3dc;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+.container {
+      display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
+    }
+
+.tool-box {
+    width: 200px;
+  background-color: #e8f5e9;
+  border: 2px solid #81c784;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.1);
+}
+
+.tool-box h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: #2e7d32;
+}
+
+.tool-box ul {
+    padding-left: 1.2rem;
+}
+
+/* Random pozíciók - csak vizuális hatás érdekében */
+.box1 { top: 20px; left: 40px; }
+.box2 { top: 80px; left: 280px; }
+.box3 { top: 300px; left: 100px; }
+.box4 { top: 180px; left: 500px; }
+.box5 { top: 80px; left: 700px; }
+.box6 { top: 350px; left: 600px; }
+
+.explanation {
+  margin-top: 10vh; /* hogy biztosan a boxok alatt legyen */
+  padding: 2rem;
+  background-color: #ffffff;
+  border-top: 2px solid #ccc;
+}
+
+.explanation h2 {
+  color: #2e7d32;
+}
+
+
+.sidebar {
+  width: 20%; 
+  background: #e9efe9;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  height: auto;
+  position: sticky;
+  top: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  float: right;
+}
+.sidebar h3 {
+  margin-top: 0;
+  
+  font-size: 1.2rem;
+  color: #386f6c;
+}
+.sidebar a {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #0b3d26;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #2d8e5a;
+  text-decoration: underline;
+}
+
+.tartalom {
+    width: 70%;
+}

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vektorgrafika</title>
+  <link rel="stylesheet" href="vector_style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Vektorgrafika bemutatása</h1>
+  </header>
+  <nav class="sidebar">
+  <h2>Tartalomjegyzék</h2>
+  
+    <a href="#bevezetes">Bevezetés</a>
+    <a href="#tulajdonsagai">Tulajdonságai</a>
+    <a href="#osszehasonlitas">Vektorgrafika és rasztergrafikák összehasonlítása</a>
+    <a href="#vektoros-szerkesztoprogramok">Vektorgrafikus szerkesztőprogramok</a>
+    <a href="#vektorgrafikus-vs-irodai">Vektorgrafikus programok vs. irodai programok</a>
+    <a href="#szoftverek">Vektorgrafikai eszközök és szoftverek</a>
+    <a href="#Inkscape">Az Inkscape program használata</a>
+    <a href="#eszkozkategoriak">Szerkesztőprogram eszközkategóriák</a>
+    <a href="#klonok-hasznalata">Klónok használata</a>
+    <a href="#unio-metszet-kulonbseg">Unió, Metszet, Különbség műveletek</a>
+    <a href="#utvonalak">Útvonalak</a>
+    <a href="#feladat-kemping">Feladat: Kemping ábra elkészítése</a>
+  
+</nav>
+<div class="tartalom">
+  <section id="bevezetes">
+    <h2 >Bevezetés a vektorgrafikába</h2>
+    <p>
+      A <strong>vektorgrafika</strong> központi fogalma az <em>alakzat</em>, más néven <strong>geometriai elem</strong>.
+      <p>Lényege, hogy nem pixelekből/képpontokból áll, hanem matematikai képleteken keresztül geometriai alakzatokból (körökből, négyszögekből, sokszögekből, pontokból, egyenesekből, görbékből, stb…) tevődik össze. Egyik legnagyobb előnye, hogy az alakzatok nem lementett képpontok formájában tárolódnak, hanem az alakzatokat kirajzoló képletekkel. Ennek eredményeként egy vektoros grafika gyakorlatilag végtelenségig kicsinyíthető és nagyítható minőségromlás nélkül, mégpedig úgy, hogy a formák határai teljesen élesek maradnak. </p>
+
+    <div class="note">
+      <strong>Megjegyzés:</strong> A vektorgrafikus ábrák bármilyen nagyításban élesek maradnak, ellentétben a rasztergrafikus képekkel, amelyek nagyításkor pixelesednek.
+    </div>
+  </section>
+  <section id="tulajdonsagai">
+    <h1>A vektorgrafika tulajdonságai</h1>
+    <ul>
+      <li><strong>Méretezhetőség:</strong> minőségveszteség nélkül nagyítható és kicsinyíthető.</li>
+      <li><strong>Felbontásfüggetlenség:</strong> bármilyen eszközön tiszta és éles megjelenítés.</li>
+      <li><strong>Kis fájlméret:</strong> matematikai leírás alapján kisebb méretű fájlokat eredményez.</li>
+      <li><strong>Szerkeszthetőség:</strong> elemei könnyen módosíthatók, áthelyezhetők.</li>
+      <li><strong>Pontosság:</strong> precíz geometriai meghatározás és manipuláció.</li>
+    </ul>
+  </section>
+
+ <section id="osszehasonlitas">
+  <h2>Vektorgrafikus és rasztergrafikus tárolás összehasonlítása</h2>
+  <table border="1" cellspacing="0" cellpadding="10" style="border-collapse: collapse; width: 100%;">
+    <thead style="background-color: #e0f2f1;">
+      <tr>
+        <th>Kategória</th>
+        <th>Vektorgrafika</th>
+        <th>Rasztergrafika</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Adattárolás módja</strong></td>
+        <td>Geometriai formák és egyenletek alapján</td>
+        <td>Pixelek mátrixaként, minden pixel színértékkel</td>
+      </tr>
+      <tr>
+        <td><strong>Méretezhetőség</strong></td>
+        <td>Minőségromlás nélkül méretezhető</td>
+        <td>Nagyításnál pixelesedés fordulhat elő</td>
+      </tr>
+      <tr>
+        <td><strong>Fájlméret</strong></td>
+        <td>Jellemzően kisebb (kivéve komplex ábrák)</td>
+        <td>Nagyobb, különösen nagy felbontásnál</td>
+      </tr>
+      <tr>
+        <td><strong>Felhasználási területek</strong></td>
+        <td>Logók, ikonok, technikai rajzok, illusztrációk</td>
+        <td>Fotók, digitális művészet, részletgazdag képek</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+
+  <section id="vektoros-szerkesztoprogramok">
+    <h2>Vektorgrafikus szerkesztőprogramok</h2>
+    <ul>
+      <li><strong>Adobe Illustrator:</strong> professzionális eszközkészlet és funkcionalitás.</li>
+      <li><strong>CorelDRAW:</strong> népszerű program a nyomdai és tervezési iparban.</li>
+      <li><strong>Inkscape:</strong> nyílt forráskódú, ingyenes, sokoldalú vektorgrafikai szerkesztő.</li>
+      <li><strong>Affinity Designer:</strong> megfizethető, hatékony alternatíva.</li>
+    </ul>
+  </section>
+
+  <section id="vektorgrafikus-vs-irodai">
+    <h2>Vektorgrafikus programok vs. irodai programok</h2>
+    <h3>Előnyök (önálló programok)</h3>
+    <ul>
+      <li><strong>Speciális eszközök:</strong> fejlett, célzott szerkesztési lehetőségek.</li>
+      <li><strong>Professzionális minőség:</strong> nyomdai és digitális felhasználásra is alkalmas.</li>
+      <li><strong>Komplexitás kezelése:</strong> rétegek, maszkok, összetett műveletek.</li>
+    </ul>
+
+    <h3>Hátrányok (önálló programok)</h3>
+    <ul>
+      <li><strong>Tanulási görbe:</strong> összetettebb, időigényesebb megtanulni.</li>
+      <li><strong>Költség:</strong> drága lehet (pl. Adobe Illustrator).</li>
+      <li><strong>Erőforrás-igény:</strong> több memóriát és teljesítményt igényelhet.</li>
+    </ul>
+
+    <h3>Irodai programok jellemzői</h3>
+    <ul>
+      <li><strong>Korlátozott funkcionalitás:</strong> egyszerűbb grafikák készítésére alkalmas.</li>
+      <li><strong>Egyszerű használat:</strong> gyorsabb tanulás, könnyebb kezelés.</li>
+      <li><strong>Költséghatékonyság:</strong> általában a meglévő irodai csomag része.</li>
+    </ul>
+  </section>
+
+
+  <section id="szoftverek">
+    <h2>Vektorgrafikai eszközök és szoftverek</h2>
+    <p>A vektorgrafikai eszközök ma már szinte minden olyan szoftverben megtalálhatók, ahol grafikai elemekre van szükség. Ezek között találhatók:</p>
+    <ul>
+      <li><strong>Irodai programok:</strong> Microsoft Word, PowerPoint, LibreOffice Writer, Impress, Draw</li>
+      <li><strong>Speciális célú programok:</strong> GeoGebra, Euklides, Euler3D, Blender</li>
+      <li><strong>Önálló vektorgrafikai szerkesztőprogramok:</strong> Inkscape, CorelDraw, Adobe Illustrator</li>
+    </ul>
+    <p>A továbbiakban az ingyenes és nyílt forráskódú <strong>Inkscape</strong> programmal foglalkozunk részletesebben.</p>
+  </section>
+
+  <section id="Inkscape">
+    <h2>Az Inkscape program használata</h2>
+    <p>
+      Az Inkscape alapértelmezett képformátuma az <strong>SVG (Scalable Vector Graphics)</strong>, amely skálázható vektorgrafikát jelent. Az SVG szabványt a W3C kezeli, és támogatja a webes megjelenítést.
+    </p>
+    <p>
+      A modern webböngészők és irodai programok is képesek megjeleníteni az SVG formátumú képeket, így ezek könnyen beágyazhatók weboldalakba vagy dokumentumokba. Az SVG állomány XML alapú, így képes szövegeket, bitképeket és hivatkozásokat is tárolni.
+    </p>
+    <p>
+      Az Inkscape segítségével az alakzatok létrehozása, módosítása, tulajdonságaik célszerű beállítása egyszerűen megoldható. Az alábbiakban néhány feladatot mutatunk be, amelyek részben korábbi érettségi feladatokon alapulnak.
+    </p>
+  </section>
+  <section id="eszkozkategoriak">  <h1>Szerkesztőprogram eszközkategóriák</h1>
+  <div class="container">
+    
+    <div class="tool-box box1">
+      <h3>Kiválasztó eszközök</h3>
+      <ul>
+        <li>Kiválasztó eszköz (Select Tool)</li>
+        <li>Csoportosítási eszköz (Group/Ungroup Tool)</li>
+      </ul>
+    </div>
+
+    <div class="tool-box box2">
+      <h3>Rajzeszközök</h3>
+      <ul>
+        <li>Vonaleszköz (Line Tool)</li>
+        <li>Szabadkézi eszköz (Freehand Tool)</li>
+        <li>Bezier-görbe eszköz (Bezier Tool)</li>
+      </ul>
+    </div>
+
+    <div class="tool-box box3">
+      <h3>Alakzat eszközök</h3>
+      <ul>
+        <li>Négyzet eszköz (Rectangle Tool)</li>
+        <li>Ellipszis eszköz (Ellipse Tool)</li>
+        <li>Többszög eszköz (Polygon Tool)</li>
+      </ul>
+    </div>
+
+    <div class="tool-box box4">
+      <h3>Szöveg eszközök</h3>
+      <ul>
+        <li>Szöveg eszköz (Text Tool)</li>
+         =Szöveg hozzáadása és szerkesztése.
+      </ul>
+    </div>
+
+    <div class="tool-box box5">
+      <h3>Átalakító eszközök</h3>
+      <ul>
+        <li>Forgatás eszköz (Rotate Tool)</li>
+        <li>Tükrözés eszköz (Flip Tool)</li>
+      </ul>
+    </div>
+
+    <div class="tool-box box6">
+      <h3>Szín és stílus eszközök</h3>
+      <ul>
+        <li>Kitöltés és kontúr eszköz (Fill and Stroke Tool)</li>
+        <li>Színválasztó eszköz (Color Picker Tool)</li>
+      </ul>
+    </div>
+    <div class="explanation">
+        <h2>Néhány eszköz használatának szemléltetése</h2>
+        <p><strong>Kiválasztó eszköz (Select Tool):</strong><br>
+        Használata: Kattintsunk egy elemre a kiválasztásához. A fogópontokat használva átméretezhetjük vagy áthelyezhetjük az elemet.<br>
+        Példa: Egy téglalap áthelyezése és méretének módosítása.</p>
+
+        <p><strong>Bezier-görbe eszköz (Bezier Tool):</strong><br>
+        Használata: Kattintsunk a kezdőpontra, majd kattintással adjuk meg a következő pontokat. Kattintsunk és húzzuk a görbe formálásához.<br>
+        Példa: Egy ívelt vonal rajzolása egy logóban.</p>
+
+        <p><strong>Szöveg eszköz (Text Tool):</strong><br>
+        Használata: Kattintsunk a dokumentumra, írjuk be a szöveget, majd a tulajdonságsávon állítsuk be a betűtípust, méretet és színt.<br>
+        Példa: Egy cég neve hozzáadása egy brosúrához.</p>
+    </div>
+
+  </div>
+  </section>
+  <section id="klonok-hasznalata">
+      <h2>Klónok használata</h2>
+       <p>
+    A klónok olyan másolatok, amelyek az eredeti objektumtól függnek. Ez azt jelenti, hogy az eredeti objektum módosítása automatikusan kihat a klónokra is.
+  </p>
+  
+  <p><strong>Használata:</strong></p>
+  <ul>
+    <li>Kattintsunk a kiválasztandó objektumra.</li>
+    <li>Válasszuk a <em>"Szerkesztés" &rarr; "Klón készítése"</em> opciót.</li>
+    <li>A klónokat ezután szabadon áthelyezhetjük és átméretezhetjük, ugyanakkor formai és színbeli tulajdonságaik továbbra is az eredeti objektumtól függenek.</li>
+  </ul>
+  <p>Az egyik eszközünk a szabályos elrendezésű klónok együttes létrehozására a <strong>Csempézett klónok</strong> (Szerkesztés > Klónozás > Csempézett klónok létrehozása…) menü használata. A menü használatának az erőssége, hogy a klónokat megadott szabály szerint és elrendezésben hozza létre a szerkesztőprogram.</p>
+    <a href="https://www.nkp.hu/tankonyv/digitalis_kultura_11-12_okosgyujtemeny_emelt_szint/lecke_05_002">->Többet a klónok haszálatáról<-</a>
+</section>
+  <section id="unio-metszet-kulonbseg">
+    <h2>Unió, Metszet, Különbség műveletek</h2>
+    <ul>
+    <li><strong>Unió (Union):</strong> Két vagy több objektum összeolvasztása egyetlen új objektummá.<br>
+      <code>A + B = AB</code>
+    </li>
+    <li><strong>Metszet (Intersection):</strong> Két vagy több objektum közös területének megtartása.<br>
+      <code>A ∩ B = C</code>
+    </li>
+    <li><strong>Különbség (Difference):</strong> Az első objektumból a második által lefedett terület eltávolítása.<br>
+      <code>A − B = D</code>
+    </li>
+  </ul>
+  </section>
+  <section id="utvonalak">
+    
+  <h2>Útvonalak (Paths)</h2>
+  <p>Az útvonalak olyan vektoros elemek, amelyek pontokból és a közöttük húzódó görbékből állnak. Az útvonalak rugalmasan szerkeszthetők és átalakíthatók.</p>
+  <h3>Használata:</h3>
+  <ul>
+    <li>Útvonalak létrehozása Bezier-görbékkel vagy vonaleszközökkel.</li>
+    <li>Útvonalak szerkesztése pontok és szegmensek hozzáadásával, eltávolításával vagy áthelyezésével.</li>
+  </ul>
+  <h3>Példák:</h3>
+  <ul>
+    <li>Logók, ikonok és más grafikai elemek létrehozása.</li>
+    <li>Egyedi alakzatok és görbék rajzolása.</li>
+  </ul>
+</section>
+
+  </section>
+
+  <section id="feladat-kemping">
+    <h2>Feladat: Kemping ábra elkészítése</h2>
+    <p>
+      Készítse el a következő ábrát!
+    </p>
+    <img src="hullamkemping_vektrografika.png" alt="minta ábra a feladathoz" width="350px">
+    <p>
+      A prezentációkészítő szoftverek és vektorgrafikus szerkesztők – például az Inkscape – többféle módszert kínálnak az ábra elkészítésére. Az ábra elemei és beállításai egységesek, függetlenül a választott szoftvertől: van kis átfedás a két szoftver között, de érettségin kérhetik az inkscape-en való bemutatását a feladatnak.
+    </p>
+    <div class="task-box">
+    Feladatok:
+    <ol>
+      <li>
+        A rajzon kétféle színt használjon: a dia hátterének megfelelő sárgát, és <code>RGB(0, 176, 80)</code> kódú zöldet!
+      </li>
+      <li>
+        A lekerekített sarkú téglalap <strong>14×17 cm</strong> méretű, kitöltés nélküli legyen, a szegélye pedig <strong>13 pont</strong> vastagságú!
+      </li>
+      <li>
+        A sátrat ábrázoló, szegély nélküli, egyenlő szárú háromszöget befoglaló téglalap <strong>9×12 cm</strong> méretű legyen! A sátor ajtaja <strong>2,5×4 cm</strong> méretű, <strong>sárga, szegély nélküli téglalap</strong> legyen, amelyet igazítson a háromszöghöz képest <strong>függőlegesen alulra</strong> és <strong>vízszintesen középre</strong>!
+      </li>
+      <li>
+        A háromszög tetején lévő két vonal legyen <strong>5 pontos</strong> vastagságú, hosszuk tetszőleges! Illeszkedjenek a háromszöghöz, vagyis az oldalak folytatásai legyenek!
+      </li>
+      <li>
+        A sátor háromszögét, az ajtót ábrázoló téglalapot és a két rudazatot ábrázoló vonalat <strong>csoportosítsa</strong>, majd igazítsa a lekerekített sarkú téglalap <strong>közepére</strong>!
+      </li>
+      <li>
+        A sátor fölé – egy ahhoz képest középre igazított szövegdobozba – írja be a <strong>„HULLÁM KEMPING”</strong> feliratot! A szöveg:
+        <ul>
+          <li>Arial (vagy Nimbus Sans) betűtípusú</li>
+          <li>26 pontos méretű</li>
+          <li>Félkövér stílusú</li>
+          <li>A szövegdobozhoz képest vízszintesen középre igazított</li>
+        </ul>
+      </li>
+    </ol>
+    </div>
+  </section>
+</div>
+</body>
+</html>
