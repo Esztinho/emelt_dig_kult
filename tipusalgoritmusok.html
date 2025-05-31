@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Alap algoritmusok – Programozási tételek</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            margin: 2rem;
+            color: #333;
+        }
+        h1, h2 {
+            color: #005a9c;
+        }
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #eee;
+            padding: 1rem;
+            border-left: 4px solid #005a9c;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alap algoritmusok</h1>
+    <p>A programozási tételek gyakran használt algoritmusokat takarnak, amelyeket általában listákon alkalmazunk.. Az adatok persze jöhetnek billentyűzetről, fájlból vagy adatbázisból is.</p>
+    <p><a href="https://www.nkp.hu/tankonyv/digitalis_kultura_10_nat2020/lecke_05_008">NKP-n további feladatok kidolgozva</a></p>
+    <h2>Összegzés</h2>
+    <p><strong>Feladat:</strong> Adjuk össze a <code>numbers</code> lista elemeit.</p>
+    <pre><code>numbers = [2, 4, 5, 7, 8, 3, 1]
+
+# 1. Inicializálás
+ossz = 0
+
+# 2. Összegzés ciklussal
+for num in numbers:
+    ossz += num
+
+# 3. Eredmény kiírása
+print(ossz)</code></pre>
+<p><p>1.még a for ciklus előtt, egy kezdeti változóba inicializáljunk egy kezdeti értéket, természetesen 0 kezdőértékkel
+ossz=0</p>
+<p>2.következhet a for ciklus, amellyel végigmegyünk a listán, és mely a ciklusmagot annyiszor futtatja  le , ahány eleme van a listának
+for  num  in  numbers:
+	ossz += num</p>
+<p>3. printeljük ki az ossz változó értékét:   print(ossz)</p>
+</p>
+
+    <h2>Megszámolás</h2>
+    <p><strong>Feladat:</strong> Számoljuk meg, hány páros szám található a listában.</p>
+    <pre><code>numbers = [2, 4, 5, 7, 8, 3, 1]
+
+# 1. Számláló inicializálása, kezdőérték beállítása 0-val
+szamlalo = 0
+
+# 2. Iterálás és feltételvizsgálat
+for num in numbers:
+    if num % 2 == 0:
+        szamlalo += 1
+
+# 3. Eredmény kiírása
+print(szamlalo)</code></pre>
+
+    <h2>Eldöntés</h2>
+    <p><strong>Feladat:</strong> Meg szeretnénk tudni, van-e 5-ös szám a listában.</p>
+    <pre><code>numbers = [2, 4, 5, 7, 8, 3, 1]
+
+# 1. Boolean változó beállítása
+van = False
+keresett_ertek = 5
+
+# 2. Iterálás és ellenőrzés
+for num in numbers:
+    if num == keresett_ertek:
+        van = True
+
+# 3. Eredmény kiírása
+if van:
+    print("Van 5-ös szám a listában.")</code></pre>
+
+   <h2>Maximumkeresés</h2>
+   <p><strong>Feladat:</strong> Melyik volt ma a taxis legjobb fuvarja? Írjuk meg a problémát megoldó algoritmust, majd kódoljuk programmá! </p>
+   <p><strong>Ötlet:</strong> Vezessünk be egy változót, amelynek az értéke a feladatban elképzelhető legkisebb eredmény. Nézzük végig egyesével a listánk elemeit, és ha találunk a változóban tároltnál nagyobb értéket, akkor cseréljük erre a változó tartalmát!</p>
+    <pre><code>bevételek := [1,5,2,3,4]
+legtöbb := 0
+ciklus bevétel a bevételek lista minden elemére:
+  ha bevétel > legtöbb:
+    legtöbb := bevétel
+ciklus vége</code></pre>
+<details>
+    <summary><strong>📌 Megoldás – kódolva Pythonban</strong></summary>
+<img src="max_kereses.png" alt="Maximumkeresés pythonban" width="600px"> </details>
+</p>
+    
+</body>
+</html>
