@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Érettségi Informatika – Gyakorlati Felkészítő</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+
+    <!-- Prism JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-python.min.js"></script>
+
+</head>
+
+<body>
+
+<header>
+    <h1>Informatika Érettségi – Gyakorlati Felkészítő</h1>
+    <p>A stabil alapokhoz és a még stabilabb érettségihez vezető legrövidebb út</p>
+</header>
+
+<nav>
+    <a href="#algoritmus">Algoritmusok</a>
+    <a href="#file">Fájlkezelés</a>
+    <a href="#kereses">Keresés</a>
+    <a href="#for">Ciklusok</a>
+    <a href="#feladatok">Feladatok</a>
+</nav>
+
+<main>
+    <section id="adattarolas">
+    <h2>Adattárolás és változók</h2>
+
+    <h3>1. Változók fogalma</h3>
+    <p>Változók tárolják az adatokat. Pythonban nem kell előre deklarálni a
+változók típusát.</p>
+
+    <h3>2. Adattípusok</h3>
+    <p>Számok, szöveg, logikai értékek, lista stb.</p>
+    
+    <h4>Adattípusok röviden</h4>
+<ul>
+    <li><strong>int</strong> – egész számok, pl. 10, -5, 0</li>
+    <li><strong>float</strong> – valós számok, tizedes törttel, pl. 3.14, -0.5</li>
+    <li><strong>str</strong> – szöveg, karakterlánc, pl. "Hello", 'Világ'</li>
+    <li><strong>bool</strong> – logikai értékek: <code>True</code> vagy <code>False</code></li>
+    <li><strong>list</strong> – elemek sorozata, pl. [1, 2, 3], [“a”, “b”, “c”]</li>
+    <li><strong>dict</strong> – kulcs-érték párok, pl. {"név": "Anna", "kor": 16} 
+        <br>(fájlbeolvasás után adatok eltárolására is használhatjuk a szótárakat)</li>
+    <li><strong>tuple</strong> – nem megváltoztatható (immutábilis) elemek sorozata, pl. (1, 2, 3)</li>
+    <li><strong>set</strong> – egyedi elemek halmaza, sorrend nem számít, pl. {1, 2, 3}</li>
+</ul>
+
+    
+        <strong>Példa Pythonban:</strong><br>
+        <pre class="code-container"><code class="language-python">szam = 10
+szoveg = "Hello, világ!"
+</code><button class="copy-btn">Másolás</button></pre>
+    
+        <p><em>Megjegyzés:</em> Az adatok tárolása minden program feladat első lépése, fontos ezt jól átlátni.</p>
+
+
+    <h3>3. Adattárolás két fajtája</h3>
+    <p>Bekért adatokat és a számított adatokat is tároljuk.</p>
+
+    <h3>4. Egyenlőségjel működése</h3>
+<p>
+    Az egyenlőségjel (<code>=</code>) értékadást jelent: a jobb oldali értéket a bal oldali változó kapja meg.
+    Ha feltételes vizsgálatot szeretnénk, dupla egyenlőségjelet (<code>==</code>) kell használunk, ami összehasonlítja a két értéket.
+</p>
+
+<h4>Példa Pythonban:</h4>
+<pre class="code-container"><code class="language-python">
+# Értékadás
+szam = 10
+szoveg = "Hello, világ!"
+
+# Összehasonlítás
+if szam == 10:
+    print("A szám 10")
+</code><button class="copy-btn">Másolás</button></pre>
+
+<h3>5. Lista</h3>
+<p>
+    <strong>Lista fogalma: </strong>elemek sorozata, amelyek módosíthatók. Indexeléssel érhetjük el az egyes elemeket(ami 0-tól indul!), és különféle műveletek végezhetünk rajtuk.
+</p>
+
+<h4>1.) Deklarálás és indexelés</h4>
+<p>Lista létrehozása és elemek elérése indexekkel:</p>
+<pre class="code-container"><code class="language-python">
+lista = [1, 2, 3, 4, 5]
+elso_elem = lista[0]  # az első elem
+utolso_elem = lista[-1]  # az utolsó elem
+</code><button class="copy-btn">Másolás</button></pre>
+
+<h4>2.) Módosítás</h4>
+<p>Lista elemek módosítása, hozzáadása és eltávolítása:</p>
+<pre class="code-container"><code class="language-python">
+# Elem módosítása
+lista[0] = 10
+
+# Elem hozzáadása a végéhez
+lista.append(6)
+
+# Elem eltávolítása érték alapján
+lista.remove(3)
+
+# Elem eltávolítása index alapján
+del lista[2]
+</code><button class="copy-btn">Másolás</button></pre>
+<h4>3.) Lista műveletek beépített függvényekkel</h4>
+<p>
+    A Python listáira számos beépített függvény alkalmazható: <code>len()</code>, <code>sum()</code>, <code>min()</code>, <code>max()</code>, <code>sorted()</code> stb.
+</p>
+
+<h4>Példa Pythonban:</h4>
+<pre class="code-container"><code class="language-python">
+lista = [10, 3, 7, 2, 5]
+
+# Lista hossza
+print(len(lista))  # 5
+
+# Elemek összege
+print(sum(lista))  # 27
+
+# Legkisebb elem
+print(min(lista))  # 2
+
+# Legnagyobb elem
+print(max(lista))  # 10
+
+# Lista rendezése (új lista létrehozása)
+rendezett_lista = sorted(lista)
+print(rendezett_lista)  # [2, 3, 5, 7, 10]
+
+# Eredeti lista nem változik
+print(lista)  # [10, 3, 7, 2, 5]
+</code><button class="copy-btn">Másolás</button></pre>
+
+<script>
+// Végigmegy minden copy gombon
+document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const code = btn.previousElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            btn.innerText = "Másolva!";
+            setTimeout(() => btn.innerText = "Másolás", 1000);
+        });
+    });
+});
+</script>
+
+</section>
+
+
+    <section id="algoritmus">
+        <h2>Alap algoritmusok</h2>
+        <p>Az érettségi programozási feladatok szinte mindig tartalmaznak alap algoritmusokat. Ezek biztos ismerete kulcsfontosságú.</p>
+
+        <h3>1. Összegzés</h3>
+        <pre>
+szamok = [3, 5, 7]
+osszeg = 0
+
+for szam in szamok:
+    osszeg += szam
+
+print(osszeg)
+  </pre>
+
+        <h3>2. Megszámlálás</h3>
+        <pre>
+szamok = [5, 12, 7, 20]
+db = 0
+
+for szam in szamok:
+    if szam > 10:
+        db += 1
+
+print(db)
+  </pre>
+
+        <h3>3. Maximumkeresés</h3>
+        <pre>
+szamok = [3, 9, 4, 7]
+legnagyobb = szamok[0]
+
+for szam in szamok:
+    if szam > legnagyobb:
+        legnagyobb = szam
+
+print(legnagyobb)
+  </pre>
+
+        <h3>4. Minimumkeresés</h3>
+        <pre>
+szamok = [3, 9, 4, 7]
+min = szamok[0]
+
+for szam in szamok:
+    if szam < min:
+        min = szam
+
+print(min)
+  </pre>
+
+        <h3>5. Eldöntés</h3>
+        <pre>
+szamok = [2, 4, 6, 7]
+van = False
+
+for szam in szamok:
+    if szam % 2 != 0:
+        van = True
+
+print(van)
+  </pre>
+
+        <h3>6. Kiválasztás</h3>
+        <pre>
+szamok = [3, 5, 8, 9]
+
+for szam in szamok:
+    if szam % 2 == 0:
+        print(szam)
+        break
+  </pre>
+
+    </section>
+
+    <section id="file">
+        <h2>Fájlbeolvasás és szótár használata</h2>
+        <p>A fájl beolvasása és feldolgozása Pythonban alapvető feladat a gyakorlati érettségin. A szótárak segítségével az adatok kezelése sokkal átláthatóbbá válik. Későbbiekben nem lesz gondunk a megfelelő indexek számolgatásával.</p>
+
+        <h3>Fájl megnyitása és sorokra bontás</h3>
+        <pre>
+file = open("taborok.txt", "r", encoding="utf-8").read().splitlines()
+
+# <strong>.read():</strong>Az egész fájlt egy szövegként olvassa be
+# <strong>.splitlines():</strong> eltávolítja a sortöréseket, azok mentén darabol és listát hoz létre (->list)
+# Minden sor egy-egy listaelem
+  </pre>
+
+        <h3>Lista létrehozása a feldolgozott adatoknak</h3>
+        <p>Ebben a példában a fájl sorait szótárakba tesszük, hogy érthetőbb és könnyebben kezelhető legyen a kód.</p>
+
+        <pre>
+taborok = []
+for line in file:
+    line = line.split("\t")  # tabulátorok mentén daraboljuk
+    tabor = {}
+    tabor["kezdo_honap"] = line[0]
+    tabor["kezdo_nap"] = line[1]
+    tabor["reszvevok"] = line[2]
+    tabor["tema"] = line[3]
+    taborok.append(tabor)
+
+print(taborok)
+  </pre>
+        <p>Így a <code>taborok</code> lista minden eleme egy-egy szótár, amely tartalmazza a tábor kezdő hónapját, kezdő napját, résztvevőket és a témát.</p>
+
+
+        <h3>Összegzés</h3>
+        <ul>
+            <li>Érthetőbb kód – kulcsok használata indexek helyett</li>
+            <li>Egyszerű hozzáférés az adatokhoz</li>
+            <li>Rugalmasság a későbbi módosításokhoz</li>
+            <li>Összetett adatok könnyű kezelése – listák, szótárak beágyazása</li>
+        </ul>
+    </section>
+
+
+    <section class="section-container" id="kereses">
+        <span class="badge">Fejlesztés alatt</span>
+        <h2>Keresés algoritmus</h2>
+        <p>Gyakori feladat egy adott névhez vagy értékhez tartozó adat megkeresése.</p>
+        <ul>
+            <li>Lineáris keresés</li>
+            <li>Összehasonlítás</li>
+            <li>Találat jelzése</li>
+        </ul>
+    </section>
+
+    <section class="section-container" id="for">
+        <span class="badge">Fejlesztés alatt</span>
+        <h2>For ciklus</h2>
+        <p>A ciklus az egyik legfontosabb eszköz az adatok feldolgozásában.</p>
+        <ul>
+            <li>Lista bejárása</li>
+            <li>Számlálás</li>
+            <li>Feltételes vizsgálatok</li>
+        </ul>
+        
+
+    </section>
+
+    <section class="section-container" id="feladatok">
+        <span class="badge">Fejlesztés alatt</span>
+        <h2>Gyakorló feladatok</h2>
+        
+
+        <a class="btn" href="#">Teszt indítása</a>
+    </section>
+
+</main>
+
+<footer>
+    <p>Készítette: Deák Eszter</p>
+</footer>
+
+</body>
+</html>
