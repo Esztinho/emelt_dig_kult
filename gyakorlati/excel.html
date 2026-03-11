@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Excel</h1>
+    <span class="badge">Fejlesztés alatt</span>
+    <div class="header-container">
+
+    <nav >
+        <ul>
+            <li><a href="index.html" class="menu-btn">Főoldal</a></li>
+            <li><a href="adatbazis.html" class="menu-btn">SQL</a></li>
+            <li><a href="programozas.html" class="menu-btn">Programozás</a></li>
+        </ul>
+        
+        
+        
+    </nav>
+</header>
+<div class="layout">
+    <aside class="sidebar">
+        <h3>Tartalomjegyzék</h3>
+        <ul>
+            <li><a href="#bevezetes">Bevezetés</a></li>
+            <li><a href="#adattipusok">Adattípusok</a></li>
+            <li><a href="#cellahivatkozasok">Cellahivatkozások</a></li>
+            <li><a href="#alapmuveletek">Alapvető műveletek</a></li>
+            <li><a href="#ha">HA() függvény</a></li>
+            <li><a href="#fuggvenyek">Excel függvények</a></li>
+            
+        </ul>
+    </aside>
+    <main>
+
+        <section id="bevezetes">
+        <h2>Bevezetés</h2>
+
+        <p>
+            A táblázatkezelő programok eredetileg gazdasági és pénzügyi számítások támogatására készültek, azonban napjainkra általános célú eszközökké váltak az adatok rendszerezésére, elemzésére és szemléltetésére. Az Excel használata különösen előnyös minden olyan feladatnál, ahol az információk táblázatos formában áttekinthetők, és a közöttük lévő összefüggések számításokkal vagy diagramokkal vizsgálhatók.
+        </p>
+
+        <p>
+            A korábbi tanulmányok során már megismerkedtünk a cellákban tárolt adatok kezelésével, az alapvető műveletekkel és a leggyakrabban használt függvényekkel. Gyakorlati feladatokon keresztül megtanultuk, hogyan lehet adatokat feldolgozni, illetve az eredményeket grafikus formában megjeleníteni.
+        </p>
+
+        <p>
+            Az emelt szintű érettségi azonban ennél összetettebb gondolkodást és problémamegoldást igényel. A következő fejezetekben röviden áttekintjük a legfontosabb alapfogalmakat és adatkezelési módszereket, majd fokozatosan haladunk a kreativitást és logikus gondolkodást igénylő feladatok felé.
+        </p>
+
+        <p>
+            Az Excel különösen hasznos nagy mennyiségű adat gyors feldolgozására, statisztikai és pénzügyi számítások elvégzésére, valamint diagramok és jelentések készítésére. Megfelelő használatával jelentősen csökkenthető a manuális számítások ideje és a hibák száma.
+        </p>
+    </section>
+<section id="adattipusok">
+    <h2>Adattípusok a táblázatkezelésben</h2>
+
+    <p>
+        A táblázatkezelő programok celláiban különböző adattípusok tárolhatók.
+        A legfontosabb típusok a következők:
+    </p>
+
+    <h3>Szám</h3>
+    <p>
+        Egész vagy tizedes szám, amelyen matematikai műveletek végezhetők.
+        Például: 25, 3.14, -8.
+    </p>
+
+    <h3>Szöveg</h3>
+    <p>
+        Karakterlánc, amelyet a program nem számként kezel.
+        Például: Név, Budapest, Termék1.
+    </p>
+
+    <h3>Logikai érték</h3>
+    <p>
+        Igaz vagy hamis érték (TRUE / FALSE),
+        amelyet gyakran feltételek és logikai vizsgálatok során használunk.
+    </p>
+</section>
+
+<section id="cellahivatkozasok">
+    <h1>Cellahivatkozások és alapfogalmak</h1>
+
+    <h2>Cellahivatkozások</h2>
+    <p>
+        A cellahivatkozás azt adja meg, hogy egy képlet melyik cella értékére hivatkozik.
+        A táblázatkezelésben háromféle cellahivatkozást különböztetünk meg:
+        relatív, abszolút és vegyes hivatkozást.
+    </p>
+
+    <h3>Relatív cellahivatkozás</h3>
+    <p>
+        A relatív hivatkozás a leggyakrabban használt forma.
+        Másoláskor a hivatkozás a másolás irányának megfelelően módosul,
+        mert a program az aktuális cellához viszonyított elhelyezkedést tárolja.
+    </p>
+    <pre><code>
+=A1+B1
+    </code></pre>
+    <p>
+        Ha ezt a képletet lejjebb másoljuk, például a következő sorba,
+        akkor automatikusan =A2+B2 formára módosul.
+    </p>
+
+    <h3>Abszolút cellahivatkozás</h3>
+    <p>
+        Abszolút hivatkozás esetén a cella helye rögzített.
+        Másoláskor nem változik, mert a program a cella konkrét pozícióját tárolja.
+        A rögzítést a <strong>$</strong> jel alkalmazásával végezzük.
+    </p>
+    <pre><code>
+=$A$1
+    </code></pre>
+    <p>
+        A fenti hivatkozás másolás után is minden esetben az A1 cellára fog mutatni.
+    </p>
+
+    <h3>Vegyes cellahivatkozás</h3>
+    <p>
+        Vegyes hivatkozás esetén az egyik koordináta rögzített, a másik relatív.
+        Így másoláskor csak az egyik irányban változik a hivatkozás.
+    </p>
+    <pre><code>
+=$A1   (oszlop rögzített)
+=A$1   (sor rögzített)
+    </code></pre>
+    <p>
+        Attól függően, melyik koordinátát rögzítjük, a képlet vízszintes
+        vagy függőleges másoláskor módosul.
+    </p>
+</section>
+
+
+
+<section id="alapmuveletek">
+    <h2>Alapvető műveletek</h2>
+    <p>Jelöljön ki egy cellát, majd írjon be egy egyenlőségjelet (=).
+
+Ezzel azt jelzi az Excelnek, hogy a cella képletet fog tartalmazni.</p>
+
+<p>Írja be például a következőket: =2+4, =4-2, =2*4 vagy =4/2.</p>
+
+    <h3>Aritmetikai műveletek</h3>
+    <ul>
+        <li>Összeadás: +</li>
+        <li>Kivonás: -</li>
+        <li>Szorzás: *</li>
+        <li>Osztás: /</li>
+        <li>Hatványozás: ^</li>
+    </ul>
+
+    
+
+</section>
+<section class="section-container" id="ha">
+    <h2>HA() függvény használata</h2>
+
+    <p>
+        A HA függvény az Excel egyik leggyakrabban alkalmazott logikai függvénye. 
+        Segítségével egy feltétel teljesülését vizsgálhatjuk, és annak megfelelően 
+        különböző eredményt adhatunk vissza.
+    </p>
+
+    <h3>Működési elv</h3>
+    <p>
+        A függvény kétféle eredményt adhat:
+    </p>
+    <ul>
+        <li>Ha a feltétel igaz → az első megadott értéket adja vissza</li>
+        <li>Ha a feltétel hamis → a második megadott értéket adja vissza</li>
+    </ul>
+
+    <h3>Szintaxis</h3>
+    <pre><code class="language-none">=HA(logikai_vizsgálat; érték_ha_igaz; érték_ha_hamis)</code></pre>
+
+    <h3>Példa</h3>
+    <p>
+        Az alábbi példa azt vizsgálja meg, hogy a diák késve adta-e le a házi feladatot:
+    </p>
+    <img src="images/ha()pelda.png" alt="">
+    <ul>
+    <li><strong>B2>$E$2</strong> → Ez a logikai feltétel. Akkor igaz, ha a B2 értéke nagyobb, mint az E2 értéke.</li>
+    <li><strong>"késve"</strong> → Ezt az eredményt adja vissza, ha a feltétel igaz.</li>
+    <li><strong>"időben"</strong> → Ezt az eredményt adja vissza, ha a feltétel hamis.</li>
+</ul>
+<p>
+Amennyiben a képletet a C2 cellába írjuk, akkor az a B2 cella értékét vizsgálja.
+Ha a képletet lefelé másoljuk (például C3, C4 stb. cellákba), akkor a relatív hivatkozás miatt
+mindig az adott sor B oszlopbeli értékét fogja ellenőrizni.
+</p>
+
+<ul>
+    <li>C2 cellában → a képlet a B2 értékét vizsgálja</li>
+    <li>C3 cellában → a képlet automatikusan a B3 értékét vizsgálja</li>
+    <li>C4 cellában → a képlet a B4 értékét vizsgálja</li>
+</ul>
+
+<p>
+Az <strong>$E$2</strong> jelölés abszolút cellahivatkozást jelent. Ez azt jelenti, hogy a képlet másolásakor az E2 cellára való hivatkozás nem változik.
+</p>
+
+<p>
+Összefoglalva: ha a B2 cellában szereplő érték meghaladja az E2-ben megadott határértéket, akkor az eredmény „késve”, ellenkező esetben „időben”.
+</p>
+</section>
+<section class="section-container" id="fuggvenyek">
+    <h2>Excel függvények rövid áttekintése</h2>
+    
+
+    <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Kategória</th>
+                <th>Függvények</th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr>
+    <td><strong>Statisztikai</strong></td>
+    <td>
+        <span class="tooltip">=ÁTLAG()<span class="tooltiptext">Számok átlagát számítja.</span></span>,
+        <span class="tooltip">=DARAB()<span class="tooltiptext">Szám típusú cellák darabszáma.</span></span>,
+        <span class="tooltip">=MAX()<span class="tooltiptext">Legnagyobb érték visszaadása.</span></span>,
+        <span class="tooltip">=MIN()<span class="tooltiptext">Legkisebb érték visszaadása.</span></span>,
+        <span class="tooltip">=NAGY()<span class="tooltiptext">Kiválasztott sorszámú legnagyobb érték.</span></span>,
+        <span class="tooltip">=KICSI()<span class="tooltiptext">Kiválasztott sorszámú legkisebb érték.</span></span>,
+        <span class="tooltip">=ÁTLAGTÖBB()<span class="tooltiptext">Átlag feltételek alapján.</span></span>,
+        <span class="tooltip">=MAXHA()<span class="tooltiptext">Maximum feltétel alapján.</span></span>
+    </td>
+</tr>
+
+<tr>
+    <td><strong>Matematikai és trigonometriai</strong></td>
+    <td>
+        <span class="tooltip">=ABS()<span class="tooltiptext">Abszolút érték.</span></span>,
+        <span class="tooltip">=GYÖK()<span class="tooltiptext">Négyzetgyök számítása.</span></span>,
+        <span class="tooltip">=KEREKÍTÉS()<span class="tooltiptext">Szám kerekítése.</span></span>,
+        <span class="tooltip">=MARADÉK()<span class="tooltiptext">Osztás maradéka.</span></span>,
+        <span class="tooltip">=HATVÁNY()<span class="tooltiptext">Hatványozás.</span></span>,
+        <span class="tooltip">=SZUM()<span class="tooltiptext">Számok összeadása.</span></span>,
+        <span class="tooltip">=SZUMHA()<span class="tooltiptext">Összeg feltétel alapján.</span></span>,
+        <span class="tooltip">=VÉLETLEN.KÖZÖTT()<span class="tooltiptext">Véletlen szám tartományban.</span></span>
+    </td>
+</tr>
+
+<tr>
+    <td><strong>Dátum és idő</strong></td>
+    <td>
+        <span class="tooltip">=ÉV()<span class="tooltiptext">Év kiolvasása dátumból.</span></span>,
+        <span class="tooltip">=HÓNAP()<span class="tooltiptext">Hónap kiolvasása.</span></span>,
+        <span class="tooltip">=NAP()<span class="tooltiptext">Nap kiolvasása.</span></span>,
+        <span class="tooltip">=DÁTUM()<span class="tooltiptext">Dátum létrehozása.</span></span>,
+        <span class="tooltip">=IDŐ()<span class="tooltiptext">Idő létrehozása.</span></span>,
+        <span class="tooltip">=MA()<span class="tooltiptext">Aktuális dátum.</span></span>,
+        <span class="tooltip">=MOST()<span class="tooltiptext">Aktuális dátum és idő.</span></span>
+    </td>
+</tr>
+
+<tr>
+    <td><strong>Logikai</strong></td>
+    <td>
+        <span class="tooltip">=HA()<span class="tooltiptext">Feltételvizsgálat.</span></span>,
+        <span class="tooltip">=ÉS()<span class="tooltiptext">Több feltétel egyszerre.</span></span>,
+        <span class="tooltip">=VAGY()<span class="tooltiptext">Legalább egy feltétel igaz.</span></span>,
+        <span class="tooltip">=NEM()<span class="tooltiptext">Logikai negáció.</span></span>
+    </td>
+</tr>
+
+<tr>
+    <td><strong>Keresési és hivatkozási</strong></td>
+    <td>
+        <span class="tooltip">=FKERES()<span class="tooltiptext">Keresés oszlopok között.</span></span>,
+        <span class="tooltip">=VKERES()<span class="tooltiptext">Keresés táblázatban.</span></span>,
+        <span class="tooltip">=INDEX()<span class="tooltiptext">Adat visszaadása pozíció alapján.</span></span>,
+        <span class="tooltip">=HOL.VAN()<span class="tooltiptext">Elem pozíciójának keresése.</span></span>,
+        <span class="tooltip">=XKERES()<span class="tooltiptext">Modern kereső függvény.</span></span>
+    </td>
+</tr>
+
+<tr>
+    <td><strong>Szöveg</strong></td>
+    <td>
+        <span class="tooltip">=BAL()<span class="tooltiptext">Szöveg első karaktereit adja vissza.</span></span>,
+        <span class="tooltip">=JOBB()<span class="tooltiptext">Szöveg utolsó karaktereit adja vissza.</span></span>,
+        <span class="tooltip">=KÖZÉP()<span class="tooltiptext">Szöveg rész kivágása.</span></span>,
+        <span class="tooltip">=HOSSZ()<span class="tooltiptext">Karakterek száma.</span></span>,
+        <span class="tooltip">=ÖSSZEFŰZ()<span class="tooltiptext">Szöveg összekapcsolása.</span></span>
+    </td>
+</tr>
+
+<tr>
+    <td><strong>Adatbázis</strong></td>
+    <td>
+        <span class="tooltip">=AB.SZUM()<span class="tooltiptext">Összeg feltételes adatbázisban.</span></span>,
+        <span class="tooltip">=AB.ÁTLAG()<span class="tooltiptext">Átlag feltételekkel.</span></span>,
+        <span class="tooltip">=AB.DARAB()<span class="tooltiptext">Rekordok száma.</span></span>,
+        <span class="tooltip">=AB.MIN()<span class="tooltiptext">Minimum feltétellel.</span></span>,
+        <span class="tooltip">=AB.MAX()<span class="tooltiptext">Maximum feltétellel.</span></span>
+    </td>
+</tr>
+           
+
+           
+
+            
+
+            
+
+        </tbody>
+    </table>
+</section>
+
+
+
+</main>
+
+</body>
+</div>
+</html>
