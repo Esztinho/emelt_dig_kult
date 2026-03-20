@@ -536,6 +536,7 @@ for sor in file[1:]:
     A felhasználótól bekérjük egy tábor témáját, majd megkeressük,
     hogy mikor kezdődik az adott tábor.
   </p>
+  <p>Továbbá feladat az is, hogy ha nincs ilyen témájú tábor, amilyet a user megadott, akkor írjunk ki neki egy tájékoztató üzenetet!</p>
 
   <pre class="code-container"><code class="language-python">
 # Feltételezzük, hogy a taborok lista már létezik (és szótárakat tartalmaz)
@@ -554,12 +555,26 @@ if talalat == False:  #vagy írhatom így is: if not talalat:
     print("Nincs ilyen témájú tábor.")
   </code><button class="copy-btn">Másolás</button></pre>
 
-  <h3>Miért hasznos?</h3>
-  <ul>
-    <li><strong>Egyszerű:</strong> minden listán alkalmazható</li>
-    <li><strong>Átlátható:</strong> könnyen követhető algoritmus</li>
-    <li><strong>Bővíthető:</strong> több feltétellel is kombinálható</li>
-  </ul>
+<h3>Miért hasznos?</h3>
+<p>
+A keresés algoritmus egyik legfontosabb szerepe, hogy meg tudjuk állapítani,
+létezik-e a feltételeknek megfelelő adat az adathalmazban.
+Ebben az esetben azt vizsgáljuk, hogy van-e legalább egy olyan tábor,
+amelynek a témája megegyezik a felhasználó által megadottal.
+</p>
+
+<p>
+A <code>talalat</code> változó segítségével nyomon követjük,
+hogy a ciklus során találtunk-e megfelelő elemet.
+Ha igen, akkor az értéke <code>True</code>-ra változik,
+ha pedig egyetlen egyezés sincs, akkor <code>False</code> marad.
+</p>
+
+<p>
+Ez a módszer általánosan alkalmazható minden olyan feladatban,
+ahol egy listában vagy adatsorban szeretnénk megkeresni,
+hogy létezik-e egy adott tulajdonságú elem.
+</p>
   </details>
 </section>
 <section class="section-container" id="fuggvenyek">
@@ -567,12 +582,10 @@ if talalat == False:  #vagy írhatom így is: if not talalat:
   <details>
     <summary>Függvények</summary>
     <h2>Fogalma</h2>
-      <ul>
-        <li>Egy adott feladat elvégzését tartalmazó kódrészlet.</li>
-        <li>Csak egyszer kell megírni a kódot, de több helyen is felhasználható.</li>
-        <li>Segít rendezetté és átláthatóbbá tenni a programot.</li>
-        <li>Fontos, hogy egy jó függvény csak egy dolgot csináljon, de azt jól.</li>
-      </ul>
+      <p>
+A függvény egy olyan kódrészlet, amely [bemenet(ek)] alapján kiszámol valamit, majd az eredményt
+<strong>visszaadja</strong> a <code>return</code> segítségével.
+</p>
 
       <h2>Létrehozás és tulajdonságok</h2>
       <ul>
@@ -598,9 +611,21 @@ def fuggveny_neve(egyik_bemenet, masik_bemenet):
 <pre class="code-container"><code class="language-python">
 def negyzet(szam):
     return szam * szam
+</code><button class="copy-btn">Másolás</button></pre>
 
-print(negyzet(5))  # 25
-</code></pre>
+<pre class="code-container"><code class="language-python">
+eredmeny = negyzet(4)
+print(eredmeny)
+</code><button class="copy-btn">Másolás</button></pre>
+
+<p>
+Ebben az esetben:
+</p>
+<ul>
+    <li>A függvény megkapja a <code>4</code>-et</li>
+    <li>Kiszámolja: <code>4 * 4</code></li>
+    <li>Visszaadja: <code>16</code></li>
+</ul>
 
 <h3>2. Páratlan szám ellenőrzése</h3>
 <p>Ez a függvény megmondja, hogy egy szám páratlan-e.</p>
@@ -613,13 +638,65 @@ print(paratlan(8))  # False
 </code></pre>
 
 <h3>3. Két szám összege</h3>
-<p>Ez a függvény visszaadja két szám összegét.</p>
 <pre class="code-container"><code class="language-python">
-def osszeg(a, b):
+def osszead(a, b):
     return a + b
+</code><button class="copy-btn">Másolás</button></pre>
+<p>Ez a függvény visszaadja a paraméterként megadott két szám összegét.</p>
+<pre class="code-container"><code class="language-python">
+eredmeny = osszead(3, 5)
+print(eredmeny)
+</code><button class="copy-btn">Másolás</button></pre>
 
-print(osszeg(3, 4))  # 7
-</code></pre>
+
+
+
+<h3>Mi az a return?</h3>
+<p>
+A <code>return</code> kulcsszóval a függvény visszaad egy értéket.
+Ez az érték a függvény meghívásának helyére kerül vissza.
+</p>
+
+
+<h3>Hogyan működik a meghívás?</h3>
+
+<pre class="code-container"><code class="language-python">
+eredmeny = osszead(3, 5)
+print(eredmeny)
+</code><button class="copy-btn">Másolás</button></pre>
+
+<p>
+Lépések:
+</p>
+<ul>
+    <li>A függvényt meghívjuk: <code>osszead(3, 5)</code></li>
+    <li>A paraméterek értéket kapnak: <code>a = 3</code>, <code>b = 5</code></li>
+    <li>A függvény kiszámolja: <code>a + b</code></li>
+    <li>A <code>return</code> visszaadja az eredményt (8)</li>
+    <li>Az eredményt eltároljuk az <code>eredmeny</code> változóban</li>
+</ul>
+
+<h3>Fontos megérteni</h3>
+<p>
+A paraméterek (pl. <code>a</code>, <code>b</code>) csak a függvényen belül léteznek,
+és a függvény ezekkel az értékekkel dolgozik.
+</p>
+
+<p>
+A <code>return</code> után a függvény azonnal befejeződik,
+és visszaadja az eredményt.
+</p>
+
+
+
+
+<h3>Összefoglalás</h3>
+<ul>
+    <li>A függvény bemenetet kap (paraméterek)</li>
+    <li>Elvégez egy műveletet</li>
+    <li>A <code>return</code> segítségével visszaad egy értéket</li>
+    <li>Az eredményt eltárolhatjuk egy változóban</li>
+</ul>
 
   <h2>Tippek a függvényekhez</h2>
 
@@ -644,6 +721,9 @@ print(osszeg(3, 4))  # 7
     <section class="section-container" id="feladatok">
         <span class="badge">Fejlesztés alatt</span>
         <h2>Gyakorló feladatok</h2>
+        <p>Egyelőre csak a főőoldalon találsz néhányat feltöltve</p>
+        <p><a href="index.html#gyakorlofeladatok">->Katt ide<-</a></p>
+        
 
 
         <a class="btn" href="#">Teszt indítása</a>
