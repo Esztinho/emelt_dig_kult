@@ -191,15 +191,6 @@ pre.code-container {
     letter-spacing: 0.5px;
 }
 
-/* Section container */
-.section-container {
-    position: relative; /* a badge pozícionálásához */
-    border: 1px solid #ccc;
-    padding: 20px;
-    margin-bottom: 40px;
-    border-radius: 6px;
-    background-color: #f9f9f9;
-}
 
 
 
@@ -601,3 +592,97 @@ html {
   th, td { border: 1px solid #bdc3c7; padding: 6px 10px; text-align: left; }
   th { background-color: #34495e; color: #fff; }
   .tip { background-color: #dff0d8; padding: 10px; border-left: 5px solid #3c763d; margin-bottom: 20px; }
+
+
+/* ===== Érettségi szekció ===== */
+
+.erettsegi-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.erettsegi-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: 0.3s;
+    border-top: 5px solid #2563eb;
+    position: relative;
+}
+
+.erettsegi-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(30,58,138,0.25);
+}
+
+.erettsegi-card h3 {
+    text-align: center;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
+
+/* fájl linkek */
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file-list a {
+    text-decoration: none;
+    background: #e9eef5;
+    padding: 8px;
+    border-radius: 6px;
+    color: #1e293b;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.file-list a:hover {
+    background: #dbeafe;
+    color: #1e3a8a;
+}
+
+/* feltöltés */
+.upload-group {
+    margin-top: 15px;
+}
+
+.upload-group label {
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    margin-top: 8px;
+}
+
+.upload-group input {
+    width: 100%;
+    margin-top: 4px;
+}
+
+/* kis badge */
+.year-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #2563eb;
+    color: white;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.task-block {
+    background: #f1f5f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.task-block strong {
+    display: block;
+    margin-bottom: 5px;
+    color: #1e3a8a;
+}
