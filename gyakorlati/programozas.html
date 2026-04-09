@@ -1,75 +1,78 @@
 <!DOCTYPE html>
 <html lang="hu">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Programozás</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-okaidia.min.css" rel="stylesheet" />
 
-    <!-- Prism JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-python.min.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Programozás</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-okaidia.min.css" rel="stylesheet" />
+
+  <!-- Prism JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-python.min.js"></script>
 
 </head>
 
 <body>
 
-<header>
+  <header>
     <h1>Programozás</h1>
     <div class="header-container">
 
-    <nav >
+      <nav>
         <ul>
-            <li><a href="index.html" class="menu-btn">Főoldal</a></li>
-            <li><a href="adatbazis.html" class="menu-btn">SQL</a></li>
-            <li><a href="excel.html" class="menu-btn">Excel</a></li>
+          <li><a href="index.html" class="menu-btn">Főoldal</a></li>
+          <li><a href="adatbazis.html" class="menu-btn">SQL</a></li>
+          <li><a href="excel.html" class="menu-btn">Excel</a></li>
         </ul>
-    </nav>
-</header>
+      </nav>
+  </header>
 
 
 
-<div class="layout">
-  <!-- Bal oldali tartalomjegyzék -->
+  <div class="layout">
+    <!-- Bal oldali tartalomjegyzék -->
     <aside class="sidebar">
-        <h3>Tartalomjegyzék</h3>
-        <ul>
-            <li><a href="#adattarolas">Adattárolás</a></li>
-            <li><a href="#lista">Lista és listaműveletek</a></li>
-            <li><a href="#input">Input</a></li>
-            <li><a href="#for">For ciklus</a></li>
-            <li><a href="#algoritmusok">Alap algoritmusok</a></li>
-            <li><a href="#fajlbeolvasas">Fájlbeolvasás</a></li>
-            <li><a href="#kereses">Keresés algoritmus</a></li>
-            <li><a href="#fuggvenyek">Függvények</a></li>
-            <li><a href="#feladatok">Gyakorló feladatok</a></li>
-            
-        </ul>
+      <h3>Tartalomjegyzék</h3>
+      <ul>
+        <li><a href="#adattarolas">Adattárolás</a></li>
+        <li><a href="#lista">Lista és listaműveletek</a></li>
+        <li><a href="#ingyen_pontok">"ingyen" pontok</a></li>
+        <li><a href="#input">Input</a></li>
+        <li><a href="#for">For ciklus</a></li>
+        <li><a href="#algoritmusok">Alap algoritmusok</a></li>
+        <li><a href="#fajlbeolvasas">Fájlbeolvasás</a></li>
+        <li><a href="#kereses">Keresés algoritmus</a></li>
+        <li><a href="#fuggvenyek">Függvények</a></li>
+        <li><a href="#feladatok">Gyakorló feladatok</a></li>
+
+      </ul>
     </aside>
 
-  <main>
-    <section class="section-container" id="adattarolas">
+    <main>
+      <section class="section-container" id="adattarolas">
         <h2>Adattárolás és változók</h2>
 
         <h3>1. Változók fogalma</h3>
         <p>Változók tárolják az adatokat. Pythonban nem kell előre deklarálni a
-            változók típusát.</p>
+          változók típusát.</p>
 
         <h3>2. Adattípusok</h3>
         <p>Számok, szöveg, logikai értékek, lista stb.</p>
 
         <h4>Adattípusok röviden</h4>
         <ul>
-            <li><strong>int</strong> – egész számok, pl. 10, -5, 0</li>
-            <li><strong>float</strong> – valós számok, tizedes törttel, pl. 3.14, -0.5</li>
-            <li><strong>str</strong> – szöveg, karakterlánc, pl. "Hello", 'Világ'</li>
-            <li><strong>bool</strong> – logikai értékek: <code>True</code> vagy <code>False</code></li>
-            <li><strong>list</strong> – elemek sorozata, pl. [1, 2, 3], [“a”, “b”, “c”]</li>
-            <li><strong>dict</strong> – kulcs-érték párok, pl. {"név": "Anna", "kor": 16}
-                <br>(fájlbeolvasás után adatok eltárolására is használhatjuk a szótárakat)</li>
-            <li><strong>tuple</strong> – nem megváltoztatható (immutábilis) elemek sorozata, pl. (1, 2, 3)</li>
-            <li><strong>set</strong> – egyedi elemek halmaza, sorrend nem számít, pl. {1, 2, 3}</li>
+          <li><strong>int</strong> – egész számok, pl. 10, -5, 0</li>
+          <li><strong>float</strong> – valós számok, tizedes törttel, pl. 3.14, -0.5</li>
+          <li><strong>str</strong> – szöveg, karakterlánc, pl. "Hello", 'Világ'</li>
+          <li><strong>bool</strong> – logikai értékek: <code>True</code> vagy <code>False</code></li>
+          <li><strong>list</strong> – elemek sorozata, pl. [1, 2, 3], [“a”, “b”, “c”]</li>
+          <li><strong>dict</strong> – kulcs-érték párok, pl. {"név": "Anna", "kor": 16}
+            <br>(fájlbeolvasás után adatok eltárolására is használhatjuk a szótárakat)
+          </li>
+          <li><strong>tuple</strong> – nem megváltoztatható (immutábilis) elemek sorozata, pl. (1, 2, 3)</li>
+          <li><strong>set</strong> – egyedi elemek halmaza, sorrend nem számít, pl. {1, 2, 3}</li>
         </ul>
 
 
@@ -86,8 +89,9 @@ szoveg = "Hello, világ!"
 
         <h3>4. Egyenlőségjel működése</h3>
         <p>
-            Az egyenlőségjel (<code>=</code>) értékadást jelent: a jobb oldali értéket a bal oldali változó kapja meg.
-            Ha feltételes vizsgálatot szeretnénk, dupla egyenlőségjelet (<code>==</code>) kell használunk, ami összehasonlítja a két értéket.
+          Az egyenlőségjel (<code>=</code>) értékadást jelent: a jobb oldali értéket a bal oldali változó kapja meg.
+          Ha feltételes vizsgálatot szeretnénk, dupla egyenlőségjelet (<code>==</code>) kell használunk, ami
+          összehasonlítja a két értéket.
         </p>
 
         <h4>Példa Pythonban:</h4>
@@ -101,9 +105,20 @@ if szam == 10:
     print("A szám 10")
 </code><button class="copy-btn">Másolás</button></pre>
 
+
+
+
+
+
+
+
+
+
+
         <h3 id="lista">5. Lista</h3>
         <p>
-            <strong>Lista fogalma: </strong>elemek sorozata, amelyek módosíthatók. Indexeléssel érhetjük el az egyes elemeket(ami 0-tól indul!), és különféle műveletek végezhetünk rajtuk.
+          <strong>Lista fogalma: </strong>elemek sorozata, amelyek módosíthatók. Indexeléssel érhetjük el az egyes
+          elemeket(ami 0-tól indul!), és különféle műveletek végezhetünk rajtuk.
         </p>
 
         <h4>1.) Deklarálás és indexelés</h4>
@@ -131,7 +146,8 @@ del lista[2]
 </code><button class="copy-btn">Másolás</button></pre>
         <h4>3.) Lista műveletek beépített függvényekkel</h4>
         <p>
-            A Python listáira számos beépített függvény alkalmazható: <code>len()</code>, <code>sum()</code>, <code>min()</code>, <code>max()</code>, <code>sorted()</code> stb.
+          A Python listáira számos beépített függvény alkalmazható: <code>len()</code>, <code>sum()</code>,
+          <code>min()</code>, <code>max()</code>, <code>sorted()</code> stb.
         </p>
 
         <h4>Példa Pythonban:</h4>
@@ -158,173 +174,229 @@ print(rendezett_lista)  # [2, 3, 5, 7, 10]
 print(lista)  # [10, 3, 7, 2, 5]
 </code><button class="copy-btn">Másolás</button></pre>
 
-        <script>
-            // Végigmegy minden copy gombon
-            document.querySelectorAll('.copy-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const code = btn.previousElementSibling.innerText;
-                    navigator.clipboard.writeText(code).then(() => {
-                        btn.innerText = "Másolva!";
-                        setTimeout(() => btn.innerText = "Másolás", 1000);
-                    });
-                });
-            });
-        </script>
 
-    </section>
 
-  <section class="section-container" id="input">
-  <details>
-    <summary>input() függvény</summary>
+      </section>
 
-  <p>
-    Az <strong>input()</strong> függvény lehetővé teszi, hogy a felhasználó adatot adjon meg a program futása közben.
-    A függvény alapértelmezés szerint <strong>szöveget (string)</strong> kér be, és ezt az értéket adja vissza.
-  </p>
+      <section class="section-container" id="ingyen_pontok">
+        <h2>Ingyen pontok az Első feladatoknál: Elemek száma, első és utolsó adat</h2>
 
-  <h3>Alapvető használat</h3>
+        <p>
+          Az érettségi feladatsor 2. vagy 3. feladata szinte mindig az, hogy határozzuk meg,
+          hány adatsor (pl. felajánlás, mérés, dolgozó) található a beolvasott állományban,
+          illetve írjuk ki az első vagy az utolsó elemet.
+        </p>
 
-  <pre class="code-container"><code class="language-python">
+        <h3>A len() függvény</h3>
+        <p>A <code>len()</code> (length = hossz) függvény megadja, hogy egy lista hány elemet tartalmaz.</p>
+        <pre class="code-container"><code class="language-python"># Tegyük fel, hogy az 'adatok' lista tartalmazza a beolvasott sorokat
+sorok_szama = len(adatok)
+print(f"2. feladat: A felajánlások száma: {sorok_szama}")</code><button class="copy-btn">Másolás</button></pre>
+
+        <h3>Első és utolsó elem kiírása</h3>
+        <pre class="code-container"><code class="language-python"># Első elem (0. index)
+print(f"Az első rögzített adat: {adatok[0]}")
+
+# Utolsó elem (-1. index)
+print(f"Az utolsó rögzített adat: {adatok[-1]}")</code><button class="copy-btn">Másolás</button></pre>
+      </section>
+
+      <section class="section-container" id="input">
+        <details>
+          <summary>input() függvény</summary>
+
+          <p>
+            Az <strong>input()</strong> függvény lehetővé teszi, hogy a felhasználó adatot adjon meg a program futása
+            közben.
+            A függvény alapértelmezés szerint <strong>szöveget (string)</strong> kér be, és ezt az értéket adja vissza.
+          </p>
+
+          <h3>Alapvető használat</h3>
+
+          <pre class="code-container"><code class="language-python">
 valasz = input("Írj be valamit: ")
 print("A te válaszod:", valasz)
   </code><button class="copy-btn">Másolás</button></pre>
 
-  <h3>Mi történik?</h3>
-  <ul>
-    <li>A program megjeleníti a kérdést a felhasználónak.</li>
-    <li>A futás megáll, amíg a felhasználó be nem ír egy értéket.</li>
-    <li>Enter lenyomása után a program folytatódik.</li>
-    <li>A beírt adat a változóban tárolódik.</li>
-  </ul>
+          <h3>Mi történik?</h3>
+          <ul>
+            <li>A program megjeleníti a kérdést a felhasználónak.</li>
+            <li>A futás megáll, amíg a felhasználó be nem ír egy értéket.</li>
+            <li>Enter lenyomása után a program folytatódik.</li>
+            <li>A beírt adat a változóban tárolódik.</li>
+          </ul>
 
-  <h3>Típuskonvertálás</h3>
+          <h3>Típuskonvertálás</h3>
 
-  <p>
-    Mivel az <code>input()</code> mindig szöveget ad vissza, számokkal való műveletek előtt
-    át kell alakítani a megfelelő adattípussá.
-  </p>
+          <p>
+            Mivel az <code>input()</code> mindig szöveget ad vissza, számokkal való műveletek előtt
+            át kell alakítani a megfelelő adattípussá.
+          </p>
 
-  <pre class="code-container"><code class="language-python">
-szam = input("Írj be egy számot: ")
-szam = int(szam)  # átalakítás egész számmá
+          <pre class="code-container"><code class="language-python">
+szam = int(input("Írj be egy számot: ")) # rögtön át is alakítjuk egész számmá
 
 print("A szám duplája:", szam * 2)
   </code><button class="copy-btn">Másolás</button></pre>
 
-  <h3>Gyakori konvertálások</h3>
-  <ul>
-    <li><code>int()</code> → egész szám</li>
-    <li><code>float()</code> → lebegőpontos szám</li>
-    <li><code>str()</code> → szöveg</li>
-  </ul>
+          <h3>Gyakori konvertálások</h3>
+          <ul>
+            <li><code>int()</code> → egész szám</li>
+            <li><code>float()</code> → lebegőpontos szám</li>
+            <li><code>str()</code> → szöveg</li>
+          </ul>
 
-  <h3>Összegzés</h3>
-  <ul>
-    <li><strong>Felhasználói adatbevitel</strong> a program futása közben</li>
-    <li>Alapértelmezés szerint <strong>string</strong> típust ad vissza</li>
-    <li>Szükség esetén könnyen konvertálható más típusokra</li>
-  </ul>
-</details>
-</section>
+          <h3>Összegzés</h3>
+          <ul>
+            <li><strong>Felhasználói adatbevitel</strong> a program futása közben</li>
+            <li>Alapértelmezés szerint <strong>string</strong> típust ad vissza</li>
+            <li>Szükség esetén könnyen konvertálható más típusokra</li>
+          </ul>
+        </details>
+      </section>
 
-    <section class="section-container" id="for">
-<details>
-  <summary>For ciklus</summary>
+      <section class="section-container" id="for">
+        <h2>Bejárás: For ciklus és egymásba ágyazott ciklusok</h2>
 
-  <p>
-    A <strong>for ciklus</strong> egy iteratív vezérlési szerkezet, amely lehetővé teszi,
-    hogy egy műveletet többször végrehajtsunk egy <strong>iterálható objektum</strong>
-    (például lista, sztring vagy tartomány) minden elemén.
-    Pythonban egyszerű és gyakran használt eszköz adatok feldolgozására.
-  </p>
+        <div class="tip-box">
+          <strong>Ha a listánk összes elemét meg akarjuk vizsgálni, for ciklust használunk!!</strong>
+        </div>
 
-  <h3>Hogyan működik?</h3>
-  <p>
-    A for ciklus sorban végighalad az iterálható objektum elemein, és az aktuális
-    elemet egy változóban tárolja. Minden iteráció során végrehajtja a ciklus
-    belsejében található utasításokat.
-  </p>
+        <h3>Egyszerű For ciklus</h3>
+        <p>Végigmegyünk a lista összes elemén, és mindegyikkel csinálunk valamit.</p>
+        <pre><code class="language-python">nevek = ["Anna", "Béla", "Cecil"]
+for nev in nevek:
+    print(nev)</code><button class="copy-btn">Másolás</button></pre>
 
-  <h3>Szintaxis</h3>
+        <h3>Egymásba ágyazott For ciklus</h3>
+        <p>
+          Ilyenkor egy cikluson belül indítunk egy másikat. Ezt leggyakrabban mátrixok (kétdimenziós listák, pl.
+          táblázatok, képpontok)
+          feldolgozásakor, vagy egy listában lévő szavak betűire bontásakor használjuk.
+        </p>
+        <pre><code class="language-python">haromszogek = [[3, 2, 4], [4, 5, 7], [10, 4, 7]]  # adott 3 db háromszög és azok oldalhosszúságai
+for haromszog in haromszogek:          # Külső ciklus: végigmegy a haromszogek listán
+    print(f"Jelenlegi háromszög: {haromszog}")
+    for oldalhossz in haromszog:        # Belső ciklus: végigmegy az adott haromszog oldalainak hosszán
+        print(f" - Oldalhossz: {oldalhossz}")</code><button class="copy-btn">Másolás</button></pre>
+        <p><strong>Kimenet:</strong></p>
+        <pre><samp class="kimenet">
+Jelenlegi háromszög: [3, 2, 4]
+ - Oldalhossz: 3
+ - Oldalhossz: 2
+ - Oldalhossz: 4
 
-  <pre class="code-container"><code class="language-python">
+Jelenlegi háromszög: [4, 5, 7]
+ - Oldalhossz: 4
+ - Oldalhossz: 5
+ - Oldalhossz: 7
+
+Jelenlegi háromszög: [10, 4, 7]
+ - Oldalhossz: 10
+ - Oldalhossz: 4
+ - Oldalhossz: 7
+</samp><button class="copy-btn">Másolás</button></pre>
+        <div class="tip-box">
+          ⇩ Ha még kezdő vagy, akkor rágd át ezt a részt is!! ⇩
+        </div>
+        <details>
+          <summary>For ciklus részletesen</summary>
+
+          <p>
+            A <strong>for ciklus</strong> egy iteratív vezérlési szerkezet, amely lehetővé teszi,
+            hogy egy műveletet többször végrehajtsunk egy <strong>iterálható objektum</strong>
+            (például lista, sztring vagy tartomány) minden elemén.
+            Pythonban egyszerű és gyakran használt eszköz adatok feldolgozására.
+          </p>
+
+          <h3>Hogyan működik?</h3>
+          <p>
+            A for ciklus sorban végighalad az iterálható objektum elemein, és az aktuális
+            elemet egy változóban tárolja. Minden iteráció során végrehajtja a ciklus
+            belsejében található utasításokat.
+          </p>
+
+          <h3>Szintaxis</h3>
+
+          <pre class="code-container"><code class="language-python">
 for valtozo in iteralhato_objektum:
     # végrehajtandó műveletek
   </code><button class="copy-btn">Másolás</button></pre>
 
-  <h3>A ciklus részei</h3>
-  <ul>
-    <li><strong>for:</strong> a ciklus kezdete</li>
-    <li><strong>változó:</strong> az aktuális elem értékét tárolja</li>
-    <li><strong>in:</strong> megadja, mit járunk be</li>
-    <li><strong>iterálható objektum:</strong> lista, sztring, szótár stb.</li>
-  </ul>
+          <h3>A ciklus részei</h3>
+          <ul>
+            <li><strong>for:</strong> a ciklus kezdete</li>
+            <li><strong>változó:</strong> az aktuális elem értékét tárolja</li>
+            <li><strong>in:</strong> megadja, mit járunk be</li>
+            <li><strong>iterálható objektum:</strong> lista, sztring, szótár stb.</li>
+          </ul>
 
-  <h3>Egyszerű példa – lista bejárása</h3>
+          <h3>Egyszerű példa – lista bejárása</h3>
 
-  <pre class="code-container"><code class="language-python">
+          <pre class="code-container"><code class="language-python">
 nevek = ["Anna", "Béla", "Cili"]
 
 for nev in nevek:
     print(f"Üdvözöllek, {nev}!")
   </code><button class="copy-btn">Másolás</button></pre>
 
-  <p><strong>Mi történik?</strong></p>
-  <ul>
-    <li>A lista elemei egymás után a <code>nev</code> változóba kerülnek.</li>
-    <li>Minden elemnél lefut a <code>print</code> utasítás.</li>
-  </ul>
+          <p><strong>Mi történik?</strong></p>
+          <ul>
+            <li>A lista elemei egymás után a <code>nev</code> változóba kerülnek.</li>
+            <li>Minden elemnél lefut a <code>print</code> utasítás.</li>
+          </ul>
 
-  <h3>Iterálható objektumok</h3>
+          <h3>Iterálható objektumok</h3>
 
-  <h4>1. Lista</h4>
-  <pre class="code-container"><code class="language-python">
+          <h4>1. Lista</h4>
+          <pre class="code-container"><code class="language-python">
 szamok = [1, 2, 3, 4, 5]
 
 for szam in szamok:
     print(szam)
   </code><button class="copy-btn">Másolás</button></pre>
 
-  <h4>2. Sztring</h4>
-  <pre class="code-container"><code class="language-python">
+          <h4>2. Sztring</h4>
+          <pre class="code-container"><code class="language-python">
 szoveg = "Python"
 
 for karakter in szoveg:
     print(karakter)
   </code><button class="copy-btn">Másolás</button></pre>
 
-  <h4>3. range() függvény</h4>
-  <pre class="code-container"><code class="language-python">
+          <h4>3. range() függvény</h4>
+          <pre class="code-container"><code class="language-python">
 for szam in range(1, 6):  # 1-től 5-ig
     print(szam)
   </code><button class="copy-btn">Másolás</button></pre>
 
-  <h4>4. Szótár</h4>
-  <pre class="code-container"><code class="language-python">
+          <h4>4. Szótár</h4>
+          <pre class="code-container"><code class="language-python">
 adatok = {"nev": "Anna", "kor": 25}
 
 for kulcs in adatok:
     print(kulcs, ":", adatok[kulcs])
   </code><button class="copy-btn">Másolás</button></pre>
 
-  <h3>Miért hasznos?</h3>
-  <ul>
-    <li><strong>Egyszerű és tiszta:</strong> nem kell manuális számláló</li>
-    <li><strong>Sokoldalú:</strong> minden iterálható objektumon működik</li>
-    <li><strong>Automatizál:</strong> ismétlődő feladatokat kezel</li>
-    <li><strong>Alapja az algoritmusoknak:</strong> keresés, számlálás, összegzés</li>
-  </ul>
-</details>
-</section>
+          <h3>Miért hasznos?</h3>
+          <ul>
+            <li><strong>Egyszerű és tiszta:</strong> nem kell manuális számláló</li>
+            <li><strong>Sokoldalú:</strong> minden iterálható objektumon működik</li>
+            <li><strong>Automatizál:</strong> ismétlődő feladatokat kezel</li>
+            <li><strong>Alapja az algoritmusoknak:</strong> keresés, számlálás, összegzés</li>
+          </ul>
+        </details>
+      </section>
 
 
-    <section class="section-container" id="algoritmusok">
-      <details>
-        <summary>Alap algoritmusok</summary>
-        <p>Az érettségi programozási feladatok szinte mindig tartalmaznak alap algoritmusokat. Ezek biztos ismerete kulcsfontosságú.</p>
+      <section class="section-container" id="algoritmusok">
+        <details>
+          <summary>Alap algoritmusok</summary>
+          <p>Az érettségi programozási feladatok szinte mindig tartalmaznak alap algoritmusokat. Ezek biztos ismerete
+            kulcsfontosságú.</p>
 
-        <h3>1. Összegzés</h3>
-        <pre class="code-container"><code class="language-python">
+          <h3>1. Összegzés</h3>
+          <pre class="code-container"><code class="language-python">
 #Feladat: Mennyi az 5-nél nagyobb számok összege?
 
 szamok = [3, 5, 7, 12]
@@ -336,10 +408,11 @@ for szam in szamok:
 
 print(osszeg) #19 </code><button class="copy-btn">Másolás</button></pre>
 
-        <p><em>Megjegyzés:</em> Az összegzés során egy lista vagy adatsor elemeit adjuk össze, általában csak egy bizonyos feltételnek eleget tevő tagokat.</p>
+          <p><em>Megjegyzés:</em> Az összegzés során egy lista vagy adatsor elemeit adjuk össze, általában csak egy
+            bizonyos feltételnek eleget tevő tagokat.</p>
 
-        <h3>2. Megszámlálás</h3>
-        <pre class="code-container"><code class="language-python">
+          <h3>2. Megszámlálás</h3>
+          <pre class="code-container"><code class="language-python">
 szamok = [5, 12, 7, 20]
 db = 0
 
@@ -349,8 +422,8 @@ for szam in szamok:
 
 print(db) </code><button class="copy-btn">Másolás</button></pre>
 
-        <h3>3. Maximumkeresés</h3>
-        <pre class="code-container"><code class="language-python">
+          <h3>3. Maximumkeresés</h3>
+          <pre class="code-container"><code class="language-python">
 szamok = [3, 9, 4, 7]
 legnagyobb = szamok[0]
 
@@ -359,21 +432,26 @@ for szam in szamok:
         legnagyobb = szam
 
 print(legnagyobb) </code><button class="copy-btn">Másolás</button></pre>
-        
 
-<p> Felmerülhet a kérdés: Miért nem használhatjuk a <code>max()</code> függvényt?</p>
 
-<p><strong>Röviden:</strong> Érettségi feladatoknál nemcsak egyetlen értéket, hanem a hozzá tartozó adatokat is meg kell keresni.</p>
+          <p> Felmerülhet a kérdés: Miért nem használhatjuk a <code>max()</code> függvényt?</p>
 
-<ul>
-  <li><strong>Bonyolultabb adatszerkezetek:</strong> Gyakran listákban szótárak vagy több adatot tartalmazó sorok szerepelnek, nem csak egyszerű számok.</li>
-  <li><strong>Több adat párhuzamos kezelése:</strong> Általában nemcsak a legnagyobb értéket keressük, hanem például a hozzá tartozó nevet vagy azonosítót is.</li>
-  <li><strong>Átlátható algoritmus:</strong> A ciklus lépésről lépésre mutatja meg a működést, ezért könnyebben érthető.</li>
-</ul>
+          <p><strong>Röviden:</strong> Érettségi feladatoknál nemcsak egyetlen értéket, hanem a hozzá tartozó adatokat
+            is meg kell keresni.</p>
 
-<p><strong>Megjegyzés:</strong> Bár <code>lambda</code> és <code>max()</code> használatával is megoldható lenne, az érettségin általában a legegyszerűbben követhető, diákbarát megoldásokat várják el.</p>
-        <h3>4. Minimumkeresés</h3>
-        <pre class="code-container"><code class="language-python">
+          <ul>
+            <li><strong>Bonyolultabb adatszerkezetek:</strong> Gyakran listákban szótárak vagy több adatot tartalmazó
+              sorok szerepelnek, nem csak egyszerű számok.</li>
+            <li><strong>Több adat párhuzamos kezelése:</strong> Általában nemcsak a legnagyobb értéket keressük, hanem
+              például a hozzá tartozó nevet vagy azonosítót is.</li>
+            <li><strong>Átlátható algoritmus:</strong> A ciklus lépésről lépésre mutatja meg a működést, ezért
+              könnyebben érthető.</li>
+          </ul>
+
+          <p><strong>Megjegyzés:</strong> Bár <code>lambda</code> és <code>max()</code> használatával is megoldható
+            lenne, az érettségin általában a legegyszerűbben követhető, diákbarát megoldásokat várják el.</p>
+          <h3>4. Minimumkeresés</h3>
+          <pre class="code-container"><code class="language-python">
 szamok = [3, 9, 4, 7]
 minimum = szamok[0]
 
@@ -383,10 +461,10 @@ for szam in szamok:
 
 print(minimum) </code><button class="copy-btn">Másolás</button></pre>
 
-        <h3>5. Eldöntés</h3>
-        <p>Itt csak azt nézzük, hogy van-e legalább egy megfelelő elem a listában.
+          <h3>5. Eldöntés</h3>
+          <p>Itt csak azt nézzük, hogy van-e legalább egy megfelelő elem a listában.
             Az teljesen mindegy, hogy melyik az.</p>
-        <pre class="code-container"><code class="language-python">
+          <pre class="code-container"><code class="language-python">
 szamok = [2, 4, 6, 7]
 van = False
 
@@ -396,39 +474,40 @@ for szam in szamok:
 
 print(van) </code><button class="copy-btn">Másolás</button></pre>
 
-        <h3>6. Kiválasztás</h3>
-        <p>Itt megkeressük az első megfelelő elemet, és általában el is mentjük vagy kiírjuk.</p>
-        <pre class="code-container"><code class="language-python">
+          <h3>6. Kiválasztás</h3>
+          <p>Itt megkeressük az első megfelelő elemet, és általában el is mentjük vagy kiírjuk.</p>
+          <pre class="code-container"><code class="language-python">
 szamok = [3, 5, 8, 9]
 legelso_paros = 0
 for szam in szamok:
     if szam % 2 == 0:
         legelso_paros = szam
         break </code><button class="copy-btn">Másolás</button></pre>
-        <h3>✔️ Mikor kell a break?</h3>
-        <p>
-            👉 amikor már megtaláltuk az első megfelelő elemet, és nem akarjuk tovább futtatni a ciklust, mert nincs rá szükség vagy a feladat kifejezetten az első ilyen előfordulást keresi!</p>
-        <h2>✔️ Egyszerű szabály (érettségire)</h2>
-        <p>
+          <h3>✔️ Mikor kell a break?</h3>
+          <p>
+            👉 amikor már megtaláltuk az első megfelelő elemet, és nem akarjuk tovább futtatni a ciklust, mert nincs rá
+            szükség vagy a feladat kifejezetten az első ilyen előfordulást keresi!</p>
+          <h2>✔️ Egyszerű szabály (érettségire)</h2>
+          <p>
             Ha az első megfelelőt keresed → kiválasztás → break. <br>
             Ha csak azt nézed, hogy van-e ilyen elem→ eldöntés → nem kötelező break.<br>
             Ha mind kell → megszámlálás vagy kiválogatás → nincs break.</p>
-      </details>
-    </section>
+        </details>
+      </section>
 
-    <section class="section-container" id="fajlbeolvasas">
-<details>
-  <summary>Fájlbeolvasás és szótár használata</summary>
+      <section class="section-container" id="fajlbeolvasas">
+        <details>
+          <summary>Fájlbeolvasás és szótár használata</summary>
 
-  <p>
-    A fájl beolvasása és feldolgozása Pythonban alapvető feladat a gyakorlati érettségin.
-    A szótárak segítségével az adatok kezelése sokkal átláthatóbbá válik, így később nem kell
-    indexekkel bajlódni.
-  </p>
+          <p>
+            A fájl beolvasása és feldolgozása Pythonban alapvető feladat a gyakorlati érettségin.
+            A szótárak segítségével az adatok kezelése sokkal átláthatóbbá válik, így később nem kell
+            indexekkel bajlódni.
+          </p>
 
-  <h3>Fájl megnyitása és sorokra bontás</h3>
+          <h3>Fájl megnyitása és sorokra bontás</h3>
 
-  <pre class="code-container"><code class="language-python">
+          <pre class="code-container"><code class="language-python">
 file = open("taborok.txt", "r", encoding="utf-8").read().splitlines()
 
 # .read() → Az egész fájlt egy szövegként olvassa be
@@ -437,13 +516,13 @@ file = open("taborok.txt", "r", encoding="utf-8").read().splitlines()
   </code><button class="copy-btn">Másolás</button></pre>
 
 
-  <h3>Lista létrehozása a feldolgozott adatoknak</h3>
+          <h3>Lista létrehozása a feldolgozott adatoknak</h3>
 
-  <p>
-    A fájl sorait szótárakba rendezzük, így a kód érthetőbb és könnyebben kezelhető lesz.
-  </p>
+          <p>
+            A fájl sorait szótárakba rendezzük, így a kód érthetőbb és könnyebben kezelhető lesz.
+          </p>
 
-  <pre class="code-container"><code class="language-python">
+          <pre class="code-container"><code class="language-python">
 taborok = []
 
 for line in file:
@@ -461,84 +540,85 @@ print(taborok)
   </code><button class="copy-btn">Másolás</button></pre>
 
 
-  <p>
-    Így a <code>taborok</code> lista minden eleme egy szótár, amely tartalmazza a tábor adatait.
-  </p>
-  <h2>Fontos: az első sor külön kezelése!!</h2>
+          <p>
+            Így a <code>taborok</code> lista minden eleme egy szótár, amely tartalmazza a tábor adatait.
+          </p>
+          <h2>Fontos: az első sor külön kezelése!!</h2>
 
-    <p>
-        A fájl első sora gyakran valamilyen összesítő adatot tartalmaz
-        (például egy darabszámot).
-    </p>
-    
+          <p>
+            A fájl első sora gyakran valamilyen összesítő adatot tartalmaz
+            (például egy darabszámot).
+          </p>
 
-    <p>
-        Mivel a beolvasott adatok listában vannak tárolva, az első elem
-        indexe 0. Amennyiben számként szeretnénk használni az értéket,
-        szükséges az <code>int()</code> típusátalakítás.
-    </p>
 
-    <pre class="code-container"><code class="language-python">
+          <p>
+            Mivel a beolvasott adatok listában vannak tárolva, az első elem
+            indexe 0. Amennyiben számként szeretnénk használni az értéket,
+            szükséges az <code>int()</code> típusátalakítás.
+          </p>
+
+          <pre class="code-container"><code class="language-python">
 agyasok_szama = int(file[0])
     </code></pre>
 
-    <h2>A további sorok feldolgozása</h2>
+          <h2>A további sorok feldolgozása</h2>
 
-    <p>
-        A második sortól kezdődnek a tényleges adatok. Ezeket egy ciklus
-        segítségével dolgozzuk fel.
-    </p>
-    <pre class="code-container"><code class="language-python">
+          <p>
+            A második sortól kezdődnek a tényleges adatok. Ezeket egy ciklus
+            segítségével dolgozzuk fel.
+          </p>
+          <pre class="code-container"><code class="language-python">
 for sor in file[1:]:
       #folytatás ugyanúgy a fentiek szerint
     </code></pre>
 
-    <p><strong>Magyarázat:</strong></p>
-    <ul>
-        <li>A <code>file[1:]</code> a lista második elemétől a végéig tartó rész.</li>
-        <li>Az első sort így kihagyjuk a feldolgozásból.</li>
-        <li>A ciklus minden egyes adatsort külön kezel.</li>
-    </ul>
+          <p><strong>Magyarázat:</strong></p>
+          <ul>
+            <li>A <code>file[1:]</code> a lista második elemétől a végéig tartó rész.</li>
+            <li>Az első sort így kihagyjuk a feldolgozásból.</li>
+            <li>A ciklus minden egyes adatsort külön kezel.</li>
+          </ul>
 
 
 
-  <h3>Összegzés</h3>
-  <ul>
-    <li><strong>Érthetőbb kód:</strong> kulcsok használata indexek helyett</li>
-    <li><strong>Egyszerű hozzáférés:</strong> az adatok nevekkel érhetők el</li>
-    <li><strong>Rugalmasabb:</strong> könnyebb később módosítani</li>
-    <li><strong>Összetett adatok kezelése:</strong> listák és szótárak kombinálása</li>
-  </ul>
-  </details>
-</section>
+          <h3>Összegzés</h3>
+          <ul>
+            <li><strong>Érthetőbb kód:</strong> kulcsok használata indexek helyett</li>
+            <li><strong>Egyszerű hozzáférés:</strong> az adatok nevekkel érhetők el</li>
+            <li><strong>Rugalmasabb:</strong> könnyebb később módosítani</li>
+            <li><strong>Összetett adatok kezelése:</strong> listák és szótárak kombinálása</li>
+          </ul>
+        </details>
+      </section>
 
 
-    <section class="section-container" id="kereses">
-  <details>
-  <summary>Keresés algoritmus</summary>
+      <section class="section-container" id="kereses">
+        <details>
+          <summary>Keresés algoritmus</summary>
 
-  <p>
-    Gyakori feladat egy adott értékhez tartozó adatoknak a megkeresése.
-    A legegyszerűbb módszer a <strong>lineáris keresés</strong>, amikor sorban
-    végignézzük az elemeket, amíg meg nem találjuk a keresett adatot.
-  </p>
+          <p>
+            Gyakori feladat egy adott értékhez tartozó adatoknak a megkeresése.
+            A legegyszerűbb módszer a <strong>lineáris keresés</strong>, amikor sorban
+            végignézzük az elemeket, amíg meg nem találjuk a keresett adatot.
+          </p>
 
-  <h3>A keresés lépései</h3>
-  <ul>
-    <li>Bejárjuk a lista elemeit</li>
-    <li>Összehasonlítjuk a keresett értékkel</li>
-    <li>Találat esetén kiírjuk az eredményt</li>
-  </ul>
+          <h3>A keresés lépései</h3>
+          <ul>
+            <li>Bejárjuk a lista elemeit</li>
+            <li>Összehasonlítjuk a keresett értékkel</li>
+            <li>Találat esetén kiírjuk az eredményt</li>
+          </ul>
 
-  <h3>Példa: Tábor keresése téma alapján</h3>
+          <h3>Példa: Tábor keresése téma alapján</h3>
 
-  <p>
-    A felhasználótól bekérjük egy tábor témáját, majd megkeressük,
-    hogy mikor kezdődik az adott tábor.
-  </p>
-  <p>Továbbá feladat az is, hogy ha nincs ilyen témájú tábor, amilyet a user megadott, akkor írjunk ki neki egy tájékoztató üzenetet!</p>
+          <p>
+            A felhasználótól bekérjük egy tábor témáját, majd megkeressük,
+            hogy mikor kezdődik az adott tábor.
+          </p>
+          <p>Továbbá feladat az is, hogy ha nincs ilyen témájú tábor, amilyet a user megadott, akkor írjunk ki neki egy
+            tájékoztató üzenetet!</p>
 
-  <pre class="code-container"><code class="language-python">
+          <pre class="code-container"><code class="language-python">
 # Feltételezzük, hogy a taborok lista már létezik (és szótárakat tartalmaz)
 
 keresett_tema = input("Add meg a tábor témáját: ")
@@ -555,81 +635,82 @@ if talalat == False:  #vagy írhatom így is: if not talalat:
     print("Nincs ilyen témájú tábor.")
   </code><button class="copy-btn">Másolás</button></pre>
 
-<h3>Miért hasznos?</h3>
-<p>
-A keresés algoritmus egyik legfontosabb szerepe, hogy meg tudjuk állapítani,
-létezik-e a feltételeknek megfelelő adat az adathalmazban.
-Ebben az esetben azt vizsgáljuk, hogy van-e legalább egy olyan tábor,
-amelynek a témája megegyezik a felhasználó által megadottal.
-</p>
+          <h3>Miért hasznos?</h3>
+          <p>
+            A keresés algoritmus egyik legfontosabb szerepe, hogy meg tudjuk állapítani,
+            létezik-e a feltételeknek megfelelő adat az adathalmazban.
+            Ebben az esetben azt vizsgáljuk, hogy van-e legalább egy olyan tábor,
+            amelynek a témája megegyezik a felhasználó által megadottal.
+          </p>
 
-<p>
-A <code>talalat</code> változó segítségével nyomon követjük,
-hogy a ciklus során találtunk-e megfelelő elemet.
-Ha igen, akkor az értéke <code>True</code>-ra változik,
-ha pedig egyetlen egyezés sincs, akkor <code>False</code> marad.
-</p>
+          <p>
+            A <code>talalat</code> változó segítségével nyomon követjük,
+            hogy a ciklus során találtunk-e megfelelő elemet.
+            Ha igen, akkor az értéke <code>True</code>-ra változik,
+            ha pedig egyetlen egyezés sincs, akkor <code>False</code> marad.
+          </p>
 
-<p>
-Ez a módszer általánosan alkalmazható minden olyan feladatban,
-ahol egy listában vagy adatsorban szeretnénk megkeresni,
-hogy létezik-e egy adott tulajdonságú elem.
-</p>
-  </details>
-</section>
-<section class="section-container" id="fuggvenyek">
-  <span class="badge">Fejlesztés alatt</span>
-  <details>
-    <summary>Függvények</summary>
-    <h2>Fogalma</h2>
-      <p>
-A függvény egy olyan kódrészlet, amely [bemenet(ek)] alapján kiszámol valamit, majd az eredményt
-<strong>visszaadja</strong> a <code>return</code> segítségével.
-</p>
+          <p>
+            Ez a módszer általánosan alkalmazható minden olyan feladatban,
+            ahol egy listában vagy adatsorban szeretnénk megkeresni,
+            hogy létezik-e egy adott tulajdonságú elem.
+          </p>
+        </details>
+      </section>
+      <section class="section-container" id="fuggvenyek">
+        <span class="badge">Fejlesztés alatt</span>
+        <details>
+          <summary>Függvények</summary>
+          <h2>Fogalma</h2>
+          <p>
+            A függvény egy olyan kódrészlet, amely [bemenet(ek)] alapján kiszámol valamit, majd az eredményt
+            <strong>visszaadja</strong> a <code>return</code> segítségével.
+          </p>
 
-      <h2>Létrehozás és tulajdonságok</h2>
-      <ul>
-      <li>A függvény létrehozása a <code>def</code> kulcsszóval kezdődik, majd ezt követi a függvény neve.</li>
-      <li>Ezután kerek zárójelek között kell megadni a függvény bemeneteit (a bemenetek száma akár 0 is lehet).</li>
-      <li>A bezáró zárójelet kettőspont (<code>:</code>) követi.</li>
-      <li>Ezután behúzással kezdődik a függvényhez tartozó kód.</li>
-      <li>A függvényben a <code>return</code> paranccsal lehet visszaadni egy kimeneti értéket.</li>
-      </ul>
+          <h2>Létrehozás és tulajdonságok</h2>
+          <ul>
+            <li>A függvény létrehozása a <code>def</code> kulcsszóval kezdődik, majd ezt követi a függvény neve.</li>
+            <li>Ezután kerek zárójelek között kell megadni a függvény bemeneteit (a bemenetek száma akár 0 is lehet).
+            </li>
+            <li>A bezáró zárójelet kettőspont (<code>:</code>) követi.</li>
+            <li>Ezután behúzással kezdődik a függvényhez tartozó kód.</li>
+            <li>A függvényben a <code>return</code> paranccsal lehet visszaadni egy kimeneti értéket.</li>
+          </ul>
 
-      <h2>Általános szintaxis</h2>
+          <h2>Általános szintaxis</h2>
 
-      <pre class="code-container"><code class="language-python">
+          <pre class="code-container"><code class="language-python">
 def fuggveny_neve(egyik_bemenet, masik_bemenet):
     # tetszőleges műveletek
     # számold ki a visszatérési értéket
     return visszateresi_ertek
       </code></pre>
-      <p>Az alábbi példák segítenek megérteni a függvények működését:</p>
+          <p>Az alábbi példák segítenek megérteni a függvények működését:</p>
 
-<h3>1. Szám négyzetének kiszámítása</h3>
-<p>Ez a függvény visszaadja a bemeneti szám négyzetét.</p>
-<pre class="code-container"><code class="language-python">
+          <h3>1. Szám négyzetének kiszámítása</h3>
+          <p>Ez a függvény visszaadja a bemeneti szám négyzetét.</p>
+          <pre class="code-container"><code class="language-python">
 def negyzet(szam):
     return szam * szam
 </code><button class="copy-btn">Másolás</button></pre>
 
-<pre class="code-container"><code class="language-python">
+          <pre class="code-container"><code class="language-python">
 eredmeny = negyzet(4)
 print(eredmeny)
 </code><button class="copy-btn">Másolás</button></pre>
 
-<p>
-Ebben az esetben:
-</p>
-<ul>
-    <li>A függvény megkapja a <code>4</code>-et</li>
-    <li>Kiszámolja: <code>4 * 4</code></li>
-    <li>Visszaadja: <code>16</code></li>
-</ul>
+          <p>
+            Ebben az esetben:
+          </p>
+          <ul>
+            <li>A függvény megkapja a <code>4</code>-et</li>
+            <li>Kiszámolja: <code>4 * 4</code></li>
+            <li>Visszaadja: <code>16</code></li>
+          </ul>
 
-<h3>2. Páratlan szám ellenőrzése</h3>
-<p>Ez a függvény megmondja, hogy egy szám páratlan-e.</p>
-<pre class="code-container"><code class="language-python">
+          <h3>2. Páratlan szám ellenőrzése</h3>
+          <p>Ez a függvény megmondja, hogy egy szám páratlan-e.</p>
+          <pre class="code-container"><code class="language-python">
 def paratlan(szam):
     return szam % 2 == 1
 
@@ -637,13 +718,13 @@ print(paratlan(7))  # True
 print(paratlan(8))  # False
 </code></pre>
 
-<h3>3. Két szám összege</h3>
-<pre class="code-container"><code class="language-python">
+          <h3>3. Két szám összege</h3>
+          <pre class="code-container"><code class="language-python">
 def osszead(a, b):
     return a + b
 </code><button class="copy-btn">Másolás</button></pre>
-<p>Ez a függvény visszaadja a paraméterként megadott két szám összegét.</p>
-<pre class="code-container"><code class="language-python">
+          <p>Ez a függvény visszaadja a paraméterként megadott két szám összegét.</p>
+          <pre class="code-container"><code class="language-python">
 eredmeny = osszead(3, 5)
 print(eredmeny)
 </code><button class="copy-btn">Másolás</button></pre>
@@ -651,91 +732,114 @@ print(eredmeny)
 
 
 
-<h3>Mi az a return?</h3>
-<p>
-A <code>return</code> kulcsszóval a függvény visszaad egy értéket.
-Ez az érték a függvény meghívásának helyére kerül vissza.
-</p>
+          <h3>Mi az a return?</h3>
+          <p>
+            A <code>return</code> kulcsszóval a függvény visszaad egy értéket.
+            Ez az érték a függvény meghívásának helyére kerül vissza.
+          </p>
 
 
-<h3>Hogyan működik a meghívás?</h3>
+          <h3>Hogyan működik a meghívás?</h3>
 
-<pre class="code-container"><code class="language-python">
+          <pre class="code-container"><code class="language-python">
 eredmeny = osszead(3, 5)
 print(eredmeny)
 </code><button class="copy-btn">Másolás</button></pre>
 
-<p>
-Lépések:
-</p>
-<ul>
-    <li>A függvényt meghívjuk: <code>osszead(3, 5)</code></li>
-    <li>A paraméterek értéket kapnak: <code>a = 3</code>, <code>b = 5</code></li>
-    <li>A függvény kiszámolja: <code>a + b</code></li>
-    <li>A <code>return</code> visszaadja az eredményt (8)</li>
-    <li>Az eredményt eltároljuk az <code>eredmeny</code> változóban</li>
-</ul>
+          <p>
+            Lépések:
+          </p>
+          <ul>
+            <li>A függvényt meghívjuk: <code>osszead(3, 5)</code></li>
+            <li>A paraméterek értéket kapnak: <code>a = 3</code>, <code>b = 5</code></li>
+            <li>A függvény kiszámolja: <code>a + b</code></li>
+            <li>A <code>return</code> visszaadja az eredményt (8)</li>
+            <li>Az eredményt eltároljuk az <code>eredmeny</code> változóban</li>
+          </ul>
 
-<h3>Fontos megérteni</h3>
-<p>
-A paraméterek (pl. <code>a</code>, <code>b</code>) csak a függvényen belül léteznek,
-és a függvény ezekkel az értékekkel dolgozik.
-</p>
+          <h3>Fontos megérteni</h3>
+          <p>
+            A paraméterek (pl. <code>a</code>, <code>b</code>) csak a függvényen belül léteznek,
+            és a függvény ezekkel az értékekkel dolgozik.
+          </p>
 
-<p>
-A <code>return</code> után a függvény azonnal befejeződik,
-és visszaadja az eredményt.
-</p>
-
-
+          <p>
+            A <code>return</code> után a függvény azonnal befejeződik,
+            és visszaadja az eredményt.
+          </p>
 
 
-<h3>Összefoglalás</h3>
-<ul>
-    <li>A függvény bemenetet kap (paraméterek)</li>
-    <li>Elvégez egy műveletet</li>
-    <li>A <code>return</code> segítségével visszaad egy értéket</li>
-    <li>Az eredményt eltárolhatjuk egy változóban</li>
-</ul>
-
-  <h2>Tippek a függvényekhez</h2>
-
-<ul>
-    <li><strong>Legyen egyértelmű a név:</strong> A függvény neve mindig tükrözze, mit csinál (pl. <code>paratlan</code>, <code>lista_osszeg</code>).</li>
-    <li><strong>Csak egy feladatot végezzen:</strong> Jó gyakorlat, ha egy függvény egyetlen célt szolgál, így könnyen újrahasználható.</li>
-    <li><strong>Használj paramétereket:</strong> Így a függvény rugalmas lesz, és nem kell minden esetben új kódot írni.</li>
-    <li><strong>Ne feledd a <code>return</code>-t:</strong> Ha a függvény valamilyen eredményt ad vissza, mindig használd a <code>return</code>-t.</li>
-    <li><strong>Dokumentáld röviden:</strong> Hasznos lehet a függvény fölé rövid kommentet írni a működéséről.</li>
-    <li><strong>Próbáld ki különböző bemenetekkel:</strong> Teszteld a függvényedet, hogy biztosan jól működjön minden esetre.</li>
-    <li><strong>Ne másold a kódot többször:</strong> Használd a függvényt, így a programod rendezett és könnyen karbantartható lesz.</li>
-</ul>
 
 
-  </details>
-  
+          <h3>Összefoglalás</h3>
+          <ul>
+            <li>A függvény bemenetet kap (paraméterek)</li>
+            <li>Elvégez egy műveletet</li>
+            <li>A <code>return</code> segítségével visszaad egy értéket</li>
+            <li>Az eredményt eltárolhatjuk egy változóban</li>
+          </ul>
 
-</section>
+          <h2>Tippek a függvényekhez</h2>
 
-    
+          <ul>
+            <li><strong>Legyen egyértelmű a név:</strong> A függvény neve mindig tükrözze, mit csinál (pl.
+              <code>paratlan</code>, <code>lista_osszeg</code>).
+            </li>
+            <li><strong>Csak egy feladatot végezzen:</strong> Jó gyakorlat, ha egy függvény egyetlen célt szolgál, így
+              könnyen újrahasználható.</li>
+            <li><strong>Használj paramétereket:</strong> Így a függvény rugalmas lesz, és nem kell minden esetben új
+              kódot írni.</li>
+            <li><strong>Ne feledd a <code>return</code>-t:</strong> Ha a függvény valamilyen eredményt ad vissza, mindig
+              használd a <code>return</code>-t.</li>
+            <li><strong>Dokumentáld röviden:</strong> Hasznos lehet a függvény fölé rövid kommentet írni a működéséről.
+            </li>
+            <li><strong>Próbáld ki különböző bemenetekkel:</strong> Teszteld a függvényedet, hogy biztosan jól működjön
+              minden esetre.</li>
+            <li><strong>Ne másold a kódot többször:</strong> Használd a függvényt, így a programod rendezett és könnyen
+              karbantartható lesz.</li>
+          </ul>
 
-    <section class="section-container" id="feladatok">
+
+        </details>
+
+
+      </section>
+
+
+
+      <section class="section-container" id="feladatok">
         <span class="badge">Fejlesztés alatt</span>
         <h2>Gyakorló feladatok</h2>
         <p>Egyelőre csak a főőoldalon találsz néhányat feltöltve</p>
-        <p><a href="index.html#gyakorlofeladatok">->Katt ide<-</a></p>
-        
+        <p><a href="index.html#gyakorlofeladatok">->Katt ide<-- </a></p>
+
 
 
         <a class="btn" href="#">Teszt indítása</a>
-    </section>
+      </section>
 
-</main>
+    </main>
+
 </body>
 </div>
 
 <footer>
-    <p>Készítette: Deák Eszter</p>
+  <p>Készítette: Deák Eszter</p>
 </footer>
 
 </body>
+
 </html>
+
+<script>
+  // Végigmegy minden copy gombon
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const code = btn.previousElementSibling.innerText;
+      navigator.clipboard.writeText(code).then(() => {
+        btn.innerText = "Másolva!";
+        setTimeout(() => btn.innerText = "Másolás", 1000);
+      });
+    });
+  });
+</script>
