@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
     <meta charset="UTF-8">
     <title>Adatbázis-kezelés – SQL</title>
@@ -8,311 +9,361 @@
 
 <body>
 
-<header>
-    <h1>Adatbázis-kezelés – SQL</h1>
-    <span class="badge">Fejlesztés alatt</span>
-     <div class="header-container">
+    <header>
+        <h1>Adatbázis-kezelés – SQL</h1>
+        <span class="badge">Fejlesztés alatt</span>
+        <div class="header-container">
 
-    <nav >
-        <ul>
-            <li><a href="index.html" class="menu-btn">Főoldal</a></li>
-            <li><a href="programozas.html" class="menu-btn">Programozás</a></li>
-            <li><a href="excel.html" class="menu-btn">Excel</a></li>
-        </ul>
-        
-        
-        
-    </nav>
-</header>
-<main>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="menu-btn">Főoldal</a></li>
+                    <li><a href="programozas.html" class="menu-btn">Programozás</a></li>
+                    <li><a href="excel.html" class="menu-btn">Excel</a></li>
+                </ul>
 
 
-    <div class="box">
-        <h3><a href="sql/emeltszint/sql_feladatok_emelt.html">SQL gyakorló feladatok</a></h3>
-<p>
-Ma már a világban szinte mindent adatokkal írunk le. Ezek az adatok nem különállóak, hanem sokféleképpen kapcsolódnak egymáshoz. 
-Például egy iskola esetében a diákok, tanárok, tantárgyak és jegyek mind összefüggnek.
-</p>
-</div>
 
-<div class="box">
-<h2>Mi az adatbázis?</h2>
-<p>
-Adatbázison köznapi értelemben valamely rendezett, valamilyen szisztéma szerint tárolt
-adatokat értünk, melyek legtöbb esetben a számítógépen kerülnek eltárolásra. Tehát a valóság egy részéről szóló információkat egymással kapcsolatban álló 
-táblákban tároljuk. Nem a teljes valóságot írjuk le, csak annak egy kisebb részét.
-</p>
-</div>
+            </nav>
+        </div>
+    </header>
+    <main>
 
-<div class="box">
-<h2>Adattábla</h2>
-<p>
-Az adattábla egy speciális táblázat. Az oszlopok azonos típusú adatokat tartalmaznak 
-(például neveket vagy születési dátumokat), a sorok pedig egy-egy konkrét személyt 
-vagy objektumot írnak le. A sorok és oszlopok együtt strukturált formában tárolják 
-az adatokat.
-</p>
 
-<p>
-Innen ered az SQL elnevezés is: az SQL a <strong>Structured Query Language</strong> 
-(magyarul: strukturált lekérdező nyelv) kifejezés rövidítése. 
-A „structured” kifejezés azt jelenti, hogy az adatokat előre meghatározott, logikus szerkezetben, egymással kapcsolatban álló táblákban tároljuk.
-</p>
-</div>
+        <div class="box">
+            <h3><a href="sql/emeltszint/sql_feladatok_emelt.html">SQL gyakorló feladatok</a></h3>
+            <p>
+                Ma már a világban szinte mindent adatokkal írunk le. Ezek az adatok nem különállóak, hanem sokféleképpen
+                kapcsolódnak egymáshoz.
+                Például egy iskola esetében a diákok, tanárok, tantárgyak és jegyek mind összefüggnek.
+            </p>
+        </div>
 
-    <section class="section-container">
-    <h1>SQL Záradékok és Műveletek Összefoglaló</h1>
+        <div class="box">
+            <h2>Mi az adatbázis?</h2>
+            <p>
+                Adatbázison köznapi értelemben valamely rendezett, valamilyen szisztéma szerint tárolt
+                adatokat értünk, melyek legtöbb esetben a számítógépen kerülnek eltárolásra. Tehát a valóság egy
+                részéről szóló információkat egymással kapcsolatban álló
+                táblákban tároljuk. Nem a teljes valóságot írjuk le, csak annak egy kisebb részét.
+            </p>
+        </div>
 
-    <h2>Alapvető SQL záradékok</h2>
-    <table border="1" cellspacing="0" cellpadding="6">
-        <thead>
-            <tr>
-                <th>Záradék</th>
-                <th>Leírás</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>SELECT</td>
-                <td>Megjelenítendő mezők kiválasztása</td>
-            </tr>
-            <tr>
-                <td>DISTINCT</td>
-                <td>Duplikált értékek eltávolítása</td>
-            </tr>
-            <tr>
-                <td>FROM</td>
-                <td>A használt tábla megadása</td>
-            </tr>
-            <tr>
-                <td>WHERE</td>
-                <td>Feltételek meghatározása (kapcsolatok is lehetnek)</td>
-            </tr>
-            <tr>
-                <td>GROUP BY</td>
-                <td>Csoportosítás megadott mezők szerint</td>
-            </tr>
-            <tr>
-                <td>HAVING</td>
-                <td>Összesítő függvényekre vonatkozó feltétel (pl.: HAVING COUNT(nezo.id)=1)</td>
-            </tr>
-            <tr>
-                <td>ORDER BY</td>
-                <td>Sorbarendezés (alapértelmezett növekvő, csökkenő: DESC)</td>
-            </tr>
-            <tr>
-                <td>LIMIT</td>
-                <td>Rekordok számának korlátozása</td>
-            </tr>
-            <tr>
-                <td>OFFSET</td>
-                <td>Rekordok kihagyása a lekérdezésből (pl.: LIMIT 1 OFFSET 1 a másodikat adja vissza)</td>
-            </tr>
-        </tbody>
-    </table>
+        <div class="box">
+            <h2>Adattábla</h2>
+            <p>
+                Az adattábla egy speciális táblázat. Az oszlopok azonos típusú adatokat tartalmaznak
+                (például neveket vagy születési dátumokat), a sorok pedig egy-egy konkrét személyt
+                vagy objektumot írnak le. A sorok és oszlopok együtt strukturált formában tárolják
+                az adatokat.
+            </p>
 
-    <h2>SQL Operátorok</h2>
-    <table border="1" cellspacing="0" cellpadding="6">
-        <thead>
-            <tr>
-                <th>Típus</th>
-                <th>Operátorok</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Összehasonlító</td>
-                <td>&gt;, &lt;, &lt;=, &gt;=, &lt;&gt;, =</td>
-            </tr>
-            <tr>
-                <td>Aritmetikai</td>
-                <td>+, -, *, /, %</td>
-            </tr>
-            <tr>
-                <td>Logikai</td>
-                <td>AND, OR, NOT</td>
-            </tr>
-        </tbody>
-    </table>
+            <p>
+                Innen ered az SQL elnevezés is: az SQL a <strong>Structured Query Language</strong>
+                (magyarul: strukturált lekérdező nyelv) kifejezés rövidítése.
+                A „structured” kifejezés azt jelenti, hogy az adatokat előre meghatározott, logikus szerkezetben,
+                egymással kapcsolatban álló táblákban tároljuk.
+            </p>
+        </div>
 
-    <h2>Műveletekhez használható elemek</h2>
-    <ul>
-        <li>Konstansok</li>
-        <li>Mezőnevek</li>
-        <li>Függvények:
+        <section class="section-container">
+            <h1>SQL Záradékok és Műveletek Összefoglaló</h1>
+
+            <h2>Alapvető SQL záradékok</h2>
+            <table border="1" cellspacing="0" cellpadding="6">
+                <thead>
+                    <tr>
+                        <th>Záradék</th>
+                        <th>Leírás</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SELECT</td>
+                        <td>Megjelenítendő mezők kiválasztása</td>
+                    </tr>
+                    <tr>
+                        <td>DISTINCT</td>
+                        <td>Duplikált értékek eltávolítása</td>
+                    </tr>
+                    <tr>
+                        <td>FROM</td>
+                        <td>A használt tábla megadása</td>
+                    </tr>
+                    <tr>
+                        <td>WHERE</td>
+                        <td>Feltételek meghatározása (kapcsolatok is lehetnek)</td>
+                    </tr>
+                    <tr>
+                        <td>GROUP BY</td>
+                        <td>Csoportosítás megadott mezők szerint</td>
+                    </tr>
+                    <tr>
+                        <td>HAVING</td>
+                        <td>Összesítő függvényekre vonatkozó feltétel (pl.: HAVING COUNT(nezo.id)=1)</td>
+                    </tr>
+                    <tr>
+                        <td>ORDER BY</td>
+                        <td>Sorbarendezés (alapértelmezett növekvő, csökkenő: DESC)</td>
+                    </tr>
+                    <tr>
+                        <td>LIMIT</td>
+                        <td>Rekordok számának korlátozása</td>
+                    </tr>
+                    <tr>
+                        <td>OFFSET</td>
+                        <td>Rekordok kihagyása a lekérdezésből (pl.: LIMIT 1 OFFSET 1 a másodikat adja vissza)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>SQL Operátorok</h2>
+            <table border="1" cellspacing="0" cellpadding="6">
+                <thead>
+                    <tr>
+                        <th>Típus</th>
+                        <th>Operátorok</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Összehasonlító</td>
+                        <td>&gt;, &lt;, &lt;=, &gt;=, &lt;&gt;, =</td>
+                    </tr>
+                    <tr>
+                        <td>Aritmetikai</td>
+                        <td>+, -, *, /, %</td>
+                    </tr>
+                    <tr>
+                        <td>Logikai</td>
+                        <td>AND, OR, NOT</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h2>Műveletekhez használható elemek</h2>
             <ul>
-                <li>Aggregációs: SUM(), AVG(), MIN(), MAX(), COUNT(*)</li>
-                <li>Matematikai: ROUND(), CEIL(), FLOOR()</li>
-                <li>Dátum/idő: YEAR(), MONTH(), DAY(), HOUR(), MINUTE(), SECOND(), DATE(), TIME()</li>
-                <li>Szövegkezelő: CONCAT(...), LOCATE(szó, szöveg)</li>
-                <li>Logikai: IF(feltétel, igaz_érték, hamis_érték)</li>
+                <li>Konstansok</li>
+                <li>Mezőnevek</li>
+                <li>Függvények:
+                    <ul>
+                        <li>Aggregációs: SUM(), AVG(), MIN(), MAX(), COUNT(*)</li>
+                        <li>Matematikai: ROUND(), CEIL(), FLOOR()</li>
+                        <li>Dátum/idő: YEAR(), MONTH(), DAY(), HOUR(), MINUTE(), SECOND(), DATE(), TIME()</li>
+                        <li>Szövegkezelő: CONCAT(...), LOCATE(szó, szöveg)</li>
+                        <li>Logikai: IF(feltétel, igaz_érték, hamis_érték)</li>
+                    </ul>
+                </li>
             </ul>
-        </li>
-    </ul>
 
-    <h2>Predikátumok és Joker karakterek</h2>
-    <table border="1" cellspacing="0" cellpadding="6">
-        <thead>
-            <tr>
-                <th>Predikátum</th>
-                <th>Leírás</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>IN()</td>
-                <td>Értékhalmazban való keresés</td>
-            </tr>
-            <tr>
-                <td>LIKE '_a%'</td>
-                <td>Szöveges keresés mintára</td>
-            </tr>
-            <tr>
-                <td>BETWEEN x AND y</td>
-                <td>Tartományon belüli keresés</td>
-            </tr>
-            <tr>
-                <td>IS NULL</td>
-                <td>NULL érték vizsgálata</td>
-            </tr>
-        </tbody>
-    </table>
-    <p>Joker karakterek: <code>_</code> (egy tetszőleges karakter), <code>%</code> (tetszőleges hosszúságú szöveg, akár üres)</p>
+            <h2>Predikátumok és Joker karakterek</h2>
+            <table border="1" cellspacing="0" cellpadding="6">
+                <thead>
+                    <tr>
+                        <th>Predikátum</th>
+                        <th>Leírás</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>IN()</td>
+                        <td>Értékhalmazban való keresés</td>
+                    </tr>
+                    <tr>
+                        <td>LIKE '_a%'</td>
+                        <td>Szöveges keresés mintára</td>
+                    </tr>
+                    <tr>
+                        <td>BETWEEN x AND y</td>
+                        <td>Tartományon belüli keresés</td>
+                    </tr>
+                    <tr>
+                        <td>IS NULL</td>
+                        <td>NULL érték vizsgálata</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>Joker karakterek: <code>_</code> (egy tetszőleges karakter), <code>%</code> (tetszőleges hosszúságú
+                szöveg, akár üres)</p>
 
-    <h2>Adatmódosító utasítások</h2>
-    <table border="1" cellspacing="0" cellpadding="6">
-        <thead>
-            <tr>
-                <th>Parancs</th>
-                <th>Leírás</th>
-                <th>Példa</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>INSERT</td>
-                <td>Rekord beszúrása</td>
-                <td><code>INSERT INTO `tablanev` (`mezo1`, `mezo2`) VALUES (ertek1, ertek2), (ertek3, ertek4);</code></td>
-            </tr>
-            <tr>
-                <td>UPDATE</td>
-                <td>Rekord módosítása</td>
-                <td><code>UPDATE `tablanev` SET `mezo1` = uj_ertek WHERE `recordID` = 9;</code></td>
-            </tr>
-            <tr>
-                <td>DELETE</td>
-                <td>Rekord törlése</td>
-                <td><code>DELETE FROM `tablanev` WHERE `recordID` = 9;</code></td>
-            </tr>
-        </tbody>
-    </table>
+            <h2>Adatmódosító utasítások</h2>
+            <table border="1" cellspacing="0" cellpadding="6">
+                <thead>
+                    <tr>
+                        <th>Parancs</th>
+                        <th>Leírás</th>
+                        <th>Példa</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>INSERT</td>
+                        <td>Rekord beszúrása</td>
+                        <td><code>INSERT INTO `tablanev` (`mezo1`, `mezo2`) VALUES (ertek1, ertek2), (ertek3, ertek4);</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>UPDATE</td>
+                        <td>Rekord módosítása</td>
+                        <td><code>UPDATE `tablanev` SET `mezo1` = uj_ertek WHERE `recordID` = 9;</code></td>
+                    </tr>
+                    <tr>
+                        <td>DELETE</td>
+                        <td>Rekord törlése</td>
+                        <td><code>DELETE FROM `tablanev` WHERE `recordID` = 9;</code></td>
+                    </tr>
+                </tbody>
+            </table>
 
-</section>
-<section class="section-container">
-    <h2>GROUP BY – Elméleti összefoglaló</h2>
-    <h2>1. Mire szolgál a GROUP BY?</h2>
-<p>A <code>GROUP BY</code> az SQL-ben lehetővé teszi, hogy az adatokat csoportosítsuk egy vagy több oszlop
-értékei szerint. Általában aggregált függvényekkel (<code>SUM</code>, <code>AVG</code>, <code>COUNT</code>, <code>MAX</code>, <code>MIN</code>) együtt használjuk, hogy az adatok
-csoportosítva jelenjenek meg.</p>
+        </section>
+        <section class="section-container">
+            <h2>GROUP BY – Elméleti összefoglaló</h2>
+            <h2>1. Mire szolgál a GROUP BY?</h2>
+            <p>A <code>GROUP BY</code> az SQL-ben lehetővé teszi, hogy az adatokat csoportosítsuk egy vagy több oszlop
+                értékei szerint. Általában aggregált függvényekkel (<code>SUM</code>, <code>AVG</code>,
+                <code>COUNT</code>, <code>MAX</code>, <code>MIN</code>) együtt használjuk, hogy az adatok
+                csoportosítva jelenjenek meg.</p>
 
-<h2>2. Szintaxis</h2>
-<pre class="code-container"><code class="language-sql"></code>SELECT oszlop1, oszlop2, osszesito_fuggveny*(oszlop3)
+            <h2>2. Szintaxis</h2>
+            <pre class="code-container"><code class="language-sql"></code>SELECT oszlop1, oszlop2, osszesito_fuggveny*(oszlop3)
 FROM tabla_nev
 WHERE feltetelek
 GROUP BY oszlop1, [oszlop2];</code></pre>
 
-<p><strong>Magyarázat:</strong></p>
-<ul>
-  <li><code>oszlop1, [oszlop2]</code>: a csoportosítás alapja (ezek szerint csoportosítja a rekordokat, ide több mezőt is megadhatunk).</li>
-  <li><code>osszesito_fuggveny</code>: pl. <code>SUM</code>, <code>AVG</code>, <code>COUNT</code>, <code>MAX</code>, <code>MIN</code>.</li>
-  <li><code>WHERE</code>: opcionális, a rekordok szűrésére a csoportosítás előtt.</li>
-</ul>
+            <p><strong>Magyarázat:</strong></p>
+            <ul>
+                <li><code>oszlop1, [oszlop2]</code>: a csoportosítás alapja (ezek szerint csoportosítja a rekordokat,
+                    ide több mezőt is megadhatunk).</li>
+                <li><code>osszesito_fuggveny</code>: pl. <code>SUM</code>, <code>AVG</code>, <code>COUNT</code>,
+                    <code>MAX</code>, <code>MIN</code>.</li>
+                <li><code>WHERE</code>: opcionális, a rekordok szűrésére a csoportosítás előtt.</li>
+            </ul>
 
-<h2>3. Példa</h2>
-<p>Adott tábla: <code>eladas</code></p>
-<table>
-  <tr><th>rendeles_id</th><th>termek</th><th>mennyiseg</th><th>ar</th></tr>
-  <tr><td>1</td><td>A</td><td>2</td><td>100</td></tr>
-  <tr><td>2</td><td>B</td><td>1</td><td>150</td></tr>
-  <tr><td>3</td><td>A</td><td>3</td><td>100</td></tr>
-  <tr><td>4</td><td>B</td><td>2</td><td>150</td></tr>
-</table>
+            <h2>3. Példa</h2>
+            <p>Adott tábla: <code>eladas</code></p>
+            <table>
+                <tr>
+                    <th>rendeles_id</th>
+                    <th>termek</th>
+                    <th>mennyiseg</th>
+                    <th>ar</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>A</td>
+                    <td>2</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>B</td>
+                    <td>1</td>
+                    <td>150</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>A</td>
+                    <td>3</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>B</td>
+                    <td>2</td>
+                    <td>150</td>
+                </tr>
+            </table>
 
-<p>Lekérdezés:</p>
-<pre class="code-container"><code class="language-sql">SELECT termek, SUM(mennyiseg) AS osszes_mennyiseg
+            <p>Lekérdezés:</p>
+            <pre class="code-container"><code class="language-sql">SELECT termek, SUM(mennyiseg) AS osszes_mennyiseg
 FROM eladas
 GROUP BY termek;</code></pre>
 
-<p>Eredmény:</p>
-<table>
-  <tr><th>termek</th><th>osszes_mennyiseg</th></tr>
-  <tr><td>A</td><td>5</td></tr>
-  <tr><td>B</td><td>3</td></tr>
-</table>
+            <p>Eredmény:</p>
+            <table>
+                <tr>
+                    <th>termek</th>
+                    <th>osszes_mennyiseg</th>
+                </tr>
+                <tr>
+                    <td>A</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>B</td>
+                    <td>3</td>
+                </tr>
+            </table>
 
-<p><strong>Magyarázat:</strong> A <code>termek</code> oszlop értékei szerint csoportosítottunk, és az <code>SUM(mennyiseg)</code> kiszámolta az adott termékre vonatkozó mennyiségek összegét.</p>
+            <p><strong>Magyarázat:</strong> A <code>termek</code> oszlop értékei szerint csoportosítottunk, és az
+                <code>SUM(mennyiseg)</code> kiszámolta az adott termékre vonatkozó mennyiségek összegét.</p>
 
-<h2>4. Tippek és fontos szabályok</h2>
-<ul>
-  <li><p class="tip">Több oszlop szerint is lehet csoportosítani: <strong>GROUP BY oszlop1, oszlop2</strong>.</p></li>
-  <li><p class="tip"><strong>HAVING</strong>-et kell használni a csoportok szűrésére (ellentétben a <code>WHERE</code>-rel, ami a sorokat szűri!!!).</p></li>
-</ul>
+            <h2>4. Tippek és fontos szabályok</h2>
+            <ul>
+                <li>
+                    <p class="tip">Több oszlop szerint is lehet csoportosítani: <strong>GROUP BY oszlop1,
+                            oszlop2</strong>.</p>
+                </li>
+                <li>
+                    <p class="tip"><strong>HAVING</strong>-et kell használni a csoportok szűrésére (ellentétben a
+                        <code>WHERE</code>-rel, ami a sorokat szűri!!!).</p>
+                </li>
+            </ul>
 
-<p><strong>Példa:</strong> csak a 10-nél nagyobb összes mennyiségeket jelenítjük meg:</p>
-<pre class="code-container"><code class="language-sql">SELECT termek, SUM(mennyiseg) AS osszes_mennyiseg
+            <p><strong>Példa:</strong> csak a 10-nél nagyobb összes mennyiségeket jelenítjük meg:</p>
+            <pre class="code-container"><code class="language-sql">SELECT termek, SUM(mennyiseg) AS osszes_mennyiseg
 FROM eladas
 GROUP BY termek
 HAVING SUM(mennyiseg) > 10;</code></pre>
-</section>
-<h1 style="align-items: center;">Nehezebb típusfeladatok</h1>
-<h3>GROUP BY, Allekérdezések, self-join feladatok..(FELTÖLTÉS ALATT!)</h3>
-<section class="section-container">
-    <h2>GROUP BY feladatok</h2>
-</section>
-<section class="section-container">
-  <h2>Allekérdezések</h2>
-  <p>
-        Az allekérdezés (más néven <strong>subquery</strong> vagy belső lekérdezés) egy olyan SQL lekérdezés,
-        amely egy másik lekérdezésen belül fut le. Az eredményét a külső lekérdezés használja fel, általában
-        összehasonlítás vagy szűrés céljából.
-    </p>
+        </section>
+        <h1 style="align-items: center;">Nehezebb típusfeladatok</h1>
+        <h3>GROUP BY, Allekérdezések, self-join feladatok..(FELTÖLTÉS ALATT!)</h3>
+        <section class="section-container">
+            <h2>GROUP BY feladatok</h2>
+        </section>
+        <section class="section-container">
+            <h2>Allekérdezések</h2>
+            <p>
+                Az allekérdezés (más néven <strong>subquery</strong> vagy belső lekérdezés) egy olyan SQL lekérdezés,
+                amely egy másik lekérdezésen belül fut le. Az eredményét a külső lekérdezés használja fel, általában
+                összehasonlítás vagy szűrés céljából.
+            </p>
 
-    <h3>Példa feladat</h3>
-    <p>
-        „Hány megyében tanulnak kevesebben, mint Heves megyében?”
-    </p>
+            <h3>Példa feladat</h3>
+            <p>
+                „Hány megyében tanulnak kevesebben, mint Heves megyében?”
+            </p>
 
-    <h3>Feltételezett tábla</h3>
-    <p>
-        Legyen egy <strong>tanulok</strong> nevű tábla, amely tartalmazza a megyéket és a tanulók számát.
-    </p>
+            <h3>Feltételezett tábla</h3>
+            <p>
+                Legyen egy <strong>tanulok</strong> nevű tábla, amely tartalmazza a megyéket és a tanulók számát.
+            </p>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Megye</th>
-                <th>Tanulók száma</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Heves</td>
-                <td>12000</td>
-            </tr>
-            <tr>
-                <td>Borsod</td>
-                <td>15000</td>
-            </tr>
-            <tr>
-                <td>Nógrád</td>
-                <td>8000</td>
-            </tr>
-        </tbody>
-    </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Megye</th>
+                        <th>Tanulók száma</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Heves</td>
+                        <td>12000</td>
+                    </tr>
+                    <tr>
+                        <td>Borsod</td>
+                        <td>15000</td>
+                    </tr>
+                    <tr>
+                        <td>Nógrád</td>
+                        <td>8000</td>
+                    </tr>
+                </tbody>
+            </table>
 
-    <h3>SQL megoldás allekérdezéssel</h3>
+            <h3>SQL megoldás allekérdezéssel</h3>
 
-    <pre class="code-container"><code class="language-sql">
+            <pre class="code-container"><code class="language-sql">
 SELECT COUNT(megye) AS megyek_szama
 FROM tanulok
 WHERE tanulok_szama <
@@ -321,97 +372,105 @@ WHERE tanulok_szama <
      WHERE megye = 'Heves');
     </code></pre>
 
-    <h3>A lekérdezés részletes magyarázata</h3>
+            <h3>A lekérdezés részletes magyarázata</h3>
 
-    <h4>1. Belső lekérdezés</h4>
-    <p>
-        A belső lekérdezés meghatározza, hogy hány tanuló van Heves megyében.
-        Ez egy konkrét számot ad vissza (például 12000). Ez az érték nem jelenik
-        meg külön eredményként, hanem a külső lekérdezés használja fel.
-    </p>
+            <h4>1. Belső lekérdezés</h4>
+            <p>
+                A belső lekérdezés meghatározza, hogy hány tanuló van Heves megyében.
+                Ez egy konkrét számot ad vissza (például 12000). Ez az érték nem jelenik
+                meg külön eredményként, hanem a külső lekérdezés használja fel.
+            </p>
 
-    <pre class="code-container"><code class="language-sql">
+            <pre class="code-container"><code class="language-sql">
 SELECT tanulok_szama
 FROM tanulok
 WHERE megye = 'Heves';
     </code></pre>
 
-    <h4>2. Külső lekérdezés</h4>
-    <p>
-        A külső lekérdezés megszámolja azokat a megyéket, ahol a tanulók száma
-        kisebb, mint a Heves megyére kapott érték.
-    </p>
+            <h4>2. Külső lekérdezés</h4>
+            <p>
+                A külső lekérdezés megszámolja azokat a megyéket, ahol a tanulók száma
+                kisebb, mint a Heves megyére kapott érték.
+            </p>
 
-    <p>
-        Gondoljuk át:
-        „Számold meg azokat a megyéket, amelyek tanulóinak száma kisebb annál az
-        értéknél, amit "Heves" belső lekérdezés visszaad.”
-    </p>
+            <p>
+                Gondoljuk át:
+                „Számold meg azokat a megyéket, amelyek tanulóinak száma kisebb annál az
+                értéknél, amit "Heves" belső lekérdezés visszaad.”
+            </p>
 
-    <h3>Mikor érdemes allekérdezést használni?</h3>
-    <ul>
-        <li>Ha egy összehasonlításhoz előbb ki kell számítani egy értéket, vagy adathalmazt.</li>
-        <li>Ha az adat dinamikus, és nem ismert előre.</li>
-        <li>Ha az összehasonlítás alapja egy másik lekérdezés eredménye.</li>
-        <li>Ha összetettebb szűrésre van szükség.</li>
-    </ul>
+            <h3>Mikor érdemes allekérdezést használni?</h3>
+            <ul>
+                <li>Ha egy összehasonlításhoz előbb ki kell számítani egy értéket, vagy adathalmazt.</li>
+                <li>Ha az adat dinamikus, és nem ismert előre.</li>
+                <li>Ha az összehasonlítás alapja egy másik lekérdezés eredménye.</li>
+                <li>Ha összetettebb szűrésre van szükség.</li>
+            </ul>
 
-    <h3>Fontos megjegyzés</h3>
-    <p>
-        Az allekérdezések az emelt szintű érettségi adatbázis feladatainál gyakran
-        előfordulnak, ezért érdemes több gyakorló feladaton keresztül begyakorolni.
-    </p>
+            <h3>Fontos megjegyzés</h3>
+            <p>
+                Az allekérdezések az emelt szintű érettségi adatbázis feladatainál gyakran
+                előfordulnak, ezért érdemes több gyakorló feladaton keresztül begyakorolni.
+            </p>
 
-  
-</section>    
-<section class="section-container">
-  <h2>Self-join jellegű feladatok</h2>
-  <p><strong>Feladat:</strong> azonos nevű dolgozókat keresni ugyanabban az osztályban<br>
-  (például két "Kiss János" nevű dolgozó a cégben, két különböző személy)</p>
-  <img src="images/dolgozok_tabla.png" alt="">
-  <img src="images/osztalyok_tabla.png" alt="">
-    <p>Ha a szokásos módon ugranánk neki a feladatnak, először összekötnénk a két táblát a <code>WHERE</code> feltételben, majd esetleg elkezdenénk gondolkodni egy <code>GROUP BY</code> használatán.</p>
-    <pre class="code-container"><code class="language-python">
+
+        </section>
+        <section class="section-container">
+            <h2>Self-join jellegű feladatok</h2>
+            <p><strong>Feladat:</strong> azonos nevű dolgozókat keresni ugyanabban az osztályban<br>
+                (például két "Kiss János" nevű dolgozó a cégben, két különböző személy)</p>
+            <img src="images/dolgozok_tabla.png" alt="">
+            <img src="images/osztalyok_tabla.png" alt="">
+            <p>Ha a szokásos módon ugranánk neki a feladatnak, először összekötnénk a két táblát a <code>WHERE</code>
+                feltételben, majd esetleg elkezdenénk gondolkodni egy <code>GROUP BY</code> használatán.</p>
+            <pre class="code-container"><code class="language-python">
 SELECT *
 FROM dolgozok, osztalyok
 WHERE dolgozok.osztaly_id = osztalyok.osztaly_id
   </code></pre>
-    <img src="images/dolgozok_osztalyoK_osszekotve.png" alt="">
-  <h3>Miért nem jó a GROUP BY?</h3>
-  <p>A GROUP BY csak összesíti a sorokat, és nem teszi lehetővé, hogy <strong>két különböző sort</strong> összevessünk ugyanabban a táblában.  
-  Itt a cél: azonos nevű dolgozókat ugyanazon osztályon két külön sorban találni – ezt csak self-join-nal lehet korrekt módon vizsgálni.</p>
+            <img src="images/dolgozok_osztalyoK_osszekotve.png" alt="">
+            <h3>Miért nem jó a GROUP BY?</h3>
+            <p>A GROUP BY csak összesíti a sorokat, és nem teszi lehetővé, hogy <strong>két különböző sort</strong>
+                összevessünk ugyanabban a táblában.
+                Itt a cél: azonos nevű dolgozókat ugyanazon osztályon két külön sorban találni – ezt csak self-join-nal
+                lehet korrekt módon vizsgálni.</p>
 
-  <h3>Descartes-szorzat</h3>
-  <p>Ha két táblát csak felsorolunk a <code>FROM</code>-ban, és nem adunk meg feltételt, az SQL <strong>Descartes-szorzatot</strong> készít:  
-  minden sor az első táblából összepárosul minden sorral a második táblából.</p>
-  <img src="images/descartes.png" alt="">
-  <ul>
-    <li>Példa: dolgozok 5 sor, osztaly 3 sor → 5 × 3 = 15 sor lesz.</li>
-    <li>Minden kombináció megjelenik, függetlenül a logikai kapcsolattól.</li>
-    <li>Ez általában nem kívánt eredmény, ezért kell használnunk <code>WHERE</code> feltételeket.</li>
-  </ul>
+            <h3>Descartes-szorzat</h3>
+            <p>Ha két táblát csak felsorolunk a <code>FROM</code>-ban, és nem adunk meg feltételt, az SQL
+                <strong>Descartes-szorzatot</strong> készít:
+                minden sor az első táblából összepárosul minden sorral a második táblából.</p>
+            <img src="images/descartes.png" alt="">
+            <ul>
+                <li>Példa: dolgozok 5 sor, osztaly 3 sor → 5 × 3 = 15 sor lesz.</li>
+                <li>Minden kombináció megjelenik, függetlenül a logikai kapcsolattól.</li>
+                <li>Ez általában nem kívánt eredmény, ezért kell használnunk <code>WHERE</code> feltételeket.</li>
+            </ul>
 
-  <h3>Megoldás: dolgozók kétszeri használata</h3>
-  <p>A feladat megoldásához a <code>dolgozok</code> táblát <strong>kétszer</strong> használjuk alias-szal (d1, d2), mert a feltétel két külön sorra vonatkozik(azonos név, azonos osztály)</p>
-  
-  <pre class="code-container"><code class="language-python">
+            <h3>Megoldás: dolgozók kétszeri használata</h3>
+            <p>A feladat megoldásához a <code>dolgozok</code> táblát <strong>kétszer</strong> használjuk alias-szal (d1,
+                d2), mert a feltétel két külön sorra vonatkozik(azonos név, azonos osztály)</p>
+
+            <pre class="code-container"><code class="language-python">
 SELECT *
 FROM dolgozok as d1, dolgozok as d2
   </code></pre>
-  
-  <img src="images/descartes_dolgozoinilyvantartas.png" alt="">
 
-  <h3>WHERE feltételek és duplikáció</h3>
-  <img src="images/dolgozo_WHERE.png" alt="">
-  <p>Mivel mindkét "Kiss János" párosítható a másikkal, a <code>DISTINCT</code> nélkül duplikált sorok jelennek meg.
-    <img src="images/duplikaltKissJanos.png" alt="">  
-  Egy kis trükk: <code>d1.id &lt; d2.id</code>, így minden pár csak egyszer szerepel.</p>
+            <img src="images/descartes_dolgozoinilyvantartas.png" alt="">
 
-  <h3>Osztálynév megjelenítése</h3>
-  <p>Ha a feladat kéri az osztály nevét, szükség lesz az <code>osztaly</code> táblára is.  
-  Mivel csak a dolgozók <code>osztaly_id</code>-jához tartozó nevet kell lekérni, az <code>osztaly</code> táblát <strong>egyszer</strong> csatoljuk:</p>
+            <h3>WHERE feltételek és duplikáció</h3>
+            <img src="images/dolgozo_WHERE.png" alt="">
+            <p>Mivel mindkét "Kiss János" párosítható a másikkal, a <code>DISTINCT</code> nélkül duplikált sorok
+                jelennek meg.
+                <img src="images/duplikaltKissJanos.png" alt="">
+                Egy kis trükk: <code>d1.id &lt; d2.id</code>, így minden pár csak egyszer szerepel.
+            </p>
 
-  <pre class="code-container"><code class="language-python">
+            <h3>Osztálynév megjelenítése</h3>
+            <p>Ha a feladat kéri az osztály nevét, szükség lesz az <code>osztaly</code> táblára is.
+                Mivel csak a dolgozók <code>osztaly_id</code>-jához tartozó nevet kell lekérni, az <code>osztaly</code>
+                táblát <strong>egyszer</strong> csatoljuk:</p>
+
+            <pre class="code-container"><code class="language-python">
 SELECT d1.id, d1.nev, d1.fizetes, d2.id, d2.nev, d2.fizetes, osztalyok.osztaly_nev
 FROM dolgozok AS d1, dolgozok AS d2, osztalyok
 WHERE d1.nev = d2.nev
@@ -419,8 +478,9 @@ WHERE d1.nev = d2.nev
   AND d1.osztaly_id = d2.osztaly_id
   AND d1.osztaly_id = osztalyok.osztaly_id;
   </code></pre>
-</section>
-</main>
+        </section>
+    </main>
 
 </body>
+
 </html>
