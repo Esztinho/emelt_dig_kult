@@ -6,6 +6,10 @@
 }
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -39,7 +43,7 @@ ul {
 }
 
 main {
-    max-width: 1300px;
+    max-width: 100%;
     margin: auto;
     padding: 20px;
 }
@@ -695,4 +699,153 @@ footer {
         max-width: 100%; /* A kép soha ne legyen szélesebb, mint a szülőeleme */
         height: auto;    /* Az arányok megőrzése */
     }
+}
+
+.special-link {
+  list-style: none;
+    margin-top: 25px !important;
+    padding-left: 0 !important;
+}
+
+/* A gomb stílusa */
+.practice-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); 
+    color: white !important; /* Felülírja a sima link színt */
+    padding: 12px 20px;
+    border-radius: 50px; 
+    font-weight: bold !important;
+    font-size: 0.9rem !important;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.practice-btn:hover {
+    transform: translateY(-2px); /* Kicsit felemelkedik */
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+    color: #ffffff;
+}
+
+/* Opcionális: Apró pulzálás, hogy vonzza a szemet */
+@keyframes pulse-animation {
+    0% { box-shadow: 0 0 0 0px rgba(79, 70, 229, 0.4); }
+    100% { box-shadow: 0 0 0 15px rgba(79, 70, 229, 0); }
+}
+
+.practice-btn {
+    animation: pulse-animation 2s infinite;
+}
+
+#kvizek {
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.kviz-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.kviz-header h2 {
+    font-size: 2.5rem;
+    color: #2d3436;
+    margin-bottom: 10px;
+}
+
+.kviz-lista {
+    max-width: 1000px; /* Nagyobb méret az olvashatóságért */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* A kártya stílusa */
+.kviz-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.kviz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* A kattintható fejléc */
+summary {
+    padding: 25px 35px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+summary::-webkit-details-marker {
+    display: none; /* Chrome nyíl eltüntetése */
+}
+
+.kviz-icon {
+    font-size: 2rem;
+    margin-right: 20px;
+}
+
+.kviz-title {
+    flex-grow: 1;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2d3436;
+}
+
+.kviz-status {
+    background: #6c5ce7;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.kviz-card[open] .kviz-status {
+    background: #ff7675;
+    content: "Bezárás"; /* Megjegyzés: a tartalom váltáshoz JS kellene, de színnel is jelzünk */
+}
+
+/* Az iframe tárolója */
+.kviz-content {
+    padding: 0 20px 30px 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+iframe {
+    width: 100%;
+    border-radius: 15px;
+    border: 1px solid #e0e0e0;
+    box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* Animáció a lenyitáshoz */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobil optimalizálás */
+@media (max-width: 600px) {
+    summary { padding: 20px; }
+    .kviz-title { font-size: 1.1rem; }
+    .kviz-icon { font-size: 1.5rem; }
 }

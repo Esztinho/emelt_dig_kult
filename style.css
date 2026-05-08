@@ -178,3 +178,44 @@ button:hover {
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
+.special-link {
+  list-style: none;
+    margin-top: 25px !important;
+    padding-left: 0 !important;
+}
+
+/* A gomb stílusa */
+.practice-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); 
+    color: white !important; /* Felülírja a sima link színt */
+    padding: 12px 20px;
+    border-radius: 50px; 
+    font-weight: bold !important;
+    font-size: 0.9rem !important;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.practice-btn:hover {
+    transform: translateY(-2px); /* Kicsit felemelkedik */
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+    background: linear-gradient(135deg, #4338ca 0%, #6d28d9 100%);
+    color: #ffffff;
+}
+
+/* Opcionális: Apró pulzálás, hogy vonzza a szemet */
+@keyframes pulse-animation {
+    0% { box-shadow: 0 0 0 0px rgba(79, 70, 229, 0.4); }
+    100% { box-shadow: 0 0 0 15px rgba(79, 70, 229, 0); }
+}
+
+.practice-btn {
+    animation: pulse-animation 2s infinite;
+}
+
