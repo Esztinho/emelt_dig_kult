@@ -26,8 +26,7 @@
             </nav>
         </div>
     </header>
-    <main>
-
+    <section class="section-container">
 
         <div class="box">
             <h3><a href="sql/emeltszint/sql_feladatok_emelt.html">SQL gyakorló feladatok</a></h3>
@@ -221,7 +220,8 @@
             <p>A <code>GROUP BY</code> az SQL-ben lehetővé teszi, hogy az adatokat csoportosítsuk egy vagy több oszlop
                 értékei szerint. Általában aggregált függvényekkel (<code>SUM</code>, <code>AVG</code>,
                 <code>COUNT</code>, <code>MAX</code>, <code>MIN</code>) együtt használjuk, hogy az adatok
-                csoportosítva jelenjenek meg.</p>
+                csoportosítva jelenjenek meg.
+            </p>
 
             <h2>2. Szintaxis</h2>
             <pre class="code-container"><code class="language-sql"></code>SELECT oszlop1, oszlop2, osszesito_fuggveny*(oszlop3)
@@ -234,7 +234,8 @@ GROUP BY oszlop1, [oszlop2];</code></pre>
                 <li><code>oszlop1, [oszlop2]</code>: a csoportosítás alapja (ezek szerint csoportosítja a rekordokat,
                     ide több mezőt is megadhatunk).</li>
                 <li><code>osszesito_fuggveny</code>: pl. <code>SUM</code>, <code>AVG</code>, <code>COUNT</code>,
-                    <code>MAX</code>, <code>MIN</code>.</li>
+                    <code>MAX</code>, <code>MIN</code>.
+                </li>
                 <li><code>WHERE</code>: opcionális, a rekordok szűrésére a csoportosítás előtt.</li>
             </ul>
 
@@ -295,7 +296,8 @@ GROUP BY termek;</code></pre>
             </table>
 
             <p><strong>Magyarázat:</strong> A <code>termek</code> oszlop értékei szerint csoportosítottunk, és az
-                <code>SUM(mennyiseg)</code> kiszámolta az adott termékre vonatkozó mennyiségek összegét.</p>
+                <code>SUM(mennyiseg)</code> kiszámolta az adott termékre vonatkozó mennyiségek összegét.
+            </p>
 
             <h2>4. Tippek és fontos szabályok</h2>
             <ul>
@@ -305,7 +307,8 @@ GROUP BY termek;</code></pre>
                 </li>
                 <li>
                     <p class="tip"><strong>HAVING</strong>-et kell használni a csoportok szűrésére (ellentétben a
-                        <code>WHERE</code>-rel, ami a sorokat szűri!!!).</p>
+                        <code>WHERE</code>-rel, ami a sorokat szűri!!!).
+                    </p>
                 </li>
             </ul>
 
@@ -438,7 +441,8 @@ WHERE dolgozok.osztaly_id = osztalyok.osztaly_id
             <h3>Descartes-szorzat</h3>
             <p>Ha két táblát csak felsorolunk a <code>FROM</code>-ban, és nem adunk meg feltételt, az SQL
                 <strong>Descartes-szorzatot</strong> készít:
-                minden sor az első táblából összepárosul minden sorral a második táblából.</p>
+                minden sor az első táblából összepárosul minden sorral a második táblából.
+            </p>
             <img src="images/descartes.png" alt="">
             <ul>
                 <li>Példa: dolgozok 5 sor, osztaly 3 sor → 5 × 3 = 15 sor lesz.</li>
@@ -479,7 +483,8 @@ WHERE d1.nev = d2.nev
   AND d1.osztaly_id = osztalyok.osztaly_id;
   </code></pre>
         </section>
-    </main>
+    </section>
+
 
 </body>
 

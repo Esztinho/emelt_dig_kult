@@ -488,7 +488,7 @@ pre.code-container {
 }
 
 .practice-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
     margin-top: 15px;
 }
 
@@ -848,4 +848,30 @@ iframe {
     summary { padding: 20px; }
     .kviz-title { font-size: 1.1rem; }
     .kviz-icon { font-size: 1.5rem; }
+}
+
+
+
+/* Bevezető doboz stílusa */
+.intro-box {
+    background: #eef2ff;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 6px solid #4f46e5;
+    margin-bottom: 30px;
+}
+
+/* Ikonok színe */
+.practice-card h4 i {
+    color: #2563eb;
+    margin-right: 10px;
+}
+
+/* Megoldás gomb kiemelése */
+.practice-links a[href*="MO_"] {
+    background: #059669;
+}
+
+.practice-links a[href*="MO_"]:hover {
+    background: #047857;
 }
