@@ -47,7 +47,9 @@
         <li><a href="#forrasfajl-tipusok">Forrásfájlok típusai⚠️</a></li>
         <li><a href="#kereses">Keresés algoritmus</a></li>
         <li><a href="#fuggvenyek">Függvények</a></li>
+        <li><a href="#szomszedos-elemek">Egymás utáni elemek összehasonlítása</a></li>
         <li><a href="#erettsegik">Korábbi évek érettségi megoldásai</a></li>
+        <li><a href="#hibak">Gyakori hibák ⚠️</a></li>
         <li><a href="#feladatok">Gyakorló feladatok</a></li>
 
       </ul>
@@ -911,6 +913,39 @@ print(eredmeny)
 
 
       </section>
+
+      <section class="section-container" id="szomszedos-elemek">
+        <h2>Egymás utáni (szomszédos) elemek összehasonlítása</h2>
+        <p>💡 <strong>Mikor kell ez neked?</strong> Amikor a feladatban a lényeg a <strong>egymást utáni </strong>sorok
+          vizsgálata. Például: Lehagyta-e az
+          egyik autó a másikat? Átfedik-e egymást a táborok időpontjai? Növekedett-e a hőmérséklet a tegnapi naphoz
+          képest?
+        </p>
+        <p>Ilyenkor nem vizsgálhatod az elemeket önállóan (sima <code>for elem in lista:</code> ciklussal), mert a
+          gépnek egyszerre kell látnia az aktuális elemet és a mellette lévőt is!</p>
+        <p class="tip-box">Ilyen feladat volt: 2023 május ütemezés 7.feladata <a href="index.html#erettsegik">Katt
+            korábbi érettségik
+            megoldásáért ide</a>
+        </p>
+
+
+        <h3>Kidolgozott mintafeladat:</h3>
+        <p>Adott a heti hőmérséklet lista: <code>fokok = [20, 22, 19, 21, 21, 18, 17]</code></p>
+
+        <h4>Előrefelé nézünk (i és i+1)</h4>
+        <p>A ciklust korábban állítjuk meg (<code>len-1</code>), nehogy lefussunk a lista végéről a holnapi napot
+          keresve.</p>
+        <pre class="code-container"><code class="language-python">fokok = [20, 22, 19, 21, 21, 18, 17]
+
+# range(0, 6) -> Az utolsó index a 5-ös lesz (Szombat)
+for i in range(len(fokok) - 1):
+    ma = fokok[i]
+    holnap = fokok[i+1]
+    
+    if holnap < ma:
+        print(f"Lehűlés történt a(z) {i+1}. indexű napon! ({ma}°C -> {holnap}°C)")
+</code><button class="copy-btn">Másolás</button></pre>
+      </section>
       <section class="section-container" id="erettsegik">
 
         <h2>Korábbi évek érettségi feladatainak megoldásai</h2>
@@ -918,6 +953,11 @@ print(eredmeny)
         <div class="erettsegi-grid" id="erettsegi-container">
           <a href="index.html#erettsegik">KATT</a>
         </div>
+      </section>
+
+      <section class="section-container" id="hibak">
+        <h2>Gyakori hibák</h2>
+        <a href="index.html#hibak">KATT</a>
       </section>
 
 
