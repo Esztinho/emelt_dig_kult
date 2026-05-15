@@ -39,11 +39,12 @@
       <ul>
         <li><a href="#adattarolas">Adattárolás</a></li>
         <li><a href="#lista">Lista és listaműveletek</a></li>
-        <li><a href="#ingyen_pontok">"ingyen" pontok</a></li>
+        <li><a href="#ingyen_pontok">"ingyen" pontok ⚠️</a></li>
         <li><a href="#input">Input</a></li>
         <li><a href="#for">For ciklus</a></li>
         <li><a href="#algoritmusok">Alap algoritmusok</a></li>
         <li><a href="#fajlbeolvasas">Fájlbeolvasás</a></li>
+        <li><a href="#forrasfajl-tipusok">Forrásfájlok típusai⚠️</a></li>
         <li><a href="#kereses">Keresés algoritmus</a></li>
         <li><a href="#fuggvenyek">Függvények</a></li>
         <li><a href="#erettsegik">Korábbi évek érettségi megoldásai</a></li>
@@ -205,7 +206,7 @@ print(f"Az utolsó rögzített adat: {adatok[-1]}")</code><button class="copy-bt
 
       <section class="section-container" id="input">
         <details>
-          <summary>input() függvény</summary>
+          <summary>▶ input() függvény</summary>
 
           <p>
             Az <strong>input()</strong> függvény lehetővé teszi, hogy a felhasználó adatot adjon meg a program futása
@@ -302,7 +303,7 @@ Jelenlegi háromszög: [10, 4, 7]
           ⇩ Ha még kezdő vagy, akkor rágd át ezt a részt is!! ⇩
         </div>
         <details>
-          <summary>For ciklus részletesen</summary>
+          <summary>▶ For ciklus részletesen</summary>
 
           <p>
             A <strong>for ciklus</strong> egy iteratív vezérlési szerkezet, amely lehetővé teszi,
@@ -393,7 +394,7 @@ for kulcs in adatok:
 
       <section class="section-container" id="algoritmusok">
         <details>
-          <summary>Alap algoritmusok</summary>
+          <summary>▶ Alap algoritmusok (Kattints a részletekért...)</summary>
           <p>Az érettségi programozási feladatok szinte mindig tartalmaznak alap algoritmusokat. Ezek biztos ismerete
             kulcsfontosságú.</p>
 
@@ -498,18 +499,18 @@ for szam in szamok:
       </section>
 
       <section class="section-container" id="fajlbeolvasas">
-        <details>
-          <summary>Fájlbeolvasás és szótár használata</summary>
+        <h2>Fájlbeolvasás és szótár használata</h2>
 
-          <p>
-            A fájl beolvasása és feldolgozása Pythonban alapvető feladat a gyakorlati érettségin.
-            A szótárak segítségével az adatok kezelése sokkal átláthatóbbá válik, így később nem kell
-            indexekkel bajlódni.
-          </p>
 
-          <h3>Fájl megnyitása és sorokra bontás</h3>
+        <p>
+          A fájl beolvasása és feldolgozása Pythonban alapvető feladat a gyakorlati érettségin.
+          A szótárak segítségével az adatok kezelése sokkal átláthatóbbá válik, így később nem kell
+          indexekkel bajlódni.
+        </p>
 
-          <pre class="code-container"><code class="language-python">
+        <h3>Fájl megnyitása és sorokra bontás</h3>
+
+        <pre class="code-container"><code class="language-python">
 file = open("taborok.txt", "r", encoding="utf-8").read().splitlines()
 
 # .read() → Az egész fájlt egy szövegként olvassa be
@@ -518,13 +519,13 @@ file = open("taborok.txt", "r", encoding="utf-8").read().splitlines()
   </code><button class="copy-btn">Másolás</button></pre>
 
 
-          <h3>Lista létrehozása a feldolgozott adatoknak</h3>
+        <h3>Lista létrehozása a feldolgozott adatoknak</h3>
 
-          <p>
-            A fájl sorait szótárakba rendezzük, így a kód érthetőbb és könnyebben kezelhető lesz.
-          </p>
+        <p>
+          A fájl sorait szótárakba rendezzük, így a kód érthetőbb és könnyebben kezelhető lesz.
+        </p>
 
-          <pre class="code-container"><code class="language-python">
+        <pre class="code-container"><code class="language-python">
 taborok = []
 
 for line in file:
@@ -542,61 +543,160 @@ print(taborok)
   </code><button class="copy-btn">Másolás</button></pre>
 
 
-          <p>
-            Így a <code>taborok</code> lista minden eleme egy szótár, amely tartalmazza a tábor adatait.
-          </p>
-          <h2>Fontos: az első sor külön kezelése!!</h2>
+        <p>
+          Így a <code>taborok</code> lista minden eleme egy szótár, amely tartalmazza a tábor adatait.
+        </p>
+        <h2>Fontos: az első sor külön kezelése!!</h2>
 
-          <p>
-            A fájl első sora gyakran valamilyen összesítő adatot tartalmaz
-            (például egy darabszámot).
-          </p>
+        <p>
+          A fájl első sora gyakran valamilyen összesítő adatot tartalmaz
+          (például egy darabszámot).
+        </p>
 
 
-          <p>
-            Mivel a beolvasott adatok listában vannak tárolva, az első elem
-            indexe 0. Amennyiben számként szeretnénk használni az értéket,
-            szükséges az <code>int()</code> típusátalakítás.
-          </p>
+        <p>
+          Mivel a beolvasott adatok listában vannak tárolva, az első elem
+          indexe 0. Amennyiben számként szeretnénk használni az értéket,
+          szükséges az <code>int()</code> típusátalakítás.
+        </p>
 
-          <pre class="code-container"><code class="language-python">
+        <pre class="code-container"><code class="language-python">
 agyasok_szama = int(file[0])
     </code></pre>
 
-          <h2>A további sorok feldolgozása</h2>
+        <h2>A további sorok feldolgozása</h2>
 
-          <p>
-            A második sortól kezdődnek a tényleges adatok. Ezeket egy ciklus
-            segítségével dolgozzuk fel.
-          </p>
-          <pre class="code-container"><code class="language-python">
+        <p>
+          A második sortól kezdődnek a tényleges adatok. Ezeket egy ciklus
+          segítségével dolgozzuk fel.
+        </p>
+        <pre class="code-container"><code class="language-python">
 for sor in file[1:]:
       #folytatás ugyanúgy a fentiek szerint
     </code></pre>
 
-          <p><strong>Magyarázat:</strong></p>
-          <ul>
-            <li>A <code>file[1:]</code> a lista második elemétől a végéig tartó rész.</li>
-            <li>Az első sort így kihagyjuk a feldolgozásból.</li>
-            <li>A ciklus minden egyes adatsort külön kezel.</li>
-          </ul>
+        <p><strong>Magyarázat:</strong></p>
+        <ul>
+          <li>A <code>file[1:]</code> a lista második elemétől a végéig tartó rész.</li>
+          <li>Az első sort így kihagyjuk a feldolgozásból.</li>
+          <li>A ciklus minden egyes adatsort külön kezel.</li>
+        </ul>
 
 
 
-          <h3>Összegzés</h3>
-          <ul>
-            <li><strong>Érthetőbb kód:</strong> kulcsok használata indexek helyett</li>
-            <li><strong>Egyszerű hozzáférés:</strong> az adatok nevekkel érhetők el</li>
-            <li><strong>Rugalmasabb:</strong> könnyebb később módosítani</li>
-            <li><strong>Összetett adatok kezelése:</strong> listák és szótárak kombinálása</li>
-          </ul>
+        <h3>Összegzés</h3>
+        <ul>
+          <li><strong>Érthetőbb kód:</strong> kulcsok használata indexek helyett</li>
+          <li><strong>Egyszerű hozzáférés:</strong> az adatok nevekkel érhetők el</li>
+          <li><strong>Rugalmasabb:</strong> könnyebb később módosítani</li>
+          <li><strong>Összetett adatok kezelése:</strong> listák és szótárak kombinálása</li>
+        </ul>
+
+      </section>
+
+      <section class="section-container" id="forrasfajl-tipusok">
+        <details>
+          <summary> ▶ Milyen típusú forrásfájlok jöhetnek? ⚠️</summary>
+          <p>Az érettségin a szöveges fájlok (.txt) szerkezete alapvetően <strong>három fő típusba</strong> sorolható.
+            Ha első lépésként felismered, melyikkel van dolgod, nyert ügyed van!</p>
+
+          <hr>
+
+          <!-- 1. TÍPUS: EGYSZERŰ / EGYDIMENZIÓS LISTA -->
+          <div class="forras-tipus">
+            <h3>1. Egyszerű lista (Egy sor = egyetlen adat)</h3>
+            <p><strong>Jellemzője:</strong>az ilyeneknél nem érdemes szótárokban eltárolni őket, hiszen nem lesz rá
+              szükség hogy megkülönböztessük, mivel mindegyik ugyanolyan típusú adat úgymond, ilyen esetben elég a
+              beolvasott fájlt egyetlen listában eltárolni: (pl. napi
+              mért hőmérsékletek, jégvastagság, szavak listája).</p>
+
+            <p><em>Példa a fájlra (melyseg.txt):</em></p>
+            <pre class="code-container"><code>120
+145
+98
+210</code></pre>
+
+            <p><em>A beolvasás logikája:</em></p>
+            <pre class="code-container"><code class="language-python"># Elég egy sima listába tölteni, és azonnal számmá (int/float) alakítani, ha szükséges!
+file = open("melyseg.txt", "r", encoding="utf-8").read().splitlines()
+melysegek = []
+for line in file:
+    melysegek.append(int(line))
+</code><button class="copy-btn">Másolás</button></pre>
+          </div>
+
+          <hr>
+
+          <!-- 2. TÍPUS: KLASSZIKUS TÁBLÁZATOS -->
+          <div class="forras-tipus">
+            <h3>2. Sima táblázatos (Egy sor = több különböző adat)</h3>
+            <p><strong>Jellemzője:</strong> Ez a leggyakoribb. Egy sor egy teljes "rekordot" (egyedet) jelent, az
+              adatokat valamilyen elválasztó karakter (szóköz, tabulátor("\t"), vagy pontosvessző)
+              választja el egymástól. Itt <strong>kötelező a split()</strong> és célszerű a szótár
+              használata.</p>
+
+            <p><em>Példa a fájlra (diakok.txt - szóközökkel elválasztva):</em></p>
+            <pre class="code-container"><code>Kovacs_Anna 11A 4.52
+Nagy_Peter 10B 3.81</code></pre>
+
+            <p><em>A beolvasás logikája:</em></p>
+            <pre class="code-container"><code class="language-python">diakok = []
+file = open("diakok.txt", "r", encoding="utf-8").read().splitlines()
+for line in file:
+    line = line.split(" ") # Feldaraboljuk a sort az elválasztó karakter mentén
+    # a sorokkal a következő fog történni:
+    # "Kovacs_Anna 11A 4.52"  --> ["Kovacs_Anna", "11A", "4.52"]
+    diak = {}
+    diak["nev"] = line[0]
+    diak["osztaly"] = line[1]
+    diak["atlag"] = float(line[2])  # Azonnal átalakítjuk a megfelelő típusra!
+        
+    diakok.append(diak)
+</code><button class="copy-btn">Másolás</button></pre>
+          </div>
+
+          <hr>
+
+          <!-- 3. TÍPUS: CIKLIKUS / BLOKKOS -->
+          <div class="forras-tipus">
+            <h3>3. Ciklikusan ismétlődő (Több sor = egyetlen egyed)</h3>
+            <p><strong>Jellemzője:</strong> Az adatok nem egymás mellett, hanem egymás alatt, fix méretű blokkokban
+              ismétlődnek. Egy objektum adatai több különálló sorból állnak össze (pl. a 2020 októberi Sorozatok). <br>
+              Itt
+              egy
+              <strong>átmeneti (puffer) listát</strong> használunk a blokkok figyelésére.
+            </p>
+
+            <p><em>Példa a fájlra (sorozat.txt - 3 soros blokkok):</em></p>
+            <pre class="code-container"><code>2024.11.12    <-- 1. adat (dátum)
+Trónok Harca  <-- 2. adat (cím)
+01x04         <-- 3. adat (rész)</code></pre>
+
+            <p><em>A beolvasás logikája:</em></p>
+            <pre class="code-container"><code class="language-python">
+file = open("sorozat.txt", "r", encoding="utf-8").read().splitlines()
+adatok = []
+ideiglenes_lista = []
+
+for line in file:
+    ideiglenes_lista.append(line)
+    if len(ideiglenes_lista) == 3: # Ha összegyűlt a blokk (itt 3 sor)
+        sorozat = {}
+        sorozat["datum"] = ideiglenes_lista[0]
+        sorozat["cim"] = ideiglenes_lista[1]
+        sorozat["resz"] = ideiglenes_lista[2]
+        
+        adatok.append(sorozat)
+        ideiglenes_lista = [] # A kosarat kiürítjük a következő blokknak!
+</code><button class="copy-btn">Másolás</button></pre>
+          </div>
+
         </details>
       </section>
 
-
       <section class="section-container" id="kereses">
         <details>
-          <summary>Keresés algoritmus</summary>
+          <summary>▶ Keresés algoritmus</summary>
 
           <p>
             Gyakori feladat egy adott értékhez tartozó adatoknak a megkeresése.
@@ -617,7 +717,8 @@ for sor in file[1:]:
             A felhasználótól bekérjük egy tábor témáját, majd megkeressük,
             hogy mikor kezdődik az adott tábor.
           </p>
-          <p>Továbbá feladat az is, hogy ha nincs ilyen témájú tábor, amilyet a user megadott, akkor írjunk ki neki egy
+          <p>Továbbá feladat az is, hogy ha nincs ilyen témájú tábor, amilyet a user megadott, akkor írjunk ki neki
+            egy
             tájékoztató üzenetet!</p>
 
           <pre class="code-container"><code class="language-python">
@@ -662,7 +763,7 @@ if talalat == False:  #vagy írhatom így is: if not talalat:
       <section class="section-container" id="fuggvenyek">
         <span class="badge">Fejlesztés alatt</span>
         <details>
-          <summary>Függvények</summary>
+          <summary>▶ Függvények</summary>
           <h2>Fogalma</h2>
           <p>
             A függvény egy olyan kódrészlet, amely [bemenet(ek)] alapján kiszámol valamit, majd az eredményt
@@ -791,13 +892,17 @@ print(eredmeny)
               könnyen újrahasználható.</li>
             <li><strong>Használj paramétereket:</strong> Így a függvény rugalmas lesz, és nem kell minden esetben új
               kódot írni.</li>
-            <li><strong>Ne feledd a <code>return</code>-t:</strong> Ha a függvény valamilyen eredményt ad vissza, mindig
+            <li><strong>Ne feledd a <code>return</code>-t:</strong> Ha a függvény valamilyen eredményt ad vissza,
+              mindig
               használd a <code>return</code>-t.</li>
-            <li><strong>Dokumentáld röviden:</strong> Hasznos lehet a függvény fölé rövid kommentet írni a működéséről.
+            <li><strong>Dokumentáld röviden:</strong> Hasznos lehet a függvény fölé rövid kommentet írni a
+              működéséről.
             </li>
-            <li><strong>Próbáld ki különböző bemenetekkel:</strong> Teszteld a függvényedet, hogy biztosan jól működjön
+            <li><strong>Próbáld ki különböző bemenetekkel:</strong> Teszteld a függvényedet, hogy biztosan jól
+              működjön
               minden esetre.</li>
-            <li><strong>Ne másold a kódot többször:</strong> Használd a függvényt, így a programod rendezett és könnyen
+            <li><strong>Ne másold a kódot többször:</strong> Használd a függvényt, így a programod rendezett és
+              könnyen
               karbantartható lesz.</li>
           </ul>
 
