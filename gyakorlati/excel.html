@@ -42,6 +42,7 @@
 
                 <li><a href="#index-holvan">Keresés: INDEX és HOL.VAN</a></li>
                 <li><a href="#xkeres">Keresés: XKERES()</a></li>
+                <li><a href="#rang-egy-fuggveny">RANG.EGY()</a></li>
                 <li><a href="#logikai-agyazas">Egymásba ágyazott logikai függvények</a></li>
                 <li><a href="#szovegmanipulacio">Szövegmanipuláció</a></li>
                 <li><a href="#kerekites-trukkok">Kerekítés trükkök</a></li>
@@ -610,6 +611,50 @@
                     keresés
                     alapján (balra keresés),
                     amit a hagyományos FKERES függvénnyel trükközés nélkül nem lehetne megoldani.
+                </p>
+            </section>
+
+            <section id="rang-egy-fuggveny">
+                <h1>Rangsorolás az Excelben</h1>
+
+                <h2>A RANG.EGY() függvény működése</h2>
+                <p>
+                    A RANG.EGY() függvény kiszámítja, hogy egy szám a nagysága alapján hányadik helyet foglalja el egy
+                    számsorozatban (toplistát készít).
+                    Ha a listában több azonos érték szerepel, a függvény mindegyiknek ugyanazt a legfelső helyezést adja
+                    vissza.
+                    Használatával anélkül állíthatunk fel rangsort, hogy az eredeti táblázatunkat sorba kellene
+                    rendeznünk.
+                </p>
+
+                <h3>Szintaxis és argumentumok</h3>
+                <p>
+                    <strong>RANG.EGY(szám; hiv; [sorrend])</strong>
+                </p>
+                <ul>
+                    <li><strong>szám:</strong> Kötelező. Az a konkrét cella vagy érték, amelynek a helyezését keressük.
+                    </li>
+                    <li><strong>hiv:</strong> Kötelező. A teljes számsorozatot tartalmazó tartomány (a lista), amihez a
+                        számot hasonlítjuk. </li>
+                    <li><strong>sorrend:</strong> Opcionális. Ha az értéke 0 vagy hiányzik, a legnagyobb szám lesz az 1.
+                        helyezett (csökkenő sorrend). 0-tól különbözőt megadva a sorrend növekvő lesz, tehát a legkisebb
+                        szám lesz az 1.</li>
+                </ul>
+
+                <h3>Gyakorlati példa a használatra</h3>
+                <p>
+                    Tegyük fel, hogy az A2:A10-es cellákban egy futóverseny időeredményei szerepelnek másodpercben, és a
+                    B2-es cellában szeretnénk megállapítani az A2-es cellában lévő futó helyezését.
+                    Mivel a futóversenyen a legkisebb időeredmény a legjobb (a leggyorsabb nyer), a növekvő rangsorolást
+                    kell alkalmaznunk, így a harmadik argumentum helyére 1-est írunk:
+                </p>
+                <p>
+                    <code>=RANG.EGY(A2; $A$2:$A$10; 1)</code>
+                </p>
+                <p>
+                    A képlet lefelé másolásával a $ jelek miatt a vizsgált tartomány fixen az A2:A10 marad, miközben az
+                    első argumentum automatikusan változik (A3, A4 stb.), pontosan meghatározva az összes többi
+                    versenyző helyezését is.
                 </p>
             </section>
 

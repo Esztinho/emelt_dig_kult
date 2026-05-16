@@ -956,9 +956,167 @@ for i in range(len(fokok) - 1):
         </div>
       </section>
 
-      <section class="section-container" id="hibak">
-        <h2>Gyakori hibák</h2>
-        <a href="index.html#hibak">KATT</a>
+      <section id="hibak">
+        <h2>⚠️ Gyakori hibák és hogyan kerüld el őket</h2>
+
+        <!-- 1. HIBA -->
+        <div class="hiba-leiras">
+          <h3>1. "volt-e ilyen típusú egyed/dolog/könyv.."</h3>
+          <p><strong>Feladat: HA NEM VOLT ZENEI TÁBOR, ÍRJA KI: "Nem volt zenei tábor"</strong></p>
+          <p><strong>A hiba:</strong> Sok diák a <code>for</code> ciklus belsejébe teszi az <code>else</code>
+            ágat. Ha a fájlban 30 tábor van, és csak az egyik zenei, akkor 29-szer fogja kiírni a
+            hibaüzenetet.</p>
+
+          <pre class="code-container"><code class="language-python"># ROSSZ MEGOLDÁS
+for tabor in taborok:
+    if tabor["tema"] == "zenei":
+        print("Van zenei!")
+    else:
+        print("Nem volt zenei tábor") # Ez minden nem zenei sornál lefut!
+</code><button class="copy-btn">Másolás</button></pre>
+
+          <p><strong>A helyes út:</strong> Használj egy változót (kapcsolót), ami alaphelyzetben
+            <code>False</code>. Ha találsz egy egyezést, állítsd <code>True</code> értékre, majd a ciklus
+            után vizsgáld meg.
+          </p>
+
+          <pre class="code-container"><code class="language-python"># HELYES MEGOLDÁS
+volt_e = False
+for tabor in taborok:
+    if tabor["tema"] == "zenei":
+        print(f"Zenei tábor kezdődik: {tabor['tol_nap']}")
+        volt_e = True
+
+if volt_e == False:
+    print("Nem volt zenei tábor.")
+</code><button class="copy-btn">Másolás</button></pre>
+        </div>
+
+        <hr>
+
+        <!-- 2. HIBA -->
+        <div class="hiba-leiras">
+          <h3>2. "Szöveg vs. Szám" (Típuskonverzió)</h3>
+          <p><strong>A hiba:</strong> A beolvasott adatok szövegként (string) érkeznek. Ha nem alakítod át
+            őket, a matematikai műveletek vagy összehasonlítások hibás eredményt adnak.</p>
+
+          <pre class="code-container"><code class="language-python"># ROSSZ MEGOLDÁS
+nap = "15"
+print(nap + 1) # TypeError: can only concatenate str to str
+</code><button class="copy-btn">Másolás</button></pre>
+
+          <p><strong>Tanács:</strong> Már a szótár feltöltésekor használd az <code>int()</code> függvényt!</p>
+
+          <pre class="code-container"><code class="language-python"># HELYES MEGOLDÁS
+tabor["tol_nap"] = int(adat[1]) # Így később számként kezelheted
+</code><button class="copy-btn">Másolás</button></pre>
+          <p><strong>Ha pedig be kell kérni a felhasználótól az adatot és egy SZÁM-ot várunk:</strong></p>
+          <pre class="code-container"><code class="language-python"># HELYES MEGOLDÁS
+bekert_nap = int(input("kérem adjon meg egy napot:"))
+</code><button class="copy-btn">Másolás</button></pre>
+        </div>
+
+        <hr>
+
+        <!-- 3. HIBA -->
+        <div class="hiba-leiras">
+          <h3>3. Maximumkeresés két lépcsőben</h3>
+          <p><strong>A hiba:</strong> Csak az első legnépszerűbb tábort találod meg, pedig több azonos
+            létszámú is lehet.</p>
+
+          <pre class="code-container"><code class="language-python"># HELYES LOGIKA
+max_letszam = 0
+for tabor in taborok:
+    if len(tabor["nevek"]) > max_letszam:
+        max_letszam = len(tabor["nevek"])
+
+for tabor in taborok:
+    if len(tabor["nevek"]) == max_letszam:
+        print(f"Legnépszerűbb: {tabor['tema']}")
+</code><button class="copy-btn">Másolás</button></pre>
+        </div>
+
+        <hr>
+
+        <!-- 4. HIBA -->
+        <div class="hiba-leiras">
+          <h3>4. Bonyolult időpontkezelés (Óra:Perc)</h3>
+          <p><strong>A hiba:</strong> Sokan megpróbálják külön-külön vizsgálni az órát és a percet (pl.
+            <code>if óra > határ_óra or (óra == határ_óra and perc > határ_perc)</code>). Ez rendkívül
+            átláthatatlan és könnyű benne hibázni.
+          </p>
+
+          <p><strong>A megoldás:</strong> Írj egy <code>percbe()</code> függvényt, ami mindent percekre vált
+            át az éjfél óta eltelt idő alapján. Így az időpontok egyszerű számokká válnak, amikkel már
+            könnyű dolgozni.</p>
+
+          <pre class="code-container"><code class="language-python"># A FÜGGVÉNY: Mindent egyetlen számmá alakítunk
+def percbe(ora, perc):
+    return ora * 60 + perc
+
+# ALKALMAZÁS: Mikor követte egyik időpont a másikat?
+ido1 = percbe(10, 20) # 10:20 -> 620 perc
+ido2 = percbe(12, 05) # 12:05 -> 725 perc
+
+if ido2 > ido1:
+    print("A második időpont később volt, mint az első.")
+
+# INTERVALLUM VIZSGÁLATA: Benne van-e a megadott időpont(jelen esetben:ó és p változókban) 8:00 és 16:00 közötti intervallumban?
+o = 11
+p = 12
+if percbe(8, 0) <= percbe(o, p) <= percbe(16, 0):
+    print("Munkaidőben történt.")
+</code><button class="copy-btn">Másolás</button></pre>
+
+          <p><strong>Miért jobb ez?</strong> Mert a percekre váltás után nem kell többé az "óraátlépéssel"
+            foglalkoznod, egyetlen matematikai összehasonlítással eldönthető bármilyen időrendi kérdés.</p>
+        </div>
+
+        <hr>
+
+        <!-- 5. HIBA -->
+        <div class="hiba-leiras">
+          <h3>5. Időpont visszaváltása (Percekből Óra:Perc)</h3>
+          <p><strong>A feladat:</strong> Kiszámoltad, hogy egy esemény 725 perccel éjfél után történt. Hogyan
+            írod ezt ki oo:pp formátumban?</p>
+
+          <p><strong>A megoldás:</strong> Használd az egészosztást (<code>//</code>) az órához és a modulo
+            (<code>%</code>) műveletet a maradék percekhez.</p>
+
+          <pre class="code-container"><code class="language-python">osszes_perc = 725
+
+# Egészosztás: hányszor van meg benne a 60?
+ora = osszes_perc // 60  # Eredmény: 12
+
+# Maradékos osztás: mi marad az órák levonása után?
+perc = osszes_perc % 60  # Eredmény: 5
+
+# KIÍRÁS: Figyelj a vezető nullára!
+print(f"Az időpont: {ora}:{perc:02d}")  # :02d jelentése: egész szám (d), legalább 2 számjegyen (2), szükség esetén vezető nullával (0) kitöltve
+# Kimenet: 12:05
+</code><button class="copy-btn">Másolás</button></pre>
+
+          <p><strong>Pro tipp:</strong> A <code>:02d</code> formázás a f-stringben gondoskodik arról, hogy ha
+            a perc kevesebb, mint 10 (pl. 5), akkor is két számjeggyel írja ki (<code>05</code>), ne pedig
+            <code>12:5</code> legyen az eredmény, amiért pontlevonás járhat.
+          </p>
+        </div>
+
+        <hr>
+
+        <!-- 6. HIBA -->
+        <div class="hiba-leiras">
+          <h3>6. Lista túlindexelés (IndexError)</h3>
+          <p>Milyen típusú feladatoknál fordulhat ez elő? <a href="programozas.html#szomszedos-elemek">Katt</a></p>
+          <p><strong>A hiba:</strong> Az <code>i+1</code> elem vizsgálatakor a ciklus kifut a listából.</p>
+
+          <pre class="code-container"><code class="language-python"># HELYES MEGOLDÁS
+# A len()-1 biztosítja, hogy az utolsó elemnél ne akarjon továbblépni
+for i in range(len(diak_taborai) - 1):
+    vege = sorszam(diak_taborai[i]["ig_honap"], diak_taborai[i]["ig_nap"])
+    kov_kezdete = sorszam(diak_taborai[i+1]["tol_honap"], diak_taborai[i+1]["tol_nap"])
+</code><button class="copy-btn">Másolás</button></pre>
+        </div>
       </section>
 
 
