@@ -587,3 +587,45 @@ button:hover {
   border-top: 1px solid #edf2f7; /* Halvány szürke, nem tolakodó vonal */
 }
 
+/* ==========================================================================
+   12. WORDWALL TANULÓKÁRTYÁK BEÁGYAZÁSA (Iframe reszponzivitás)
+   ========================================================================== */
+
+/* A beágyazott tartalom címe és leírása */
+.kviz-header p {
+  color: #4a5568;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* Rugalmas burkoló doboz az iframe köré, ami fixálja a képarányt */
+.iframe-container {
+  position: relative;
+  width: 100%;
+  max-width: 650px;     /* Maximális szélesség asztali gépen */
+  margin: 0 auto 20px auto;
+  padding-bottom: 56.25%; /* 16:9-es modern képarány biztosítása */
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;  /* Szép, lekerekített sarkok a játékablaknak */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #edf2f7;
+}
+
+/* Maga a beágyazott WordWall ablak, ami kitölti a fenti rugalmas dobozt */
+.iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: none;
+}
+
+/* Mobilos finomhangolás, hogy kisebb kijelzőn se legyen túl magas */
+@media (max-width: 600px) {
+  .iframe-container {
+    padding-bottom: 75%; /* Mobilon 4:3-as arányra váltunk, hogy jobban látszódjanak a kártyák */
+    border-radius: 8px;
+  }
+}
