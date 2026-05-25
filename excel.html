@@ -1,234 +1,244 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
   <meta charset="UTF-8">
-  <title>Excel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background-color: #c6d2be;
-      font-family: 'Patrick Hand', cursive;
-      margin: 10px;
-      padding: 2rem;
-      font-size: large;
-    }
-    h1 {
-      text-align: center;
-    }
-    h2{
-      background-color: #efeeea;
-    }
-
-    .note-paper {
-      background: #fff ;
-      border: 1px solid #ccc;
-      padding: 2rem;
-      margin: 20px;
-      max-width: 80%;
-      line-height: 1.6;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      min-height: 200px;
-    }
-    .question{
-      background-color: #fdf6e3;
-    }
-     code {
-      background-color: #f0f0f0;
-      padding: 2px 5px;
-      border-radius: 4px;
-      font-family: monospace;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel – Táblázatkezelés</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <h1>Táblázatkezelés</h1>
-  <h2>A táblázatkezelés alapjai</h2>
-  <div class="note-paper">
-    
 
-    <h2>Ismert adattípusok</h2>
-    <p>A táblázatkezelő celláiban három alapvető adattípust különböztetünk meg: szám, szöveg és logikai érték.</p>
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">Főoldal</a>
+      <nav class="main-nav">
+        <a href="adatbazis_kezeles.html">SQL</a>
+        <a href="pixelgrafika.html">Pixelgrafika</a>
+        <a href="vektorgrafika.html">Vektorgrafika</a>
+        <a href="programozas.html">Programozás</a>
+        <a href="weblap_keszites.html">Weblap</a>
+      </nav>
+    </div>
+  </header>
 
-    <ul>
-      <li>
-        <strong>Szám (Number):</strong> Tetszőleges numerikus érték, amely lehet egész vagy valós szám.
-        <ul>
-          <li><strong>Dátum és idő:</strong> A dátumokat és időpontokat a rendszer valós számként tárolja.</li>
-          <li>A szám <em>egész része</em> a dátumot, a <em>tört része</em> az időt jelenti.</li>
-          <strong>Példa:</strong> 44500,5 → 2021.09.15. 12:00
-          <li>A dátum a táblázatkezelő kezdőnapjától eltelt napok számát jelenti (pl. 1900. január 1. az Excel esetén).</li>
-          <li><strong>Százalékformátum:</strong> A szám százszorosát jeleníti meg, és százalékjellel egészíti ki.</li>
-          <strong>Példa:</strong> Az <code>0,25</code> érték százalékformátumban <code>25%</code>-ként jelenik meg.
-        </ul>
-      </li>
+  <nav class="sidebar">
+    <h3>Táblázatkezelés</h3>
+    <a href="#adattipusok">Ismert adattípusok</a>
+    <a href="#cellahivatkozasok">Cellahivatkozások</a>
+    <a href="#kifejezesek">Kifejezések & Műveletek</a>
+    <a href="#formazas">Formázási beállítások</a>
+    <a href="#diagramok">Diagramok és típusok</a>
+    <a href="#fuggvenyalapok">Függvények alapjai</a>
+    <a href="#fuggvenytipusok">Függvénytípusok</a>
+    <a href="#adathalmazok">Nagy adathalmazok</a>
+    <a href="#felteteles-formazas">Feltételes formázás</a>
+    <a href="#ellenorzokerdesek">Ellenőrző kérdések</a>
+  </nav>
 
-      <li>
-        <strong>Szöveg (Text):</strong> Betűkből, számokból és speciális karakterekből álló adat. A szöveges értékeket nem lehet számításra használni, és alapértelmezetten balra igazítottak.
-      </li>
+  <div class="tartalom">
+    <h1>Táblázatkezelés</h1>
 
-      <li>
-        <strong>Logikai (Boolean):</strong> Kétféle értéket vehet fel: <code>IGAZ (TRUE)</code> vagy <code>HAMIS (FALSE)</code>. Jellemzően feltételes függvények és logikai műveletek során használjuk.
-      </li>
-    </ul>
+    <section id="adattipusok">
+      <h2>Ismert adattípusok</h2>
+      <p>A táblázatkezelő celláiban három alapvető adattípust különböztetünk meg: szám, szöveg és logikai érték.</p>
+      <ul>
+        <li>
+          <strong>Szám (Number):</strong> Tetszőleges numerikus érték, amely lehet egész vagy valós szám.
+          <ul>
+            <li><strong>Dátum és idő:</strong> A dátumokat és időpontokat a rendszer valós számként tárolja. A szám
+              <em>egész része</em> a dátumot, a <em>tört része</em> az időt jelenti. <br><em>Példa:</em>
+              <code>44500,5</code> → 2021.09.15. 12:00</li>
+            <li>A dátum a táblázatkezelő kezdőnapjától eltelt napok számát jelenti (pl. 1900. január 1. az Excel
+              esetén).</li>
+            <li><strong>Százalékformátum:</strong> A szám százszorosát jeleníti meg, és százalékjellel egészíti ki.
+              <br><em>Példa:</em> Az <code>0,25</code> érték százalékformátumban <code>25%</code>-ként jelenik meg.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Szöveg (Text):</strong> Betűkből, számokból és speciális karakterekből álló adat. A szöveges értékeket
+          nem lehet számításra használni, és alapértelmezetten balra igazítottak.
+        </li>
+        <li>
+          <strong>Logikai (Boolean):</strong> Kétféle értéket vehet fel: <code>IGAZ (TRUE)</code> vagy
+          <code>HAMIS (FALSE)</code>. Jellemzően feltételes függvények és logikai műveletek során használjuk.
+        </li>
+      </ul>
+    </section>
+
+    <section id="cellahivatkozasok">
+      <h2>Cellahivatkozások</h2>
+      <p>A képletek másolásakor a cellahivatkozások viselkedése határozza meg a számítások pontosságát:</p>
+      <ol>
+        <li><strong>Relatív hivatkozás (A1):</strong> A képletet másolva a hivatkozás automatikusan igazodik az új
+          helyhez a sorok vagy oszlopok eltolódásának megfelelően.</li>
+        <li><strong>Abszolút hivatkozás ($A$1):</strong> A dollárjelek rögzítik a hivatkozást, így a képlet másolásakor
+          a hivatkozott cella pozíciója teljesen változatlan marad.</li>
+        <li><strong>Vegyes hivatkozás ($A1 vagy A$1):</strong> Vagy az oszlop, vagy a sor van rögzítve egy dollárjellel,
+          miközben a másik koordináta szabadon változik a másolás során.</li>
+      </ol>
+    </section>
+
+    <section id="kifejezesek">
+      <h2>Kifejezések összeállítása</h2>
+      <p>Kifejezések segítségével végezhetünk számításokat és műveleteket a táblázatkezelőben. Az alapvető matematikai
+        műveleteken kívül logikai és szövegfüggvényeket is használhatunk.</p>
+      <h3>Példák alapvető képletekre:</h3>
+      <ul>
+        <li>Összeadás: <code>=A1 + B1</code></li>
+        <li>Kivonás: <code>=A1 - B1</code></li>
+        <li>Szorzás: <code>=A1 * B1</code></li>
+        <li>Osztás: <code>=A1 / B1</code></li>
+        <li>Feltételes függvény: <code>=HA(A1 > B1; "Nagyobb"; "Kisebb")</code></li>
+        <li>Dátumok különbsége: <code>=A1 - A2</code> (napok számát adja vissza, ha mindkét cella dátumot tartalmaz)
+        </li>
+      </ul>
+    </section>
+
+    <section id="formazas">
+      <h2>Formázási beállítások táblázatkezelőben</h2>
+      <p>A táblázatkezelők számos formázási lehetőséget kínálnak, hogy az adatok jól olvashatók és esztétikusak
+        legyenek:</p>
+      <ul>
+        <li><span class="highlight">Szövegformázás:</span> Betűtípus, betűméret, félkövér, dőlt és aláhúzott stílusok.
+        </li>
+        <li><span class="highlight">Színezés:</span> Cellák háttérszíne (kitöltés) és a megjelenített szöveg egyedi
+          színe.</li>
+        <li><span class="highlight">Szegélyek:</span> Cellák körüli rácsvonalak, keretek és azok stílusának (vastagság,
+          vonaltípus) testreszabása.</li>
+        <li><span class="highlight">Igazítás:</span> Vízszintes (balra, középre, jobbra) és függőleges igazítás,
+          valamint cellák egyesítése.</li>
+        <li><span class="highlight">Számformátumok:</span> Általános szám, pénznem, százalék, valamint a különböző
+          dátum- és időformátumok.</li>
+      </ul>
+    </section>
+
+    <section id="diagramok">
+      <h2>Diagramok és diagramfajták</h2>
+      <p>A diagramok vizuálisan ábrázolják az adatokat, segítik azok gyors értelmezését és az összefüggések, trendek
+        felismerését.</p>
+      <h3>Gyakori diagramtípusok:</h3>
+      <ul>
+        <li><strong>Oszlopdiagram:</strong> Függőleges oszlopokkal mutatja az adatokat, ideális diszkrét kategóriák
+          összehasonlítására (pl. havi értékesítés).</li>
+        <li><strong>Sávdiagram:</strong> Vízszintes sávokkal szemlélteti a különböző kategóriákat, hasznos hosszú
+          feliratok esetén.</li>
+        <li><strong>Vonaldiagram:</strong> Idősorok, folyamatos változások és trendek ábrázolására a legalkalmasabb.
+        </li>
+        <li><strong>Kördiagram:</strong> Egy teljes egész megoszlását mutatja meg arányosan, százalékos részletekre
+          felosztva.</li>
+        <li><strong>Pontdiagram:</strong> Két numerikus változó közötti matematikai kapcsolat, korreláció megjelenítése
+          pontfelhővel.</li>
+        <li><strong>Területdiagram:</strong> A vonaldiagramhoz hasonló, de a vonal alatti rész színnel kitöltött, ami a
+          mennyiségek egymásra rakódását mutatja.</li>
+      </ul>
+    </section>
+
+    <section id="fuggvenyalapok">
+      <h2>Függvények Excelben – Alapok</h2>
+      <p>
+        A <strong>függvény</strong> olyan előre definiált képlet vagy művelet, amely egy vagy több bemeneti értéket vesz
+        fel (argumentumok), és egy meghatározott kimeneti értéket ad vissza. A függvények megkönnyítik az összetett
+        számítások végrehajtását.
+      </p>
+      <h3>A függvényhasználat szintaxisa:</h3>
+      <ul>
+        <li><strong>Függvény neve:</strong> Határozott parancsszó, például <code>SZUM</code>.</li>
+        <li><strong>Nyitó zárójel:</strong> A függvénynév után közvetlenül: <code>(</code>.</li>
+        <li><strong>Argumentumok:</strong> Pontosvesszővel elválasztva; lehetnek cellák, tartományok (pl.
+          <code>A1:A10</code>), vagy fix értékek.</li>
+        <li><strong>Záró zárójel:</strong> A művelet lezárása: <code>)</code>.</li>
+      </ul>
+      <p><em>Konkrét példa:</em> <code>=SZUM(A1:A10)</code> összeadja az A1 és A10 közötti tartomány összes celláját.
+      </p>
+    </section>
+
+    <section id="fuggvenytipusok">
+      <h2>Függvénytípusok és konkrét példák</h2>
+      <ul>
+        <li><strong>Matematikai és trigonometriai:</strong> Adatok matematikai feldolgozása. <br><em>Példák:</em>
+          <code>=HATVÁNY(2; 3)</code> (eredmény: 8), <code>SZUM()</code>, <code>SZORZAT()</code></li>
+        <li><strong>Statisztikai:</strong> Átlagok, darabszámok és szélsőértékek keresése. <br><em>Példák:</em>
+          <code>=SZUMHATÖBB(A1:A10; "&gt;5")</code>, <code>ÁTLAG()</code>, <code>MAX()</code>, <code>MIN()</code></li>
+        <li><strong>Szövegfüggvények:</strong> Karakterláncok darabolása, tisztítása. <br><em>Példák:</em>
+          <code>=BAL("Hello"; 2)</code> (eredmény: "He"), <code>JOBB()</code>, <code>KÖZÉP()</code>,
+          <code>HOSSZ()</code></li>
+        <li><strong>Dátum és idő:</strong> Időbélyegek kezelése. <br><em>Példák:</em> <code>=ÉV("2024-06-02")</code>
+          (eredmény: 2024), <code>HÓNAP()</code>, <code>NAP()</code></li>
+        <li><strong>Logikai függvények:</strong> Feltételes ágakat kezelnek. <br><em>Példák:</em> <code>HA()</code>,
+          <code>ÉS()</code>, <code>VAGY()</code></li>
+        <li><strong>Kereső- és hivatkozásfüggvények:</strong> Adatok párosítása táblázatok között. <br><em>Példák:</em>
+          <code>=INDEX(A1:B2; 2; 1)</code>, <code>FKERES()</code>, <code>HOL.VAN()</code></li>
+      </ul>
+    </section>
+
+    <section id="adathalmazok">
+      <h2>Nagy adathalmazok átláthatóvá tétele</h2>
+      <p>Amikor több ezer soros táblázatokkal dolgozunk, az alábbi beépített eszközök segítik az adatok rendszerezését:
+      </p>
+      <ul>
+        <li><strong>Szűrés (Filter):</strong> Elrejti azokat a sorokat, amelyek nem felelnek meg a megadott
+          feltételeknek.</li>
+        <li><strong>Rendezés (Sort):</strong> Az adatokat abc-rendbe, növekvő vagy csökkenő számsorrendbe rendezi.</li>
+        <li><strong>Pivot táblák (Kimutatások):</strong> Óriási adathalmazok gyors összesítésére, csoportosítására és
+          keresztfülű elemzésére szolgáló interaktív tábla.</li>
+      </ul>
+    </section>
+
+    <section id="felteteles-formazas">
+      <h2>Képletek és feltételes formázás kapcsolata</h2>
+      <p>A feltételes formázás automatikusan megváltoztatja a cellák megjelenését (háttérszín, betűtípus, ikonok) egy
+        előre megadott szabály vagy képlet alapján. Ha a megadott képlet eredménye <code>IGAZ</code>, a formázás azonnal
+        életbe lép.</p>
+      <div class="note">
+        <strong>Példa működésre:</strong><br>
+        • <strong>Alkalmazott képlet:</strong> <code>=A1 &gt; 100</code><br>
+        • <strong>Vizuális hatás:</strong> Ha az A1 cella értéke meghaladja a 100-at, a háttérszíne automatikusan
+        pirosra vált, azonnal felhívva magára a figyelmet.
+      </div>
+    </section>
+
+    <section id="ellenorzokerdesek">
+      <h2>📋 Ellenőrző kérdések</h2>
+
+      <div class="question">1. Mit nevezünk függvénynek a táblázatkezelőben?</div>
+      <details>
+        <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
+        <p>Egy előre definiált képlet, amely bemeneti értékek (argumentumok) alapján egy meghatározott kimeneti
+          eredményt ad vissza.</p>
+      </details>
+
+      <div class="question">2. Mi a függvény általános szintaxisa?</div>
+      <details>
+        <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
+        <p><code>=FÜGGVÉNYNÉV(argumentum1; argumentum2; ...)</code></p>
+      </details>
+
+      <div class="question">3. Mi a különbség a SZUM() és a SZUMHATÖBB() függvények között?</div>
+      <details>
+        <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
+        <p>A <code>SZUM()</code> feltétel nélkül összeadja a kijelölt tartomány összes értékét, míg a
+          <code>SZUMHATÖBB()</code> kizárólag azokat a cellákat összegzi, amelyek megfelelnek egy vagy több külön
+          megadott kritériumnak.</p>
+      </details>
+
+      <div class="question">4. Hogyan működik az INDEX() függvény?</div>
+      <details>
+        <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
+        <p>Az <code>INDEX()</code> egy megadott adattömb vagy tartomány adott pozícióján lévő értékét emeli ki és adja
+          vissza, a megadott sor- és oszlopszám metszéspontja alapján.</p>
+      </details>
+
+      <div class="question">5. Mire jó a feltételes formázás, és hogyan kapcsolódik a képletekhez?</div>
+      <details>
+        <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
+        <p>Lehetővé teszi az adatok gyors vizuális kiemelését. Dinamikus képletekhez kapcsolva automatizálható: amint a
+          logikai képlet eredménye igaz (pl. egy határérték túllépése), a cella stílusa azonnal megváltozik.</p>
+      </details>
+    </section>
+
   </div>
-  <div class="note-paper">
-    <h2>Cellahivatkozások</h2>
-    <ol>
-      <li><strong>Relatív hivatkozás (A1):</strong> A képletet másolva a hivatkozás automatikusan igazodik az új helyhez.</li>
-      <li><strong>Abszolút hivatkozás ($A$1):</strong> A képlet másolásakor a hivatkozott cella nem változik.</li>
-      <li><strong>Vegyes hivatkozás ($A1 vagy A$1):</strong> Az oszlop vagy a sor rögzített, a másik változik másoláskor.
-      </li>
-    </ol>
-
-</div>
-<div class="note-paper">
-   <h2>Kifejezések összeállítása</h2>
-    <p>Kifejezések segítségével végezhetünk számításokat és műveleteket a táblázatkezelőben. Az alapvető matematikai műveleteken kívül logikai és szövegfüggvényeket is használhatunk.</p>
-
-    <h3>Példák:</h3>
-    <ul>
-      <li>Összeadás: <code>=A1 + B1</code></li>
-      <li>Kivonás: <code>=A1 - B1</code></li>
-      <li>Szorzás: <code>=A1 * B1</code></li>
-      <li>Osztás: <code>=A1 / B1</code></li>
-      <li>Feltételes függvény: <code>=HA(A1 > B1; "Nagyobb"; "Kisebb")</code></li>
-      <li>Dátumok különbsége: <code>=A1 - A2</code> (ha mindkét cella dátumot tartalmaz)</li>
-    </ul>
-</div>
-<div class="note-paper">
-  <h2>Formázási beállítások táblázatkezelőben</h2>
-    <p>A táblázatkezelők számos formázási lehetőséget kínálnak, hogy az adatok jól olvashatók és esztétikusak legyenek:</p>
-    <ul>
-      <li><strong>Szövegformázás:</strong> Betűtípus, betűméret, félkövér, dőlt, aláhúzott</li>
-      <li><strong>Színezés:</strong> Cellák háttérszíne, szöveg színe</li>
-      <li><strong>Szegélyek:</strong> Cellák körüli vonalak és azok stílusa</li>
-      <li><strong>Igazítás:</strong> Balra, középre, jobbra, valamint függőleges igazítás</li>
-      <li><strong>Számformátumok:</strong> Szám, pénznem, százalék, dátumformátum</li>
-    </ul>
-</div>
-<div class="note-paper">
-  <h2>Diagramok és diagramfajták</h2>
-    <p>A diagramok vizuálisan ábrázolják az adatokat, segítik azok értelmezését és az összefüggések felismerését.</p>
-
-    <h3>Gyakori diagramtípusok:</h3>
-    <ul>
-      <li><strong>Oszlopdiagram:</strong> Függőleges oszlopokkal mutatja az adatokat (pl. havi értékesítés).</li>
-      <li><strong>Sávdiagram:</strong> Vízszintes sávokkal szemlélteti a különböző kategóriákat.</li>
-      <li><strong>Vonaldiagram:</strong> Idősorok, trendek ábrázolására alkalmas.</li>
-      <li><strong>Kördiagram:</strong> Teljes egészt mutat meg arányosan felosztva.</li>
-      <li><strong>Pontdiagram:</strong> Két változó közötti kapcsolat megjelenítése pontokkal.</li>
-      <li><strong>Területdiagram:</strong> Vonaldiagramhoz hasonló, de színnel kitöltve jeleníti meg az értékeket.</li>
-    </ul>
-
-    <h3>Diagramok előnyei:</h3>
-    <ul>
-      <li>Az adatok gyorsabb és könnyebb értelmezése</li>
-      <li>Kapcsolatok, trendek felismerése</li>
-      <li>Döntéstámogatás vizuális eszközökkel</li>
-    </ul>
-</div>
-<h2>Függvények Excelben</h2>
-   <div class="note-paper">
-    <h2>Mi az a függvény?</h2>
-    <p>A függvény olyan előre definiált képlet vagy művelet, amely egy vagy több bemeneti értéket vesz fel (argumentumok), és egy kimeneti értéket ad vissza. A függvények megkönnyítik az összetett számítások és adatmanipulációk végrehajtását a táblázatkezelőkben.</p>
-  </div>
-
-  <div class="note-paper">
-    <h2>Függvény használatának általános bemutatása</h2>
-    <p>Egy függvény használata a következő lépések szerint történik:</p>
-    <ul>
-      <li><strong>Függvény neve:</strong> Például <code>SZUM</code>.</li>
-      <li><strong>Nyitó zárójel:</strong> A függvénynév után <code>(</code>.</li>
-      <li><strong>Argumentumok:</strong> Lehetnek cellahivatkozások, értékek, vagy más függvények.</li>
-      <li><strong>Záró zárójel:</strong> <code>)</code>.</li>
-    </ul>
-    <p><strong>Példa:</strong> <code>=SZUM(A1:A10)</code> összegzi az A1-től A10-ig terjedő cellák értékeit.</p>
-  </div>
-
-  <div class="note-paper">
-    <h2>Függvénytípusok és jellemzésük</h2>
-    <ul>
-      <li><strong>Matematikai és trigonometriai függvények:</strong> Pl. <code>HATVÁNY()</code>, <code>SZUM()</code>, <code>SZORZAT()</code></li>
-      <li><strong>Statisztikai függvények:</strong> Pl. <code>ÁTLAG()</code>, <code>MEDIÁN()</code>, <code>MAX()</code>, <code>MIN()</code></li>
-      <li><strong>Szövegfüggvények:</strong> Pl. <code>BAL()</code>, <code>JOBB()</code>, <code>KÖZÉP()</code>, <code>HOSSZ()</code></li>
-      <li><strong>Dátum és idő függvények:</strong> Pl. <code>DÁTUM()</code>, <code>ÉV()</code>, <code>HÓNAP()</code>, <code>NAP()</code></li>
-      <li><strong>Logikai függvények:</strong> Pl. <code>HA()</code>, <code>ÉS()</code>, <code>VAGY()</code></li>
-      <li><strong>Keresőfüggvények:</strong> Pl. <code>FKERES()</code>, <code>INDEX()</code>, <code>HOL.VAN()</code></li>
-    </ul>
-  </div>
-
-  <div class="note-paper">
-    <h2>Függvények használata – konkrét példák</h2>
-    <ul>
-      <li><strong>HATVÁNY(szám, kitevő):</strong> Pl. <code>=HATVÁNY(2, 3)</code> → 8</li>
-      <li><strong>SZUMHATÖBB(tartomány, kritérium):</strong> Pl. <code>=SZUMHATÖBB(A1:A10, ">5")</code></li>
-      <li><strong>BAL(szöveg, karakterek száma):</strong> Pl. <code>=BAL("Hello", 2)</code> → "He"</li>
-      <li><strong>INDEX(tömb, sor, [oszlop]):</strong> Pl. <code>=INDEX(A1:B2, 2, 1)</code> → A2 értéke</li>
-      <li><strong>ÉV(dátum):</strong> Pl. <code>=ÉV("2024-06-02")</code> → 2024</li>
-    </ul>
-  </div>
-
-  <div class="note-paper">
-    <h2>Nagy adathalmazok átláthatóvá tétele</h2>
-    <ul>
-      <li><strong>Szűrés (Filter):</strong> Csak a feltételeknek megfelelő adatok megjelenítése.</li>
-      <li><strong>Rendezés (Sort):</strong> Adatok növekvő vagy csökkenő sorrendbe helyezése.</li>
-      <li><strong>Pivot táblák:</strong> Összegzés, csoportosítás új táblázatban.</li>
-      <li><strong>Feltételes formázás:</strong> Adatok kiemelése színekkel, ikonokkal bizonyos szabályok alapján.</li>
-    </ul>
-  </div>
-
-  <div class="note-paper">
-    <h2>Képletek és feltételes formázás kapcsolata</h2>
-    <p>A feltételes formázás gyakran képletek alapján történik. Ha a képlet igaz értéket ad vissza, a cella formátuma megváltozik.</p>
-    <p><strong>Példa:</strong></p>
-    <ul>
-      <li><strong>Képlet:</strong> <code>=A1 > 100</code></li>
-      <li><strong>Feltételes formázás:</strong> Ha igaz, az A1 cella háttérszíne piros lesz.</li>
-    </ul>
-    <p>Ez lehetővé teszi az adatok gyors vizuális kiemelését és a fontos értékek azonnali felismerését.</p>
-  </div>
-  <div class="note-paper">
-  <h2>Ellenőrző kérdések</h2>
-  <div class="question">Mit nevezünk függvénynek a táblázatkezelőben?</div>
- <details>
-  <summary>
-     
-    <small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small>
-  </summary>
-  <p>Egy előre definiált képlet, amely bemeneti értékek (argumentumok) alapján egy eredményt ad vissza.</p>
-</details>
-
-  <div class="question">Mi a függvény általános szintaxisa?</div>
-  <details>
-    <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
-    <p><code>=FÜGGVÉNYNÉV(argumentum1; argumentum2; ...)</code></p>
-  </details>
-
-
-<div class="question">Mi a különbség a SZUM() és a SZUMHATÖBB() függvények között? </div>
-  <details>
-    <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
-    <p>A <code>SZUM()</code> egyszerűen összeadja a megadott értékeket, míg a <code>SZUMHATÖBB()</code> csak azokat, amelyek megfelelnek megadott feltételeknek.</p>
-  </details>
-
-
-<div class="question">Hogyan működik az INDEX() függvény? </div>
-  <details>
-    <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
-    <p>Az INDEX() egy tömb vagy tartomány adott pozícióján lévő értéket adja vissza a sor- és oszlopszám alapján.</p>
-  </details>
-
-
-<div class="question">Mire jó a feltételes formázás, és hogyan kapcsolódik a képletekhez? </div>
-  <details>
-    <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
-    <p>Lehetővé teszi az adatok vizuális kiemelését, és gyakran képletek alapján működik. Ha a képlet igaz, formázás történik (pl. színváltás).</p>
-  </details>
-
-
-
-</div>
 
 </body>
 

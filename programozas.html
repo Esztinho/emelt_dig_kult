@@ -1,104 +1,227 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Programozás szóbeli összefoglaló</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-    h1, h2, h3 {
-      color: #005a9c;
-    }
-    ul {
-      list-style-type: square;
-      margin-left: 20px;
-    }
-    .section {
-      background: #fff;
-      padding: 20px;
-      margin-bottom: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <h1>📘 Programozás szóbeli összefoglaló</h1>
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">Főoldal</a>
+      <nav class="main-nav">
+        <a href="pixelgrafika.html">Pixelgrafika</a>
+        <a href="vektorgrafika.html">Vektorgrafika</a>
+        <a href="adatbazis_kezeles.html">SQL</a>
+        <a href="excel.html">Excel</a>
+        <a href="weblap_keszites.html">Weblap</a>
+      </nav>
+    </div>
+  </header>
 
-  <div class="section">
-    <h2>🧾 Adattárolás</h2>
-    <ul>
-      <li><strong>Változók:</strong> adattípusokkal (int, float, str, bool)</li>
-      <li><strong>Lista:</strong> több érték tárolására</li>
-      <li><strong>Bekért adatok tárolása:</strong> input() és mentés változóba vagy listába</li>
-      <li><strong>Számított adatok tárolása:</strong> műveleti eredmények változóban</li>
-      <li><strong>Egyenlőségjel (=):</strong> értékadás</li>
-      <li><strong>Feltételes Egyenlőségjel (==):</strong> összehasonlítás!!</li>
-    </ul>
-  </div>
+  <nav class="sidebar">
+    <h3>Programozás</h3>
+    <a href="#adattarolas">Adattárolás & Változók</a>
+    <a href="#vezerles">Vezérlési szerkezetek</a>
+    <a href="#operatorok">Operátorok típusai</a>
+    <a href="#fuggvenyek">Fontos beépített függvények</a>
+    <a href="#tipusalgoritmusok">Alapvető típusalgoritmusok</a>
+    <a href="#halado">Emelt szintű témakörök</a>
+  </nav>
 
-  <div class="section">
-    <h2>🧭 Vezérlési szerkezetek</h2>
-    <ul>
-      <li>Utasítások: változók módosítása, függvényhívás</li>
-      <li>Elágazások: if, elif, else</li>
-      <li>Ciklusok: for, while</li>
-      <li>Blokkok: behúzásokkal jelölve Pythonban</li>
-    
-    </ul>
-  </div>
+  <div class="tartalom">
+    <h1>📘 Programozás szóbeli összefoglaló</h1>
 
-  <div class="section">
-    <h2>➕ Operátorok</h2>
-    <ul>
-      <li><strong>Aritmetikai:</strong> +, -, *, /, %</li>
-      <li><strong>Összehasonlító:</strong> >, <, <=, >=, ==, !=</li>
-      <li><strong>Logikai:</strong> and, or, not</li>
-      <li><strong>Szöveges:</strong> + (összefűzés), * (ismétlés:pl alma*2-> kíírja "almaalma")</li>
-    </ul>
-  </div>
+    <section id="adattarolas">
+      <h2>🧾 Adattárolás és változók</h2>
+      <p>
+        A programozás során az adatok átmeneti tárolására <strong>változókat</strong> használunk. A változó egy névvel
+        ellátott memóriaterület, amelynek értéke a program futása során módosítható.
+      </p>
+      <p><strong>Alapvető adattípusok Pythonban:</strong></p>
+      <ul>
+        <li><code>int</code> (Egész szám): Egész értékek tárolására, pl. <code>kor = 18</code></li>
+        <li><code>float</code> (Lebegőpontos szám): Tizedes törtek tárolására, pl. <code>atlag = 4.55</code></li>
+        <li><code>str</code> (Karakterlánc / Szöveg): Idézőjelek közé zárt szöveg, pl. <code>nev = "Anna"</code></li>
+        <li><code>bool</code> (Logikai érték): Két értéke lehet: <code>True</code> (Igaz) vagy <code>False</code>
+          (Hamis).</li>
+      </ul>
 
-  <div class="section">
-    <h2>🔧 Fontos függvények</h2>
-    <ul>
-      <li>print(), input()</li>
-      <li>int(), float(), str() – típuskonverzió</li>
-      <li>Matematikai: max(), min(), sum(), round()</li>
-      <li>Szövegkezelés: len(), upper(), lower(), split()</li>
-      <li>Lista: append(), remove(), sort(), reverse(), in</li>
-      <li>len() – hossz lekérdezése</li>
-      <li><strong>Véletlenszám:</strong> import random, random.randint(a,b)</li>
-    </ul>
-  </div>
+      <h3>Összetett adattárolás: A Lista (List)</h3>
+      <p>
+        Ha több, egymással összefüggő adatot szeretnénk egyetlen változóban tárolni, <strong>listát</strong>
+        használunk. A lista elemei sorszámozva (indexelve) vannak, az indexelés mindig <code>0</code>-val kezdődik.
+      </p>
+      <pre>gyumolcsok = ["alma", "banán", "narancs"]
+print(gyumolcsok[0])  # Kiírja: alma</pre>
 
-  <div class="section">
-    <h2>📋 Típusalgoritmusok</h2>
-    <h3><a href="tipusalgoritmusok.html">->Bővebben róluk<-</a></h3>
-    <ul>
-        <li><strong>Összegzés</strong></li>-> <a href="https://sulipy.hu/alapveto_algoritmusok/osszegzes">magyarázó videó</a>
-      <li><strong>Eldöntés</strong> (van-e adott elem),  <strong>Kiválasztás</strong> (melyik az adott feltételű elem), <strong>Keresés</strong> (adat megtalálása listában)</li>-> <a href="https://sulipy.hu/alapveto_algoritmusok/kereses">magyarázó videó</a>
-      <li><strong>Megszámolás</strong> (hányszor fordul elő)</li>
-      <li><strong>Maximum/minimum kiválasztás</strong></li>
-      
-    </ul>
-  </div>
+      <h3>Értékadás vs. Összehasonlítás</h3>
+      <p>A vizsgán kritikus fontosságú a két operátor közötti különbség pontos ismerete:</p>
+      <ul>
+        <li><strong>Egyenlőségjel (<code>=</code>):</strong> Értékadás. A jobb oldalon lévő értéket menti el a bal
+          oldali változóba. (Pl. <code>x = 5</code>)</li>
+        <li><strong>Dupla egyenlőségjel (<code>==</code>):</strong> Összehasonlítás. Megvizsgálja, hogy a két oldal
+          egyenlő-e, és logikai (True/False) értéket ad vissza. (Pl. <code>if x == 5:</code>)</li>
+      </ul>
+    </section>
 
-  <div class="section">
-    <h2>📈 Emelt szint (haladóknak)</h2>
-    <ul>
-      <li>2D tömbök (listák listája)</li>
-      <li>dictionary (szótár) használata</li>
-      <li>Fájlműveletek: fájl be/kiolvasás</li>
-      <li>Saját függvények írása</li>
-      <li>Bonyolultabb logikai algoritmusok</li>
-    </ul>
+    <section id="vezerles">
+      <h2>🧭 Vezérlési szerkezetek</h2>
+      <p>
+        Alapértelmezetten a programok végrehajtása fentről lefelé, sorról sorra történik (szekvencia). Ezt a sorrendet
+        tudjuk módosítani vezérlési szerkezetekkel.
+      </p>
+
+      <h3>1. Elágazások (Szelekció)</h3>
+      <p>Feltételes végrehajtást tesznek lehetővé. Pythonban az <code>if</code>, <code>elif</code> (egyébként ha) és
+        <code>else</code> (különben) kulcsszavakat használjuk.
+      </p>
+      <pre>pontszam = 75
+if pontszam >= 80:
+    print("Kiváló")
+elif pontszam >= 50:
+    print("Megfelelt")
+else:
+    print("Elégtelen")</pre>
+
+      <h3>2. Ciklusok (Iteráció)</h3>
+      <p>Műveletek automatikus ismétlésére szolgálnak, amíg egy adott feltétel teljesül.</p>
+      <ul>
+        <li><strong>Számlálós ciklus (<code>for</code>):</strong> Akkor használjuk, ha előre tudjuk az ismétlések
+          számát, vagy végig akarunk menni egy lista elemein.</li>
+        <li><strong>Feltételes ciklus (<code>while</code>):</strong> Addig ismétel, amíg a megadott feltétel igaz. Akkor
+          hasznos, ha nem tudjuk előre, hányszor kell lefutnia (pl. adatbekérés ellenőrzése).</li>
+      </ul>
+
+      <div class="note">
+        <strong>Fontos szabály (Blokkok és behúzás):</strong> A Python nyelvben nincsenek kapcsos zárójelek a
+        kódblokkok jelölésére. A struktúrát, vagyis azt, hogy melyik utasítás tartozik a ciklushoz vagy az
+        elágazáshoz, a <strong>kötelező behúzások (indentation - általában 4 szóköz)</strong> határozzák meg!
+      </div>
+    </section>
+
+    <section id="operatorok">
+      <h2>➕ Operátorok</h2>
+      <p>A programban a változókon és értékeken különböző műveleteket végezhetünk az operátorok segítségével:</p>
+
+      <h3>Aritmetikai (Matematikai) operátorok</h3>
+      <ul>
+        <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> – Alapműveletek (összeadás, kivonás, szorzás,
+          osztás).</li>
+        <li><code>%</code> (Modulo): Az osztás maradékát adja vissza. Nagyon hasznos párosság vizsgálatakor
+          (<code>x % 2 == 0</code>).</li>
+        <li><code>//</code>: Egész osztás (lefelé kerekítve a legközelebbi egészig).</li>
+      </ul>
+
+      <h3>Összehasonlító és Logikai operátorok</h3>
+      <p>Összehasonlításkor a <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code> mellett a
+        <code>==</code> (egyenlő) és <code>!=</code> (nem egyenlő) jeleket használjuk.
+      </p>
+      <p>Összetett feltételeket logikai operátorokkal köthetünk össze:</p>
+      <ul>
+        <li><code>and</code>: Csak akkor igaz, ha a kifejezés mindkét oldala igaz.</li>
+        <li><code>or</code>: Igaz, ha leastwise az egyik oldal igaz.</li>
+        <li><code>not</code>: Megfordítja a logikai értéket (igazból hamis lesz, és fordítva).</li>
+      </ul>
+
+      <h3>Speciális szöveges műveletek</h3>
+      <p>A karakterláncokon is alkalmazható a plusz és a szorzás jel:</p>
+      <ul>
+        <li><strong>Összefűzés (<code>+</code>):</strong> Két szöveget fűz össze. Pl. <code>"Jó" + "reggelt"</code>
+          eredménye <code>"Jóreggelt"</code>.</li>
+        <li><strong>Replikáció (<code>*</code>):</strong> Megismétli a szöveget. Pl. <code>"ma"*3</code> eredménye
+          <code>"mamama"</code>.
+        </li>
+      </ul>
+    </section>
+
+    <section id="fuggvenyek">
+      <h2>🔧 Fontos beépített függvények</h2>
+      <p>A Python számos előre megírt funkciót biztosít számunkra:</p>
+
+      <h3>I/O és konverziós függvények</h3>
+      <ul>
+        <li><code>print()</code>: Kiíratás a képernyőre.</li>
+        <li><code>input()</code>: Adatbekérés a felhasználótól. <em>Fontos: mindig szövegként (str) olvassa be az
+            adatot!</em></li>
+        <li><code>int()</code>, <code>float()</code>, <code>str()</code>: Típuskonverziós függvények. Szövegből számot,
+          vagy számból szöveget formálnak.</li>
+      </ul>
+
+      <h3>Matematikai és Lista függvények</h3>
+      <ul>
+        <li><code>len()</code>: Megadja egy lista elemeinek számát vagy egy szöveg karaktereinek hosszát.</li>
+        <li><code>min()</code>, <code>max()</code>, <code>sum()</code>: Kiválasztja a legkisebb, legnagyobb elemet, vagy
+          összegzi a lista elemeit.</li>
+        <li><code>append()</code>: Új elemet fűz a lista végére. (Használata: <code>lista.append(uj_elem)</code>)</li>
+        <li><code>random.randint(a, b)</code>: Véletlenszám-generálás a megadott `a` és `b` zárt intervallumban.
+          Használatához a kód elején kötelező az <code>import random</code> parancs.</li>
+      </ul>
+    </section>
+
+    <section id="tipusalgoritmusok">
+      <h2>📋 Alapvető típusalgoritmusok</h2>
+      <p>
+        A típusalgoritmusok olyan általános programozási minták, amelyeket sűrűn alkalmazunk adathalmazok (listák)
+        feldolgozása során.
+      </p>
+
+      <h3>1. Összegzés tétele</h3>
+      <p>Egy lista elemeinek összeadására szolgál. Alapelve egy nullázott összeggyűjtő változó (`akku`), amihez
+        ciklussal hozzáadjuk az elemeket.</p>
+      <pre>szamok = [3, 5, 2, 8]
+osszeg = 0
+for szam in szamok:
+    osszeg += szam
+print("Összeg:", osszeg)</pre>
+
+      <h3>2. Megszámolás tétele</h3>
+      <p>Megszámolja, hány darab egy bizonyos feltételnek megfelelő elem van a listában. Alapelve egy nullázott
+        számláló, amit feltétel teljesülésekor növelünk.</p>
+      <pre>darab = 0
+for szam in szamok:
+    if szam > 3:
+        darab += 1
+print("3-nál nagyobbak száma:", darab)</pre>
+
+      <h3>3. Szélsőérték (Maximum/Minimum) kiválasztás</h3>
+      <p>Megkeresi a lista legnagyobb vagy legkisebb elemét. Alapelve, hogy a legelső elemet kikiáltjuk a legnagyobbnak,
+        majd a többit hozzá hasonlítjuk.</p>
+      <pre>legnagyobb = szamok[0]
+for szam in szamok:
+    if szam > legnagyobb:
+        legnagyobb = szam
+print("A legnagyobb szám:", legnagyobb)</pre>
+
+      <div class="note">
+        <strong>További tételek:</strong> Az <strong>Eldöntés</strong> tételével azt vizsgáljuk meg, hogy van-e legalább
+        egy feltételnek megfelelő elem a listában (pl. a `break` kulcsszó használatával, ha megtaláltuk), míg a
+        <strong>Keresés</strong> során az elem helyét (indexét) is meghatározzuk.
+      </div>
+    </section>
+
+    <section id="halado">
+      <h2>📈 Emelt szintű témakörök (Haladóknak)</h2>
+      <p>Az emelt szintű érettségi során az alábbi struktúrák ismerete is
+        szükséges:</p>
+      <ul>
+        <li><strong>Kétdimenziós tömbök (Mátrixok):</strong> Listák listája, ahol az adatokat sorokba és oszlopokba
+          rendezve tároljuk. Elérésükhöz egymásba ágyazott ciklusokat alkalmazunk.</li>
+        <li><strong>Szótárak (Dictionary):</strong> Kulcs-érték párok tárolására alkalmas összetett adattípus
+          (<code>kulcs: ertek</code>). Nem indexekkel, hanem egyedi kulcsszavakkal hivatkozunk az elemekre.</li>
+        <li><strong>Fájlkezelés (I/O):</strong> Adatok beolvasása külső szöveges állományból (pl. `.txt`, `.csv`), vagy
+          az eredmények elmentése merevlemezre a biztonságos <code>with open()</code> szerkezet használatával.</li>
+        <li><strong>Saját függvények (def):</strong> Kódunk modularizálása, újrahasznosítható egyedi logikai blokkok
+          létrehozása paraméterek és visszatérési értékek (<code>return</code>) segítségével.</li>
+      </ul>
+    </section>
+
   </div>
 
 </body>
+
 </html>

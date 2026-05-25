@@ -1,39 +1,74 @@
 <!DOCTYPE html>
 <html lang="hu">
+
 <head>
   <meta charset="utf-8">
-  <title>HTML5  – Weblap Készítés</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 – Weblap Készítés</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <h1>Weblap készítése HTML5 nyelven</h1>
+
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">Főoldal</a>
+      <nav class="main-nav">
+        <a href="adatbazis_kezeles.html">SQL</a>
+        <a href="vektorgrafika.html">Vektorgrafika</a>
+        <a href="programozas.html">Programozás</a>
+        <a href="excel.html">Excel</a>
+        <a href="weblap_keszites.html">Weblap</a>
+      </nav>
+    </div>
   </header>
-  <div class="practice"><a href="Gyakorlati_mintafeladatsor_HTML+CSS.pdf" download="">Gyakorlati feladatsor letöltése</a></div>
-  <h3>Fogalmak:</h3>
-<dl>
-  <dt>HTML</dt>
-  <dd>HyperText Markup Language, a weboldalak alapvető nyelve.</dd>
 
-  <dt>CSS</dt>
-  <dd>Stíluslapok készítésére szolgáló nyelv, amely megadja az oldal megjelenését.</dd>
+  <nav class="sidebar">
+    <h3>Tartalomjegyzék</h3>
+    <a href="#alapfogalmak">Alapvető fogalmak</a>
+    <a href="#alapstruktura">HTML5 alapstruktúra</a>
+    <a href="#dokumentumtípus">Dokumentumtípus és nyelv</a>
+    <a href="#tagek-tipusai">Tag-ek típusai</a>
+    <a href="#fajl-mentese">Fájl mentése és szerkesztők</a>
+    <a href="#betuformazas">Betű- és bekezdésformázás</a>
+    <a href="#media-elemek">Média és hivatkozások</a>
+    <a href="#tablazatok">Táblázatok struktúrája</a>
+    <a href="#dobozmodell">CSS dobozmodell</a>
+    <a href="#ellenorzokerdesek">Ellenőrző kérdések</a>
+  </nav>
 
-  <dt>Weboldal</dt>
-  <dd>Interneten elérhető dokumentum vagy dokumentumok halmaza, amelyeket böngészővel jelenítünk meg.
+  <div class="tartalom">
+    <h1>Weblap Készítés Alapjai</h1>
 
-    <dt>Domain név</dt>
-    <dd>Az internetes cím, amely segítségével elérjük a weboldalt (pl. www.pelda.hu).</dd>
-</dd>
-  <dt>Bőngésző (Browser)</dt>
-  <dd>azon programok, amelyekkel az interneten található tartalmakat – legtöbbször weblapokat – lehet megtekinteni, illetve az interneten keresztül elérhető szolgáltatásokat használni.</dd>
-</dl>
-  <section>
-    <h2><h1>HTML5 alapstruktúra</h1></h2>
-    <p>
-      A weblap tartalmának elkészítéséhez szükséges címkéket (tageket) a HTML5 szabvány szerinti alapstruktúrában kell elhelyezni, amely a következő:
-    </p>
-    <pre>
-&lt;!DOCTYPE html&gt;
+    <div class="button-container">
+      <a href="Gyakorlati_mintafeladatsor_HTML+CSS.pdf" download class="practice-btn">
+        Gyakorlati feladatsor letöltése
+      </a>
+    </div>
+
+    <section id="alapfogalmak">
+      <h2>Fogalmak</h2>
+      <ul>
+        <li><strong>HTML:</strong> HyperText Markup Language, a weboldalak alapvető strukturális nyelve.</li>
+        <li><strong>CSS:</strong> Stíluslapok készítésére szolgáló nyelv, amely megadja az oldal vizuális megjelenését.
+        </li>
+        <li><strong>Weboldal:</strong> Az interneten elérhető dokumentum vagy dokumentumok halmaza, amelyeket
+          böngészővel jelenítünk meg.</li>
+        <li><strong>Domain név:</strong> Az internetes cím, amely segítségével elérjük a weboldalt (pl. www.pelda.hu).
+        </li>
+        <li><strong>Böngésző (Browser):</strong> Azon programok, amelyekkel az interneten található tartalmakat –
+          legtöbbször weblapokat – lehet megtekinteni, illetve az interneten keresztül elérhető szolgáltatásokat
+          használni.</li>
+      </ul>
+    </section>
+
+    <section id="alapstruktura">
+      <h2>HTML5 alapstruktúra</h2>
+      <p>
+        A weblap tartalmának elkészítéséhez szükséges címkéket (tageket) a HTML5 szabvány szerinti alapstruktúrában kell
+        elhelyezni, amely a következő:
+      </p>
+      <pre>&lt;!DOCTYPE html&gt;
 &lt;html lang="hu"&gt;
   &lt;head&gt;
     &lt;meta charset="utf-8"&gt;
@@ -41,488 +76,238 @@
   &lt;/head&gt;
   &lt;body&gt;
   &lt;/body&gt;
-&lt;/html&gt;
-    </pre>
-  </section>
+&lt;/html&gt;</pre>
+    </section>
 
-  <section>
-    <h2>Dokumentumtípus</h2>
-    <p>
-      Az első sor <code>&lt;!DOCTYPE html&gt;</code> tartalmazza a dokumentumtípust, amely megadja, hogy melyik szabvány szerint írja le a tartalmat – jelen esetben a HTML5 szabvány szerint.
-    </p>
-  </section>
+    <section id="dokumentumtípus">
+      <h2>Dokumentumtípus és nyelvi beállítás</h2>
+      <p>
+        Az első sor <code>&lt;!DOCTYPE html&gt;</code> tartalmazza a dokumentumtípust, amely megadja, hogy melyik
+        szabvány
+        szerint írja le a tartalmat – jelen esetben a HTML5 szabvány szerint.
+      </p>
+      <p>
+        A <code>&lt;html lang="hu"&gt;</code> tag jelzi, hogy HTML-dokumentumról van szó, a <code>lang</code>
+        attribútumban pedig az oldal nyelvét kell megadni (pl. <code>hu</code> magyar, <code>en</code> angol).
+      </p>
+      <p>
+        A teljes dokumentum a <code>&lt;html&gt;</code> tagben helyezkedik el, két fő részre tagolva:
+      </p>
+      <ul>
+        <li><strong>Fej (<code>&lt;head&gt;</code>)</strong>: Beállítások, mint például karakterkódolás (pl.
+          <code>&lt;meta charset="utf-8"&gt;</code>), cím (<code>&lt;title&gt;</code>) stb.</li>
+        <li><strong>Törzs (<code>&lt;body&gt;</code>)</strong>: A tényleges tartalom (címsorok, szövegek, képek, videók
+          stb.).</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>HTML és nyelvi beállítás</h2>
-    <p>
-      A <code>&lt;html lang="hu"&gt;</code> tag jelzi, hogy HTML-dokumentumról van szó, a <code>lang</code> attribútumban pedig az oldal nyelvét kell megadni (pl. <code>hu</code> magyar, <code>en</code> angol).
-    </p>
-  </section>
+    <section id="tagek-tipusai">
+      <h2>Tag-ek típusai és megjegyzések</h2>
+      <p>
+        A HTML-címkék többségét kötelező lezárni zárócímkével – ezeket páros tageknek nevezzük. Léteznek azonban
+        páratlan
+        vagy üres tagek is, amelyeknek nincs zárópárjuk (pl. <code>&lt;br&gt;</code>).
+      </p>
+      <p>
+        A HTML-kódban megjegyzéseket lehet elhelyezni a <code>&lt;!--</code> és <code>--&gt;</code> jelek között. Ezek
+        nem
+        jelennek meg a böngészőben.
+      </p>
+    </section>
 
-  <section>
-    <h2>Tag-ek típusai</h2>
-    <p>
-      A HTML-címkék többségét kötelező lezárni zárócímkével – ezeket páros tageknek nevezzük. Léteznek azonban páratlan vagy üres tagek is, amelyeknek nincs zárópárjuk (pl. <code>&lt;br&gt;</code>).
-    </p>
-  </section>
+    <section id="fajl-mentese">
+      <h2>Fájl mentése és a kódszerkesztők</h2>
+      <p>
+        A kész HTML-kódot <strong>.html</strong> kiterjesztéssel kell elmenteni. A kezdőlapot minden esetben
+        <strong>index.html</strong> néven mentsük el, mivel ez a böngészők és szerverek által alapértelmezett belépési
+        pontként szolgál.
+      </p>
+      <p><strong>A kódszerkesztők hasznos funkciói:</strong></p>
+      <ul>
+        <li><span class="highlight">Kiemelés (syntax highlighting):</span> A különböző HTML tagek, attribútumok, értékek
+          színezése az átláthatóság érdekében.</li>
+        <li><span class="highlight">Kód-kiegészítés:</span> Automatikusan felajánlja a lehetséges tageket vagy
+          attribútumokat, és támogatja az Emmet rövidítéseket.</li>
+        <li><span class="highlight">Hibakeresés és előnézet:</span> Figyelmeztet a szintaktikai hibákra, a Live Preview
+          funkcióval pedig azonnali visszajelzést ad.</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Dokumentum felépítése</h2>
-    <p>
-      A teljes dokumentum a <code>&lt;html&gt;</code> tagben helyezkedik el, két fő részre tagolva:
-    </p>
-    <ul>
-      <li><strong>Fej (<code>&lt;head&gt;</code>)</strong>: Beállítások, mint például karakterkódolás (pl. <code>&lt;meta charset="utf-8"&gt;</code>), cím (<code>&lt;title&gt;</code>) stb.</li>
-      <li><strong>Törzs (<code>&lt;body&gt;</code>)</strong>: A tényleges tartalom (címsorok, szövegek, képek, videók stb.).</li>
-    </ul>
-  </section>
+    <section id="betuformazas">
+      <h2>Betűformázás és bekezdések</h2>
+      <p>A <code>&lt;p&gt;</code> tag bekezdést jelöl. Minden új gondolatot, témát ezzel célszerű elválasztani.</p>
+      <p>A címsor tagek <code>&lt;h1&gt;</code> és <code>&lt;h6&gt;</code> között helyezkednek el. A
+        <code>&lt;h1&gt;</code> a legnagyobb szintű cím.</p>
+      <p><strong>Fontosabb szövegformázó elemek:</strong></p>
+      <ul>
+        <li><code>&lt;b&gt;</code> – Félkövér betű (megjelenítési célú).</li>
+        <li><code>&lt;strong&gt;</code> – Fontos, erőteljesen kiemelt szöveg (szemantikus).</li>
+        <li><code>&lt;i&gt;</code> – Dőlt betű (megjelenítési célú).</li>
+        <li><code>&lt;em&gt;</code> – Hangsúlyos dőlt szöveg (szemantikus kiemelés).</li>
+      </ul>
+    </section>
 
-  <section>
-    <h2>Megjegyzések elhelyezése</h2>
-    <p>
-      A HTML-kódban megjegyzéseket lehet elhelyezni a <code>&lt;!--</code> és <code>--&gt;</code> jelek között. Ezek nem jelennek meg a böngészőben.
-    </p>
-  </section>
+    <section id="media-elemek">
+      <h2>Média elemek és hivatkozások beszúrása</h2>
+      <p>
+        A HTML-ben a képek beszúrásához az <code>&lt;img&gt;</code> elemet használjuk, amely önzáró tag. Legfontosabb
+        attribútumai az <code>src</code> (elérési út) és az <code>alt</code> (alternatív szöveg).
+      </p>
+      <p>
+        A hivatkozások létrehozásához az <code>&lt;a&gt;</code> taget használjuk a kötelező <code>href</code>
+        attribútummal. Az új lapon való megnyitást a <code>target="_blank"</code> biztosítja.
+      </p>
+      <p>
+        Hang beillesztésére az <code>&lt;audio&gt;</code>, míg videó elhelyezésére a <code>&lt;video&gt;</code> tag
+        szolgál, mindkettőnél elengedhetetlen a <code>controls</code> paraméter.
+      </p>
 
-  <section>
-    <h2>Fájl mentése</h2>
-    <p>
-      A kész HTML-kódot <strong>.html</strong> kiterjesztéssel kell elmenteni. A kezdőlapot minden esetben <strong>index.html</strong> néven mentsük el, mivel ez a böngészők és szerverek által alapértelmezett belépési pontként szolgál.
-    </p>
-  </section>
+      <h3>Kép, videó és hang beszúrásának különbségei</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Elem</th>
+            <th>HTML tag</th>
+            <th>Jellemzők</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kép</td>
+            <td><code>&lt;img&gt;</code></td>
+            <td>Önzáró tag, egyszerű használat, nincs zárótag.</td>
+          </tr>
+          <tr>
+            <td>Videó</td>
+            <td><code>&lt;video&gt;</code></td>
+            <td>Zárópárral rendelkezik, lejátszásvezérlőkkel, több forrás megadható.</td>
+          </tr>
+          <tr>
+            <td>Hang</td>
+            <td><code>&lt;audio&gt;</code></td>
+            <td>Hasonló a videóhoz, hangállományok (pl. MP3) lejátszására szolgál.</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-  <section>
-    <h2>Milyen hasznos funkciói vannak egy kódszerkesztőnek?</h2>
-    <ul>
-      <li><strong>Kiemelés (syntax highlighting):</strong> a különböző HTML tagek, attribútumok, értékek színezése az átláthatóság érdekében.</li>
-      <li><strong>Kód-kiegészítés:</strong> automatikusan felajánlja a lehetséges tageket vagy attribútumokat.</li>
-      <li><strong>Hibakeresés támogatása:</strong> figyelmeztet a szintaktikai hibákra.</li>
-      <li><strong>Előnézet (Live Preview):</strong> azonnali visszajelzés a szerkesztett HTML megjelenéséről.</li>
-      <li><strong>Verziókezelés integráció (pl. Git):</strong> egyszerűbb együttműködés másokkal és visszalépés a korábbi állapotokhoz.</li>
-    </ul>
-    <p>További kényelmi funkció lehet az úgynevezett emmet rövidítések használatának támogatása, ami gyakorlatilag egy automatikus kódkiegészítést jelent. Rövid kódok begépelésével akár nagyon hosszú kódot is előállíthat, ami hatékonnyá teszi a munkáját.</p>
-  </section>
+    <section id="tablazatok">
+      <h2>Táblázatok struktúrája</h2>
+      <p>
+        A HTML-ben a <code>&lt;table&gt;</code> elem segítségével hozhatunk létre táblázatokat. Egy táblázat sorokból
+        (<code>&lt;tr&gt;</code>) és cellákból áll. A fejléc cellákhoz a <code>&lt;th&gt;</code> elemet, míg az
+        adatokhoz a <code>&lt;td&gt;</code> elemet használjuk. A <code>&lt;caption&gt;</code> elem a táblázat felirata.
+      </p>
+      <table>
+        <caption>Felhasználók adatai</caption>
+        <thead>
+          <tr>
+            <th>Név</th>
+            <th>Kor</th>
+            <th>Város</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>János</td>
+            <td>25</td>
+            <td>Budapest</td>
+            <td>janos@example.com</td>
+          </tr>
+          <tr>
+            <td>Anna</td>
+            <td>30</td>
+            <td>Szeged</td>
+            <td>anna@example.com</td>
+          </tr>
+          <tr>
+            <td>Béla</td>
+            <td>28</td>
+            <td>Debrecen</td>
+            <td>bela@example.com</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-  <section>
-    <h2>Betűformázáshoz kapcsolódó HTML tagek</h2>
-    <ul>
-      <li><code>&lt;b&gt;</code> – félkövér betű (megjelenítési cél, nem szemantikus)</li>
-      <li><code>&lt;strong&gt;</code> – fontos, erőteljesen kiemelt szöveg</li>
-      <li><code>&lt;i&gt;</code> – dőlt betű (megjelenítés céljára)</li>
-      <li><code>&lt;em&gt;</code> – hangsúlyos dőlt szöveg (szemantikus kiemelés)</li>
-    </ul>
-  </section>
+    <section id="dobozmodell">
+      <h2>CSS dobozmodell és deklarációk</h2>
+      <p>
+        Minden HTML elem egy dobozként jelenik meg a böngészőben, amely négy fő részből áll:
+      </p>
+      <ul>
+        <li><strong>Content (Tartalom):</strong> Az elem tényleges tartalma (szöveg, kép).</li>
+        <li><strong>Padding (Belső margó):</strong> A tartalom és a keret közötti térköz.</li>
+        <li><strong>Border (Keretszegély):</strong> Az elem körül elhelyezkedő szegélyvonal.</li>
+        <li><strong>Margin (Külső margó):</strong> Az elem és a környező elemek közötti távolság.</li>
+      </ul>
+      <p>
+        A <code>box-sizing: border-box;</code> beállítással elérhetjük, hogy a megadott szélesség (<code>width</code>)
+        és magasság (<code>height</code>) már magában foglalja a padding és a border értékét is.
+      </p>
+      <div class="note">
+        <strong>Stíluslapok csatolása:</strong> Történhet külső fájlként a head szekcióban
+        (<code>&lt;link rel="stylesheet" href="style.css"&gt;</code>), beágyazottan (<code>&lt;style&gt;</code>), vagy
+        egyedi elemeknél közvetlenül (inline) a <code>style</code> attribútummal.
+      </div>
+    </section>
 
-  <section>
-    <h2>Bekezdés és címsor tagek</h2>
-    <p>A <code>&lt;p&gt;</code> tag bekezdést jelöl. Minden új gondolatot, témát ezzel célszerű elválasztani.</p>
-    <p>A címsor tagek <code>&lt;h1&gt;</code> és <code>&lt;h6&gt;</code> között helyezkednek el. A <code>&lt;h1&gt;</code> a legnagyobb szintű cím, míg a <code>&lt;h6&gt;</code> a legkisebb.</p>
+    <section id="ellenorzokerdesek" class="quiz-section">
+      <h2>HTML & CSS ellenőrző kérdések</h2>
+      <form name="quizForm" id="quiz-form">
 
-    <h3>Példák:</h3>
-    <p><code>&lt;h1&gt;Főcím&lt;/h1&gt;</code> → <h1 style="color: black;">Főcím</h1></p>
-    <p><code>&lt;h2&gt;Alcím&lt;/h2&gt;</code> → <h3>Alcím</h3></p>
-    
-  </section>
+        <div class="quiz-question">
+          <p>1. Melyik HTML elem használatos a legfontosabb címsorhoz?</p>
+          <input type="radio" id="q1a" name="q1" value="a">
+          <label for="q1a">&lt;header&gt;</label><br>
+          <input type="radio" id="q1b" name="q1" value="b">
+          <label for="q1b">&lt;h1&gt;</label><br>
+          <input type="radio" id="q1c" name="q1" value="c">
+          <label for="q1c">&lt;title&gt;</label>
+        </div>
 
-  <section>
-    <h2>Listák HTML-ben</h2>
-    <p>Kétféle lista típust különböztetünk meg:</p>
+        <div class="quiz-question">
+          <p>2. Hogyan adhatunk meg háttérszínt CSS-ben?</p>
+          <input type="radio" id="q2a" name="q2" value="a">
+          <label for="q2a">background-color: red;</label><br>
+          <input type="radio" id="q2b" name="q2" value="b">
+          <label for="q2b">color: red;</label><br>
+          <input type="radio" id="q2c" name="q2" value="c">
+          <label for="q2c">bg-color: red;</label>
+        </div>
 
-    <h3>Felsoroláslista (unordered list):</h3>
-    <pre>
-&lt;ul&gt;
-  &lt;li&gt;Első elem&lt;/li&gt;
-  &lt;li&gt;Második elem&lt;/li&gt;
-&lt;/ul&gt;
-    </pre>
-    <ul>
-      <li>Első elem</li>
-      <li>Második elem</li>
-    </ul>
+        <div class="quiz-question">
+          <p>3. Melyik CSS tulajdonság felel a betűméret beállításáért?</p>
+          <input type="radio" id="q3a" name="q3" value="a">
+          <label for="q3a">font-style</label><br>
+          <input type="radio" id="q3b" name="q3" value="b">
+          <label for="q3b">font-size</label><br>
+          <input type="radio" id="q3c" name="q3" value="c">
+          <label for="q3c">font-weight</label>
+        </div>
 
-    <h3>Sorszámozott lista (ordered list):</h3>
-    <pre>
-&lt;ol&gt;
-  &lt;li&gt;Első lépés&lt;/li&gt;
-  &lt;li&gt;Második lépés&lt;/li&gt;
-&lt;/ol&gt;
-    </pre>
-    <ol>
-      <li>Első lépés</li>
-      <li>Második lépés</li>
-    </ol>
-  </section>
+        <button type="button" class="quiz-btn" onclick="checkAnswers()">Ellenőrzés</button>
+      </form>
 
-  <section>
-  <h2>Képek beszúrása</h2>
-  <p>A HTML-ben a képek beszúrásához az <code>&lt;img&gt;</code> elemet használjuk, amely önzáró (páratlan) tag, nincs zárócíme.</p>
-  <p>Legfontosabb attribútumai:</p>
-  <ul>
-    <li><code>src</code>: a kép elérési útja vagy URL-je</li>
-    <li><code>alt</code>: alternatív szöveg, amely megjelenik, ha a kép nem tölt be, és segíti a képernyőolvasókat</li>
-    <li><code>width</code>, <code>height</code>: a kép szélessége és magassága pixelben vagy százalékban</li>
-    <p>- azonban a modern webfejlesztésben általában ajánlott ezeket a méretezéseket külön CSS stíluslapban kezelni</p>
-    <li><code>title</code>: rámutatáskor megjelenő kiegészítő szöveg</li>
-  </ul>
-  <p><strong>Példa:</strong></p>
-  <pre><code>&lt;img src="kep.jpg" alt="Tájkép a hegyekben" width="400" height="300"&gt;</code></pre>
+      <p id="result"></p>
+    </section>
+  </div>
 
-  <h2>Hivatkozások beszúrása</h2>
-  <p>A hivatkozások létrehozásához az <code>&lt;a&gt;</code> taget használjuk, amelynek kötelező attribútuma a <code>href</code>.</p>
-  <p>Alapvető használat:</p>
-  <pre><code>&lt;a href="https://www.pelda.hu"&gt;Látogasd meg a weboldalt&lt;/a&gt;</code></pre>
-  <p><strong>Fontos attribútumok:</strong></p>
-  <ul>
-    <li><code>href</code>: a cél URL vagy fájl elérési útja</li>
-    <li><code>target</code>: megadja, hogy a hivatkozás új lapon (<code>_blank</code>) vagy ugyanazon a lapon (<code>_self</code>) nyíljon meg</li>
-  </ul>
-  <p><strong>Példa új lapon nyíló hivatkozásra:</strong></p>
-  <pre><code>&lt;a href="https://www.pelda.hu" target="_blank"&gt;Nyisd meg új lapon&lt;/a&gt;</code></pre>
+  <script>
+    function checkAnswers() {
+      let form = document.forms['quizForm'];
+      let score = 0;
 
-  <h2>Oldalon belüli hivatkozások</h2>
-  <p>Oldalon belüli hivatkozások (horgonylinkek) segítségével egy adott oldalrészre ugrhatunk.</p>
-  <ol>
-    <li>Adjunk egyedi <code>id</code> attribútumot a cél elemnek.</li>
-    <li>Készítsünk hivatkozást <code>href="#id"</code> formában.</li>
-  </ol>
-  <p><strong>Példa:</strong></p>
-  <pre><code>&lt;h2 id="szakasz1"&gt;1. szakasz&lt;/h2&gt;
-&lt;a href="#szakasz1"&gt;Ugrás az 1. szakaszhoz&lt;/a&gt;</code></pre>
+      if (form['q1'] && form['q1'].value === 'b') score++;
+      if (form['q2'] && form['q2'].value === 'a') score++;
+      if (form['q3'] && form['q3'].value === 'b') score++;
 
-  <h2>Kép, videó és hang beszúrásának különbségei</h2>
-  <table border="1" cellpadding="5" cellspacing="0">
-    <thead>
-      <tr>
-        <th>Elem</th>
-        <th>HTML tag</th>
-        <th>Jellemzők</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Kép</td>
-        <td><code>&lt;img&gt;</code></td>
-        <td>Önzáró tag, egyszerű használat, nincs zárótag.</td>
-      </tr>
-      <tr>
-        <td>Videó</td>
-        <td><code>&lt;video&gt;</code></td>
-        <td>Zárópárral rendelkezik, lejátszásvezérlőkkel, több forrás megadható.</td>
-      </tr>
-      <tr>
-        <td>Hang</td>
-        <td><code>&lt;audio&gt;</code></td>
-        <td>Hasonló a videóhoz, hangállományok lejátszására szolgál.</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-<section>
-  <h2>Hang és videó beillesztése HTML-ben</h2>
-
-  <h3>Hangfájl beillesztése</h3>
-  <p>
-    Hangot nagyon hasonló módon illeszthet be az oldalra, mint videót. Ehhez az <code>&lt;audio&gt;</code> taget kell használnia, amely képes lejátszani a hangfájlt a böngészőben. A legelterjedtebb és legjobban támogatott formátum az MP3, így célszerű azt használni.
-  </p>
-  <p>
-    A forrásfájlt a <code>&lt;source&gt;</code> tag segítségével adhatjuk meg. Fontos a <code>type="audio/mpeg"</code> paraméter megadása is.
-  </p>
-  <pre><code>&lt;audio controls&gt;
-  &lt;source src="hang.mp3" type="audio/mpeg"&gt;
-&lt;/audio&gt;
-</code></pre>
-
-  <h3>Videó beillesztése</h3>
-  <p>
-    Videót a <code>&lt;video&gt;</code> tag segítségével szúrhatunk be. A videók esetén az MP4 formátum ajánlott, mivel ez szintén széles körű támogatottsággal rendelkezik. A <code>controls</code> attribútum lehetővé teszi a lejátszás, szünet, hangerő és egyéb funkciók elérését a felhasználó számára.
-  </p>
-  <pre><code>&lt;video width="640" height="360" controls&gt;
-  &lt;source src="video.mp4" type="video/mp4"&gt;
-  A böngésző nem támogatja a videó lejátszását.
-&lt;/video&gt;
-</code></pre>
-</section>
-
-<section>
-  <h2>Táblázatok struktúrája</h2>
-  <p>
-    A HTML-ben a <code>&lt;table&gt;</code> elem segítségével hozhatunk létre táblázatokat. Egy táblázat jellemzően sorokból (<code>&lt;tr&gt;</code>) és oszlopokból, azaz cellákból áll. A fejléc cellákhoz a <code>&lt;th&gt;</code> elemet, míg az adatokhoz a <code>&lt;td&gt;</code> elemet használjuk.
-  </p>
-  <p>
-    A <code>&lt;caption&gt;</code> elem a táblázat címsorát vagy feliratát jeleníti meg, jellemzően a táblázat felett. Ez különösen hasznos a tartalom jobb értelmezéséhez.
-  </p>
-  <ul>
-    <li><code>&lt;table&gt;</code> – a táblázatot definiálja.</li>
-    <li><code>&lt;caption&gt;</code> – a táblázat felirata.</li>
-    <li><code>&lt;tr&gt;</code> – egy sort jelöl a táblázatban.</li>
-    <li><code>&lt;th&gt;</code> – fejléc cella, jellemzően félkövér és középre igazított.</li>
-    <li><code>&lt;td&gt;</code> – normál adatcella.</li>
-  </ul>
-
-  <p>Az alábbi példában egy egyszerű, 4 oszlopos táblázat látható néhány mintaadattal:</p>
-
-  <pre><code>
-  &lt;table border="1"&gt;
-  &lt;caption&gt;Felhasználók adatai&lt;/caption&gt;
-  &lt;tr&gt;
-    &lt;th&gt;Név&lt;/th&gt;
-    &lt;th&gt;Kor&lt;/th&gt;
-    &lt;th&gt;Város&lt;/th&gt;
-    &lt;th&gt;Email&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;János&lt;/td&gt;
-    &lt;td&gt;25&lt;/td&gt;
-    &lt;td&gt;Budapest&lt;/td&gt;
-    &lt;td&gt;janos@example.com&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Anna&lt;/td&gt;
-    &lt;td&gt;30&lt;/td&gt;
-    &lt;td&gt;Szeged&lt;/td&gt;
-    &lt;td&gt;anna@example.com&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;Béla&lt;/td&gt;
-    &lt;td&gt;28&lt;/td&gt;
-    &lt;td&gt;Debrecen&lt;/td&gt;
-    &lt;td&gt;bela@example.com&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;
-
-
-</code></pre>
-<h3>Előnézet:</h3>
-
-  <table border="1">
-  <caption>Felhasználók adatai</caption>
-  <tr>
-    <th>Név</th>
-    <th>Kor</th>
-    <th>Város</th>
-    <th>Email</th>
-  </tr>
-  <tr>
-    <td>János</td>
-    <td>25</td>
-    <td>Budapest</td>
-    <td>janos@example.com</td>
-  </tr>
-  <tr>
-    <td>Anna</td>
-    <td>30</td>
-    <td>Szeged</td>
-    <td>anna@example.com</td>
-  </tr>
-  <tr>
-    <td>Béla</td>
-    <td>28</td>
-    <td>Debrecen</td>
-    <td>bela@example.com</td>
-  </tr>
-  </table>
-
-
-  <p>
-    A <code>border="1"</code> attribútum egyszerű keretet ad a táblázatnak. Modern webfejlesztésben azonban inkább CSS-t használunk a megjelenés testreszabására.
-  </p>
-</section>
-<section>
-  <h2>Stíluslapok használata </h2>
-  <p>A honlap arculatának megadásához a CSS- (Cascading Style Sheets, magyarul: lépcsőzetes stíluslapok) szabványt kell használnia</p>
-<h3>Mi az a CSS szabály?</h3>
-  <p>A CSS-szabály segítségével megadhatja, hogy az egyes elemek milyen módon legyenek formázva.Tehát egy olyan utasítás, amely meghatározza, hogyan jelenjen meg egy adott HTML 
-elem. </p>
-<p>A CSS-szabály két részből áll. Az első rész a <strong>kijelölő, vagyis a szelektor</strong>. Ahogy a neve is mutatja, segítségével kijelölheti azokat az elemeket, amelyeket formázni szeretne.</p>
-<p>A második rész a <strong>deklarációs blokk</strong>, amely kapcsos zárójelek között helyezkedik el. A deklarációs blokkban deklarációkat helyezhet el, amelyek tulajdonságokat és azok értékeit tartalmazzák. A tulajdonságot kettősponttal kell elválasztani az értéktől.</p>
-<img width=400px src="szelektor.png" alt="CSS-szabály (egy deklarációt tartalmazó blokkal)">
-<p>Amikor a deklarációs blokk több deklarációt tartalmaz, a deklarációk végére pontosvesszőt kell tenni. Ez alól kivétel az utolsó deklaráció. Az alábbi kódban erre láthat példát:</p>
-</section>
-<section> <h2>Betűformázó CSS deklarációk</h2> <p>A CSS segítségével a szöveg megjelenését részletesen szabályozhatjuk. Az alábbiakban néhány gyakran használt betűformázó tulajdonságot mutatunk be:</p> <ul> <li><code>color</code>: A szöveg színének beállítása. Például: <code>color: #333333;</code></li> <li><code>font-size</code>: A betűméret meghatározása, például pixelben vagy relatív mértékegységekben (<code>font-size: 16px;</code>, <code>font-size: 1.2em;</code>)</li> <li><code>font-family</code>: A betűtípus megadása, például: <code>font-family: Arial, sans-serif;</code></li> <li><code>font-weight</code>: A betű vastagságának szabályozása, például <code>normal</code>, <code>bold</code> vagy numerikus értékekkel (<code>font-weight: 700;</code>)</li> <li><code>font-style</code>: A betű stílusa, például <code>normal</code>, <code>italic</code> vagy <code>oblique</code></li> <li><code>text-decoration</code>: Szöveg dekorációk, például <code>underline</code> (aláhúzás), <code>line-through</code> (áthúzás) vagy <code>none</code></li> <li><code>text-align</code>: A szöveg igazítása, például <code>left</code>, <code>center</code>, <code>right</code> vagy <code>justify</code></li> </ul> <h2>Bekezdésformázó CSS deklarációk</h2> <p>A bekezdések megjelenését is számos tulajdonsággal lehet szabályozni:</p> <ul> <li><code>text-align</code>: A bekezdés szövegének igazítása (balra, középre, jobbra, sorkizárt).</li> <li><code>line-height</code>: Sortávolság, amely meghatározza a sorok közötti távolságot (<code>line-height: 1.5;</code> például 1,5-szeres sortávolság).</li> <li><code>text-indent</code>: A bekezdés első sorának behúzása, például: <code>text-indent: 30px;</code></li> <li><code>margin</code>: Külső margó, amely a bekezdés és más elemek közötti térközt szabályozza.</li> <li><code>padding</code>: Belső margó, amely a bekezdés tartalma és a határa közötti távolság.</li> </ul> </section>
-<section>
-  <h2>Osztály és azonosító kijelölők, valamint stíluslap csatolása HTML-ben</h2>
-
-  <h3>Osztály (<code>class</code>) és azonosító (<code>id</code>) kijelölők a CSS-ben</h3>
-  <p>A CSS-ben az elemek célzott formázásához használhatjuk az <strong>osztály</strong> és <strong>azonosító</strong> kijelölőket.</p>
-  <ul>
-    <li><strong>Osztály kijelölő (<code>class</code>)</strong><br>
-      Egy vagy több HTML elemhez rendelhető, csoportos formázást tesz lehetővé.<br>
-      CSS szintaxis: <code>.osztalynev { /* stílusok */ }</code><br>
-      Példa:
-      <pre><code>&lt;p class="kiemelt"&gt;Ez egy kiemelt bekezdés.&lt;/p&gt;</code></pre>
-    </li>
-    <li><strong>Azonosító kijelölő (<code>id</code>)</strong><br>
-      Egyedi azonosító, amely egyetlen elemhez tartozhat.<br>
-      CSS szintaxis: <code>#azonosito { /* stílusok */ }</code><br>
-      Példa:
-      <pre><code>&lt;div id="fejlec"&gt;Ez az oldal fejléc része.&lt;/div&gt;</code></pre>
-    </li>
-  </ul>
-
-  <h3>Stíluslap csatolása HTML dokumentumhoz</h3>
-  <p>A CSS stílusokat többféleképpen is csatolhatjuk egy HTML dokumentumhoz:</p>
-  <ol>
-    <li><strong>Külső CSS fájl</strong><br>
-      A legelterjedtebb módszer, külön <code>.css</code> fájl csatolása a <code>&lt;head&gt;</code> szekcióban:
-      <pre><code>&lt;link rel="stylesheet" href="styles.css"&gt;</code></pre>
-    </li>
-    <li><strong>Beágyazott stíluslap (Internal CSS)</strong><br>
-      CSS szabályok elhelyezése közvetlenül a <code>&lt;head&gt;</code> részben:
-      <pre><code>&lt;style&gt;
-body {
-  background-color: #fafafa;
-}
-&lt;/style&gt;</code></pre>
-    </li>
-    <li><strong>Inline stílusok</strong><br>
-      Egyedi elemekhez közvetlenül a <code>style</code> attribútumban:
-      <pre><code>&lt;p style="color: blue; font-weight: bold;"&gt;Kék és félkövér szöveg.&lt;/p&gt;</code></pre>
-    </li>
-  </ol>
-</section>
-
-<section>
-  <h2>CSS dobozmodell (Box Model)</h2>
-  <p>
-    A honlapot alkotó elemek a böngészőprogramban úgynevezett dobozokban helyezkednek el. A legbelső dobozban a tartalom (például szöveg, kép, videó) helyezkedik el. Amikor egy elemnek megadjuk a szélességét <strong>(width)</strong>, akkor azzal a valójában a tartalom szélességét adjuk meg. Ugyanez igaz a magasságra <strong>(height)</strong> is, vagyis az is a tartalomra vonatkozik.
-
-A belső dobozt körülvevő doboz a kitöltés, vagy más néven belső margó <strong>(padding)</strong>, amely a tartalom és a szegély <strong>(border)</strong> között helyezkedik el. A szegély és a többi elem közötti térköz pedig a margó <strong>(margin)</strong>. Az értékek mind a négy oldalra (felső, jobb, alsó, bal) egyedileg beállíthatók.
-   </p>
-   <h3>Röviden tehát:</h3>
-  <p>
-    Minden HTML elem egy dobozként jelenik meg, amely négy fő részből áll:
-  </p>
-  <ul>
-    <li><strong>Content (Tartalom):</strong> Az elem tényleges tartalma, például szöveg vagy kép.</li>
-    <li><strong>Padding (Belső margó):</strong> A tartalom és a keret közötti tér, amely kitölti a doboz belsejét, növeli az elem méretét.</li>
-    <li><strong>Border (Keretszegély):</strong> Az elem körül elhelyezkedő vonal, amely vizuálisan elkülöníti a dobozt.</li>
-    <li><strong>Margin (Külső margó):</strong> Az elem és a környező elemek közötti távolság, amely nem része az elem hátterének vagy keretének.</li>
-  </ul>
-
-  <p>
-    A dobozmodell struktúráját az alábbi ábra szemlélteti:
-  </p>
-  <p style="text-align:center;">
-    <img src="dobozmodell.png" alt="CSS dobozmodell ábra" width="300">
-  </p>
-
-  <h3>Példa CSS kód a dobozmodell beállítására:</h3>
-  <pre><code>div {
-  width: 200px;
-  padding: 20px;
-  border: 5px solid black;
-  margin: 15px;
-}
-</code></pre>
-
-  <p>
-    Ebben a példában az elem tényleges teljes szélessége a következőképpen számítható ki:
-  </p>
-  <p><strong>Teljes szélesség = margin (15px * 2) + border (5px * 2) + padding (20px * 2) + tartalom szélessége (200px)</strong></p>
-  <p>Azaz összesen: <code>15*2 + 5*2 + 20*2 + 200 = 300px</code>.</p>
-
-  <h3><code>box-sizing</code> tulajdonság</h3>
-  <p>
-    A <code>box-sizing</code> CSS tulajdonság lehetővé teszi a dobozmodell viselkedésének megváltoztatását. Alapértelmezés szerint a <code>content-box</code> érték érvényesül, amely szerint a <code>width</code> és <code>height</code> csak a tartalom méretét határozza meg.
-  </p>
-  <p>
-    Ha beállítjuk a <strong>box-sizing: border-box;</strong> értéket, akkor a megadott width (pl. 200px) már a teljes doboz szélességére vonatkozik, azaz a tartalom + padding + border együtt nem haladja meg a 200px-t.
-Ebben az esetben a padding és border beleértendő a megadott szélességbe, tehát a tartalom szélessége automatikusan kisebb lesz, hogy az egész doboz pontosan 200px szélességű legyen.</p>
-
-  <pre><code>div {
-  box-sizing: border-box;
-  width: 200px;
-  padding: 20px;
-  border: 5px solid black;
-  margin: 15px;
-}
-</code></pre>
-
-  <p>
-    Tehát ebben az esetben az elem teljes szélessége 200px lesz, mivel a padding és border ezen belül kerülnek elszámolásra.
-  </p>
-  
-</section>
-
-
-
-<section id="quiz" style="max-width: 600px; margin: 40px auto; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f0f9f4; padding: 30px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);">
-  <h2 style="color: #2e7d32; margin-bottom: 20px; text-align: center;">HTML & CSS ellenőrző kérdések</h2>
-
-  <form id="quiz-form">
-    <div class="question" style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 3px 8px rgba(46, 125, 50, 0.1);">
-      <p style="font-weight: 600; margin-bottom: 10px;">1. Melyik HTML elem használatos a legfontosabb címsorhoz?</p>
-      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
-        <input type="radio" name="q1" value="a" style="margin-right: 10px;"> &lt;header&gt;
-      </label>
-      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
-        <input type="radio" name="q1" value="b" style="margin-right: 10px;"> &lt;h1&gt;
-      </label>
-      <label style="display: block; cursor: pointer;">
-        <input type="radio" name="q1" value="c" style="margin-right: 10px;"> &lt;title&gt;
-      </label>
-    </div>
-
-    <div class="question" style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 3px 8px rgba(46, 125, 50, 0.1);">
-      <p style="font-weight: 600; margin-bottom: 10px;">2. Hogyan adhatunk meg háttérszínt CSS-ben?</p>
-      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
-        <input type="radio" name="q2" value="a" style="margin-right: 10px;"> background-color: red;
-      </label>
-      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
-        <input type="radio" name="q2" value="b" style="margin-right: 10px;"> color: red;
-      </label>
-      <label style="display: block; cursor: pointer;">
-        <input type="radio" name="q2" value="c" style="margin-right: 10px;"> bg-color: red;
-      </label>
-    </div>
-
-    <div class="question" style="margin-bottom: 25px; padding: 15px; background: white; border-radius: 8px; box-shadow: 0 3px 8px rgba(46, 125, 50, 0.1);">
-      <p style="font-weight: 600; margin-bottom: 10px;">3. Melyik CSS tulajdonság felel a betűméret beállításáért?</p>
-      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
-        <input type="radio" name="q3" value="a" style="margin-right: 10px;"> font-style
-      </label>
-      <label style="display: block; margin-bottom: 8px; cursor: pointer;">
-        <input type="radio" name="q3" value="b" style="margin-right: 10px;"> font-size
-      </label>
-      <label style="display: block; cursor: pointer;">
-        <input type="radio" name="q3" value="c" style="margin-right: 10px;"> font-weight
-      </label>
-    </div>
-
-    <button type="button" onclick="checkAnswers()" style="display: block; width: 100%; background-color: #2e7d32; color: white; font-weight: 700; font-size: 1.1rem; padding: 12px 0; border: none; border-radius: 8px; cursor: pointer; transition: background-color 0.3s ease;">
-      Ellenőrzés
-    </button>
-  </form>
-
-  <div id="result" style="margin-top: 20px; font-weight: 700; font-size: 1.2rem; color: #388e3c; text-align: center;"></div>
-</section>
-
-
-<script>
-  function checkAnswers() {
-    const answers = {
-      q1: 'b',
-      q2: 'a',
-      q3: 'b'
-    };
-
-    let score = 0;
-    for (const [key, value] of Object.entries(answers)) {
-      const selected = document.querySelector(`input[name="${key}"]:checked`);
-      if (selected && selected.value === value) {
-        score++;
-      }
+      let resultElement = document.getElementById('result');
+      resultElement.innerText = 'Helyes válaszok száma: ' + score + ' / 3';
     }
-
-    const result = document.getElementById('result');
-    result.textContent = `Helyes válaszok száma: ${score} / 3`;
-  }
-</script>
-
-
-
-
-
+  </script>
 
 </body>
+
 </html>
