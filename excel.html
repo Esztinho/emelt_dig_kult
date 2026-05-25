@@ -19,12 +19,14 @@
         <a href="vektorgrafika.html">Vektorgrafika</a>
         <a href="programozas.html">Programozás</a>
         <a href="weblap_keszites.html">Weblap</a>
+        <a href="word.html">Word</a>
+        <a href="bemutatokeszites.html">PPT</a>
       </nav>
     </div>
   </header>
 
   <nav class="sidebar">
-    <h3>Táblázatkezelés</h3>
+    <h3>Tartalomjegyzék</h3>
     <a href="#adattipusok">Ismert adattípusok</a>
     <a href="#cellahivatkozasok">Cellahivatkozások</a>
     <a href="#kifejezesek">Kifejezések & Műveletek</a>
@@ -49,11 +51,13 @@
           <ul>
             <li><strong>Dátum és idő:</strong> A dátumokat és időpontokat a rendszer valós számként tárolja. A szám
               <em>egész része</em> a dátumot, a <em>tört része</em> az időt jelenti. <br><em>Példa:</em>
-              <code>44500,5</code> → 2021.09.15. 12:00</li>
+              <code>44500,5</code> → 2021.09.15. 12:00
+            </li>
             <li>A dátum a táblázatkezelő kezdőnapjától eltelt napok számát jelenti (pl. 1900. január 1. az Excel
               esetén).</li>
             <li><strong>Százalékformátum:</strong> A szám százszorosát jeleníti meg, és százalékjellel egészíti ki.
-              <br><em>Példa:</em> Az <code>0,25</code> érték százalékformátumban <code>25%</code>-ként jelenik meg.</li>
+              <br><em>Példa:</em> Az <code>0,25</code> érték százalékformátumban <code>25%</code>-ként jelenik meg.
+            </li>
           </ul>
         </li>
         <li>
@@ -147,7 +151,8 @@
         <li><strong>Függvény neve:</strong> Határozott parancsszó, például <code>SZUM</code>.</li>
         <li><strong>Nyitó zárójel:</strong> A függvénynév után közvetlenül: <code>(</code>.</li>
         <li><strong>Argumentumok:</strong> Pontosvesszővel elválasztva; lehetnek cellák, tartományok (pl.
-          <code>A1:A10</code>), vagy fix értékek.</li>
+          <code>A1:A10</code>), vagy fix értékek.
+        </li>
         <li><strong>Záró zárójel:</strong> A művelet lezárása: <code>)</code>.</li>
       </ul>
       <p><em>Konkrét példa:</em> <code>=SZUM(A1:A10)</code> összeadja az A1 és A10 közötti tartomány összes celláját.
@@ -158,18 +163,23 @@
       <h2>Függvénytípusok és konkrét példák</h2>
       <ul>
         <li><strong>Matematikai és trigonometriai:</strong> Adatok matematikai feldolgozása. <br><em>Példák:</em>
-          <code>=HATVÁNY(2; 3)</code> (eredmény: 8), <code>SZUM()</code>, <code>SZORZAT()</code></li>
+          <code>=HATVÁNY(2; 3)</code> (eredmény: 8), <code>SZUM()</code>, <code>SZORZAT()</code>
+        </li>
         <li><strong>Statisztikai:</strong> Átlagok, darabszámok és szélsőértékek keresése. <br><em>Példák:</em>
-          <code>=SZUMHATÖBB(A1:A10; "&gt;5")</code>, <code>ÁTLAG()</code>, <code>MAX()</code>, <code>MIN()</code></li>
+          <code>=SZUMHATÖBB(A1:A10; "&gt;5")</code>, <code>ÁTLAG()</code>, <code>MAX()</code>, <code>MIN()</code>
+        </li>
         <li><strong>Szövegfüggvények:</strong> Karakterláncok darabolása, tisztítása. <br><em>Példák:</em>
           <code>=BAL("Hello"; 2)</code> (eredmény: "He"), <code>JOBB()</code>, <code>KÖZÉP()</code>,
-          <code>HOSSZ()</code></li>
+          <code>HOSSZ()</code>
+        </li>
         <li><strong>Dátum és idő:</strong> Időbélyegek kezelése. <br><em>Példák:</em> <code>=ÉV("2024-06-02")</code>
           (eredmény: 2024), <code>HÓNAP()</code>, <code>NAP()</code></li>
         <li><strong>Logikai függvények:</strong> Feltételes ágakat kezelnek. <br><em>Példák:</em> <code>HA()</code>,
-          <code>ÉS()</code>, <code>VAGY()</code></li>
+          <code>ÉS()</code>, <code>VAGY()</code>
+        </li>
         <li><strong>Kereső- és hivatkozásfüggvények:</strong> Adatok párosítása táblázatok között. <br><em>Példák:</em>
-          <code>=INDEX(A1:B2; 2; 1)</code>, <code>FKERES()</code>, <code>HOL.VAN()</code></li>
+          <code>=INDEX(A1:B2; 2; 1)</code>, <code>FKERES()</code>, <code>HOL.VAN()</code>
+        </li>
       </ul>
     </section>
 
@@ -220,7 +230,8 @@
         <summary><small style="font-style: italic; margin-left: 8px;">(válasz megtekintése)</small></summary>
         <p>A <code>SZUM()</code> feltétel nélkül összeadja a kijelölt tartomány összes értékét, míg a
           <code>SZUMHATÖBB()</code> kizárólag azokat a cellákat összegzi, amelyek megfelelnek egy vagy több külön
-          megadott kritériumnak.</p>
+          megadott kritériumnak.
+        </p>
       </details>
 
       <div class="question">4. Hogyan működik az INDEX() függvény?</div>

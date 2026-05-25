@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Programozás szóbeli összefoglaló</title>
+  <title>Programozás</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -14,17 +14,19 @@
     <div class="header-container">
       <a href="index.html" class="logo">Főoldal</a>
       <nav class="main-nav">
+        <a href="adatbazis_kezeles.html">SQL</a>
         <a href="pixelgrafika.html">Pixelgrafika</a>
         <a href="vektorgrafika.html">Vektorgrafika</a>
-        <a href="adatbazis_kezeles.html">SQL</a>
         <a href="excel.html">Excel</a>
         <a href="weblap_keszites.html">Weblap</a>
+        <a href="word.html">Word</a>
+        <a href="bemutatokeszites.html">PPT</a>
       </nav>
     </div>
   </header>
 
   <nav class="sidebar">
-    <h3>Programozás</h3>
+    <h3>Tartalomjegyzék</h3>
     <a href="#adattarolas">Adattárolás & Változók</a>
     <a href="#vezerles">Vezérlési szerkezetek</a>
     <a href="#operatorok">Operátorok típusai</a>
@@ -34,7 +36,8 @@
   </nav>
 
   <div class="tartalom">
-    <h1>📘 Programozás szóbeli összefoglaló</h1>
+    <h1>📘 Programozás</h1>
+
 
     <section id="adattarolas">
       <h2>🧾 Adattárolás és változók</h2>
@@ -93,7 +96,8 @@ else:
       <ul>
         <li><strong>Számlálós ciklus (<code>for</code>):</strong> Akkor használjuk, ha előre tudjuk az ismétlések
           számát, vagy végig akarunk menni egy lista elemein.</li>
-        <li><strong>Feltételes ciklus (<code>while</code>):</strong> Addig ismétel, amíg a megadott feltétel igaz. Akkor
+        <li><strong>Feltételes ciklus (<code>while</code>):</strong> Addig ismétel, amíg a megadott feltétel igaz.
+          Akkor
           hasznos, ha nem tudjuk előre, hányszor kell lefutnia (pl. adatbekérés ellenőrzése).</li>
       </ul>
 
@@ -110,7 +114,8 @@ else:
 
       <h3>Aritmetikai (Matematikai) operátorok</h3>
       <ul>
-        <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> – Alapműveletek (összeadás, kivonás, szorzás,
+        <li><code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> – Alapműveletek (összeadás, kivonás,
+          szorzás,
           osztás).</li>
         <li><code>%</code> (Modulo): Az osztás maradékát adja vissza. Nagyon hasznos párosság vizsgálatakor
           (<code>x % 2 == 0</code>).</li>
@@ -148,14 +153,16 @@ else:
         <li><code>print()</code>: Kiíratás a képernyőre.</li>
         <li><code>input()</code>: Adatbekérés a felhasználótól. <em>Fontos: mindig szövegként (str) olvassa be az
             adatot!</em></li>
-        <li><code>int()</code>, <code>float()</code>, <code>str()</code>: Típuskonverziós függvények. Szövegből számot,
+        <li><code>int()</code>, <code>float()</code>, <code>str()</code>: Típuskonverziós függvények. Szövegből
+          számot,
           vagy számból szöveget formálnak.</li>
       </ul>
 
       <h3>Matematikai és Lista függvények</h3>
       <ul>
         <li><code>len()</code>: Megadja egy lista elemeinek számát vagy egy szöveg karaktereinek hosszát.</li>
-        <li><code>min()</code>, <code>max()</code>, <code>sum()</code>: Kiválasztja a legkisebb, legnagyobb elemet, vagy
+        <li><code>min()</code>, <code>max()</code>, <code>sum()</code>: Kiválasztja a legkisebb, legnagyobb elemet,
+          vagy
           összegzi a lista elemeit.</li>
         <li><code>append()</code>: Új elemet fűz a lista végére. (Használata: <code>lista.append(uj_elem)</code>)</li>
         <li><code>random.randint(a, b)</code>: Véletlenszám-generálás a megadott `a` és `b` zárt intervallumban.
@@ -189,7 +196,8 @@ for szam in szamok:
 print("3-nál nagyobbak száma:", darab)</pre>
 
       <h3>3. Szélsőérték (Maximum/Minimum) kiválasztás</h3>
-      <p>Megkeresi a lista legnagyobb vagy legkisebb elemét. Alapelve, hogy a legelső elemet kikiáltjuk a legnagyobbnak,
+      <p>Megkeresi a lista legnagyobb vagy legkisebb elemét. Alapelve, hogy a legelső elemet kikiáltjuk a
+        legnagyobbnak,
         majd a többit hozzá hasonlítjuk.</p>
       <pre>legnagyobb = szamok[0]
 for szam in szamok:
@@ -198,7 +206,8 @@ for szam in szamok:
 print("A legnagyobb szám:", legnagyobb)</pre>
 
       <div class="note">
-        <strong>További tételek:</strong> Az <strong>Eldöntés</strong> tételével azt vizsgáljuk meg, hogy van-e legalább
+        <strong>További tételek:</strong> Az <strong>Eldöntés</strong> tételével azt vizsgáljuk meg, hogy van-e
+        legalább
         egy feltételnek megfelelő elem a listában (pl. a `break` kulcsszó használatával, ha megtaláltuk), míg a
         <strong>Keresés</strong> során az elem helyét (indexét) is meghatározzuk.
       </div>
@@ -213,7 +222,8 @@ print("A legnagyobb szám:", legnagyobb)</pre>
           rendezve tároljuk. Elérésükhöz egymásba ágyazott ciklusokat alkalmazunk.</li>
         <li><strong>Szótárak (Dictionary):</strong> Kulcs-érték párok tárolására alkalmas összetett adattípus
           (<code>kulcs: ertek</code>). Nem indexekkel, hanem egyedi kulcsszavakkal hivatkozunk az elemekre.</li>
-        <li><strong>Fájlkezelés (I/O):</strong> Adatok beolvasása külső szöveges állományból (pl. `.txt`, `.csv`), vagy
+        <li><strong>Fájlkezelés (I/O):</strong> Adatok beolvasása külső szöveges állományból (pl. `.txt`, `.csv`),
+          vagy
           az eredmények elmentése merevlemezre a biztonságos <code>with open()</code> szerkezet használatával.</li>
         <li><strong>Saját függvények (def):</strong> Kódunk modularizálása, újrahasznosítható egyedi logikai blokkok
           létrehozása paraméterek és visszatérési értékek (<code>return</code>) segítségével.</li>
@@ -221,6 +231,7 @@ print("A legnagyobb szám:", legnagyobb)</pre>
     </section>
 
   </div>
+
 
 </body>
 
