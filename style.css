@@ -584,7 +584,7 @@ button:hover {
 .section-divider {
   margin: 40px 0;
   border: none;
-  border-top: 1px solid #edf2f7; /* Halvány szürke, nem tolakodó vonal */
+  border-top: 4px solid #9daca2; /* Halvány szürke, nem tolakodó vonal */
 }
 
 /* ==========================================================================
