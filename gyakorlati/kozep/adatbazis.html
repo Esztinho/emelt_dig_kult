@@ -102,22 +102,42 @@
                 </li>
             </ul>
 
-            <h3>D) Operátorok és Logikai Műveletek</h3>
+            <h3>D) Operátorok és Logikai Műveletek SQL-ben</h3>
+            <p>
+                A szűréseket a <code>WHERE</code> (és aggregálás után a <code>HAVING</code>) záradékban végezzük logikai
+                operátorok segítségével.
+            </p>
+
             <ul>
-                <li><strong>Nem egyenlő:</strong> <code>&lt;&gt;</code> (pl. <code>&lt;&gt; "Budapest"</code>)</li>
-                <li><strong>És / Vagy kapcsolatok:</strong>
-                    <ul>
-                        <li><code>AND</code> (ÉS): A lekérdező rácsban <strong>egy sorba</strong> írjuk a feltételeket.
-                        </li>
-                        <li><code>OR</code> (VAGY): A lekérdező rácsban <strong>külön sorokba</strong> (Vagy sor) írjuk
-                            őket.</li>
-                    </ul>
+                <li>
+                    <strong>Nem egyenlő operátor (<code>&lt;&gt;</code> vagy <code>!=</code>):</strong>
+                    <pre><code>-- Kiszűri a budapesti rekordokat
+WHERE telepules.nev &lt;&gt; "Budapest"</code></pre>
                 </li>
-                <li><strong>Kötelező Zárójelezés:</strong> Ha az AND és OR műveleteket kevered, zárójelezned kell!
-                    <pre><code>-- HELYES logikai zárójelezés:
-Megye = "Zala" AND (Ár > 5000 OR Ár < 1000)</code></pre>
+                <li>
+                    <strong><code>AND</code> (És) kapcsolat:</strong> Mindkét feltételnek EGYSZERRE kell teljesülnie.
+                    <pre><code>-- Csak a Zala megyei ÉS 5000 Ft-nál drágább termékek
+WHERE megye = "Zala" AND ar > 5000</code></pre>
+                </li>
+                <li>
+                    <strong><code>OR</code> (Vagy) kapcsolat:</strong> ELÉG az egyik feltételnek teljesülnie.
+                    <pre><code>-- A Duna VAGY a Tisza feletti hidak
+WHERE athidalas = "Duna" OR athidalas = "Tisza"</code></pre>
                 </li>
             </ul>
+
+            <div class="alert-box">
+                <strong>⚠️ Kötelező Zárójelezés (Műveleti Sorrend):</strong><br>
+                Az SQL nyelvben az <code>AND</code> művelet erősebb (előbb értékelődik ki), mint az <code>OR</code>! Ha
+                a kettőt kevered egy lekérdezésben, <strong>kötelező zárójelet használnod</strong>, különben hibás
+                eredményt kapsz!
+            </div>
+
+            <pre><code>-- ❌ HIBÁS (a zárójelek hiánya miatt minden 1000 alatti terméket kiad, megyétől függetlenül):
+WHERE megye = "Zala" AND ar > 5000 OR ar < 1000
+
+-- ✅ HELYES (egyértelműen meghatározza a VAGY kapcsolat hatókörét):
+WHERE megye = "Zala" AND (ar > 5000 OR ar < 1000)</code></pre>
 
             <h3>E) Számított Mezők és Átnevezés (<code>AS</code>)</h3>
 
