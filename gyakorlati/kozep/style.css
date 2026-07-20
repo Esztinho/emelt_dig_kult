@@ -1,0 +1,308 @@
+/* ==========================================
+   Közös CSS Stíluslap - Digitális Kultúra
+   ========================================== */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg-body: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --code-bg: #0f172a;
+    --code-text: #f8fafc;
+    --warning-bg: #fef3c7;
+    --warning-border: #f59e0b;
+    --warning-text: #92400e;
+    --success: #16a34a;
+    --danger: #dc2626;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-main);
+    background-color: var(--bg-body);
+    padding-bottom: 60px;
+}
+
+/* Header & Fejléc */
+header {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Elrendezés & Konténer */
+.container {
+    max-width: 950px;
+    margin: 35px auto;
+    padding: 0 20px;
+}
+
+/* Navigáció */
+.nav-back {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-back:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
+/* Kártyák & Dobozok */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.welcome-box {
+    background: var(--bg-card);
+    border-left: 5px solid var(--primary);
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 35px;
+}
+
+.welcome-box h2 {
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* Modulok Rácsa (Index oldal) */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.module-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.module-badge {
+    display: inline-block;
+    background-color: #dbeafe;
+    color: var(--primary-dark);
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    align-self: flex-start;
+}
+
+.module-badge.badge-disabled {
+    background-color: #e2e8f0;
+    color: #475569;
+}
+
+.module-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.module-card p {
+    color: var(--text-muted);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Címek & Szövegek */
+h2 {
+    color: var(--primary-dark);
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 8px;
+}
+
+h3 {
+    margin: 18px 0 10px 0;
+    font-size: 1.2rem;
+    color: #334155;
+}
+
+p, ul, ol {
+    margin-bottom: 14px;
+}
+
+ul, ol {
+    padding-left: 24px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* Kód blokkok & Formázás */
+code {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+    font-size: 0.95em;
+    font-weight: 600;
+}
+
+pre {
+    background-color: var(--code-bg);
+    color: var(--code-text);
+    padding: 16px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 14px 0;
+    font-family: 'Consolas', 'Courier New', Courier, monospace;
+}
+
+pre code {
+    background: none;
+    color: inherit;
+    padding: 0;
+}
+
+/* Kiemelt Dátum/Tipp Doboz */
+.alert-box {
+    background-color: var(--warning-bg);
+    border-left: 4px solid var(--warning-border);
+    padding: 16px;
+    border-radius: 4px;
+    margin: 16px 0;
+    color: var(--warning-text);
+}
+
+/* Táblázat Formázás */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 18px 0;
+    background: white;
+}
+
+th, td {
+    border: 1px solid var(--border);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+}
+
+/* Gombok */
+.btn {
+    display: inline-block;
+    text-align: center;
+    background-color: var(--primary);
+    color: white;
+    text-decoration: none;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-disabled {
+    background-color: #cbd5e1;
+    color: #64748b;
+    cursor: not-allowed;
+}
+
+.btn-disabled:hover {
+    background-color: #cbd5e1;
+}
+
+/* Kvíz Stílusok */
+.quiz-option {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.quiz-option:hover {
+    background: #f1f5f9;
+    border-color: var(--primary);
+}
+
+.quiz-option input {
+    margin-right: 10px;
+}
+
+#quiz-result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+    font-weight: bold;
+}
+
+/* Lábléc */
+footer {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 50px;
+}

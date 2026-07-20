@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS Access Adatbázis-kezelés | Digitális Kultúra Érettségi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Középszintű Digitális Kultúra Érettségi</h1>
+        <p>Adatbázis-kezelés Modul (Microsoft Access)</p>
+    </header>
+
+    <div class="container">
+
+        <a href="index.html" class="nav-back">&larr; Vissza a modulokhoz</a>
+
+        <!-- EMBERI BEVEZETŐ DOBOS -->
+        <div class="welcome-box">
+            <h2>Pánikra semmi ok, jó helyen jársz! 💻</h2>
+
+            <p>Nem tömjük a fejed száraz
+                elmélettel: alább megtalálod az összes kötelező szintaktikai trükköt, majd egy komplett érettségi
+                mintafeladaton nézzük meg őket működés közben!</p>
+        </div>
+
+        <!-- 1. TÁBLAKÉSZÍTÉS ÉS IMPORTÁLÁS -->
+        <section class="card">
+            <h2>1. Adattábla létrehozása és Importálás</h2>
+            <p>A feladatok mindig meglévő adatok importálásával (pl. <code>.txt</code>, <code>.csv</code>) vagy új tábla
+                kézi létrehozásával kezdődnek.</p>
+
+            <h3>A) Adatimportálás lépései:</h3>
+            <ol>
+                <li><code>Külső adatok</code> &rarr; <code>Új adatforrás</code> &rarr; <code>Fájlból</code> &rarr;
+                    <code>Szövegfájl</code>.
+                </li>
+                <li>Válaszd az <strong>Elválasztott</strong> opciót, majd állítsd be a határolójelet (leggyakrabban
+                    Tabulátor vagy Pontosvessző).</li>
+                <li><strong>Kiemelten fontos:</strong> Pipáld be az <em>„Az első sor tartalmazza a mezőneveket”</em>
+                    opciót!</li>
+                <li>Állítsd be a mezők adattípusait (Szöveg, Szám, Dátum) és jelöld ki az elsődleges kulcsot.</li>
+            </ol>
+
+            <h3>B) Új tábla építése leírás alapján (Táblatervező):</h3>
+            <ul>
+                <li>Nyisd meg a <code>Létrehozás</code> &rarr; <code>Táblatervező</code> nézetet.</li>
+                <li>Adatmező tulajdonságai (alsó panel): <code>Mezőméret</code> (pl. szövegnél 50),
+                    <code>Kötelező</code> (Required = Igen/Nem), <code>Alapértelmezett érték</code>.
+                </li>
+                <li><strong>Összetett kulcs beállítása:</strong> Ha egy táblának két kulcsa van, tartsd nyomva a
+                    <code>CTRL</code> billentyűt, jelöld ki mindkét mezőt, és kattints a <strong>KULCS</strong> ikonra!
+                </li>
+            </ul>
+        </section>
+
+        <!-- 2. ÁLTALÁNOS LEKÉRDEZÉSI SZINTAXIS -->
+        <section class="card">
+            <h2>2. Általános Lekérdezési Szintaxis Kisokos</h2>
+
+
+            <h3>A) Névrészletek és Helyettesítő Karakterek (<code>Like</code>)</h3>
+            <p>A <code>Like</code> (Hasonló) operátort akkor használjuk, ha szövegrészletekre keresünk rá.</p>
+            <ul>
+                <li><code>Like "K*"</code> &rarr; <strong>K</strong> betűvel kezdődő szavak (pl. Kovács, Kassa).</li>
+                <li><code>Like "*utca"</code> &rarr; <strong>utca</strong> szóra végződő kifejezések (pl. Petőfi utca).
+                </li>
+                <li><code>Like "*patak*"</code> &rarr; A szövegben <strong>bárhol</strong> szerepel a "patak" szó (pl.
+                    Rákos-patak, Patakpart).</li>
+                <li><code>Like "T?ra"</code> &rarr; A <code>?</code> pontosan egy tetszőleges karaktert helyettesít (pl.
+                    Túra, Tára).</li>
+            </ul>
+
+            <h3>B) Hiányzó és Meglévő Adatok Szűrése (<code>Is Null</code> / <code>Is Not Null</code>)</h3>
+            <div class="alert-box">
+                <strong>⚠️ Örök szabály:</strong> Hiányzó mezőkre soha ne használj <code>= ""</code> vagy
+                <code>= Null</code> kifejezést!
+            </div>
+            <ul>
+                <li><code>Is Null</code> &rarr; Kiszűri azokat a rekordokat, ahol a mező <strong>üres / nincs
+                        kitöltve</strong>.</li>
+                <li><code>Is Not Null</code> &rarr; Kiszűri azokat a rekordokat, ahol a mező <strong>ki van
+                        töltve</strong>.</li>
+            </ul>
+
+            <h3>C) Dátumok Használata és Dátumfüggvények</h3>
+            <p>A konkrét dátumértékeket kötelező <strong>kettőskeresztek (<code>#</code>) közé</strong> zárni!</p>
+            <ul>
+                <li>Pontos dátum: <code>#2026/07/20#</code> vagy <code>#2026.07.20#</code></li>
+                <li>Intervallum: <code>Between #2026/01/01# And #2026/12/31#</code></li>
+                <li>Beépített dátumfüggvények:
+                    <ul>
+                        <li><code>Now()</code> &rarr; Pontos mai dátum ÉS idő.</li>
+                        <li><code>Date()</code> &rarr; Csak a mai dátum.</li>
+                        <li><code>Year(dátum)</code> &rarr; Kinyeri a dátumból az évszámot (pl. <code>Year(Now())</code>
+                            az aktuális évet adja vissza).</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>D) Operátorok és Logikai Műveletek</h3>
+            <ul>
+                <li><strong>Nem egyenlő:</strong> <code>&lt;&gt;</code> (pl. <code>&lt;&gt; "Budapest"</code>)</li>
+                <li><strong>És / Vagy kapcsolatok:</strong>
+                    <ul>
+                        <li><code>AND</code> (ÉS): A lekérdező rácsban <strong>egy sorba</strong> írjuk a feltételeket.
+                        </li>
+                        <li><code>OR</code> (VAGY): A lekérdező rácsban <strong>külön sorokba</strong> (Vagy sor) írjuk
+                            őket.</li>
+                    </ul>
+                </li>
+                <li><strong>Kötelező Zárójelezés:</strong> Ha az AND és OR műveleteket kevered, zárójelezned kell!
+                    <pre><code>-- HELYES logikai zárójelezés:
+Megye = "Zala" AND (Ár > 5000 OR Ár < 1000)</code></pre>
+                </li>
+            </ul>
+
+            <h3>E) Számított Mezők és Átnevezés (<code>AS</code>)</h3>
+
+            <p>SQL nézetben az átnevezés az <code>AS</code> kulcsszóval történik:
+                <code>SELECT [NettóÁr] * 1.27 AS BruttóÁr FROM Termékek;</code>
+            </p>
+
+            <h3>F) Összegző / Csoportosító Lekérdezések</h3>
+            <p>
+                A vizsgafeladatok többségében nem egyenként kell kilistázni a rekordokat, hanem <strong>valamilyen
+                    szempont alapján csoportosítva</strong> kell kiszámolnod egy értéket.
+            </p>
+
+            <div class="alert-box">
+                <strong>💡 A kulcs a gondolkodásmódban van:</strong><br>
+                Keresd a feladat leírásában a <strong>„-ként / -onként”</strong> végződéseket!<br>
+                <em>„Városonként”</em> &rarr; Város szerint csoportosítunk.<br>
+                <em>„Iskolánként”</em> &rarr; Iskola szerint csoportosítunk.<br>
+                <em>„Megyénként”</em> &rarr; Megye szerint csoportosítunk.
+            </div>
+            <h4>1. A leggyakoribb aggregáló függvények:</h4>
+            <ul>
+                <li><code>COUNT(mező)</code> &rarr; Rekordok megszámlálása (pl. <em>„Hány
+                        híd/diák van?”</em>).</li>
+                <li><code>SUM(mező)</code> &rarr; Értékek összeadása (pl. <em>„Hidak teljes hossza”</em>).</li>
+                <li><code>AVG(mező)</code> &rarr; Átlagszámítás (pl. <em>„Átlagos kor vagy pontszám”</em>).</li>
+                <li><code>MIN(mező)</code> / <code>MAX(mező)</code> &rarr; Legkisebb vagy legnagyobb érték.</li>
+            </ul>
+
+            <h4>2. Gyakorlati SQL Példák:</h4>
+
+            <p><strong>A) "Hány diák jár az egyes iskolákba?"</strong> (Iskolánkénti darabszám)</p>
+            <pre><code>SELECT iskola, COUNT(diak_id) AS diakok_szama
+FROM diakok
+GROUP BY iskola;</code></pre>
+
+            <p><strong>B) "Mennyi az átlagos hídhossz városonként, de csak Zala megyében?"</strong> (Szűrés +
+                Csoportosítás)</p>
+            <pre><code>SELECT telepules_nev, AVG(hossz) AS atlagos_hossz
+FROM hidak
+WHERE megye = 'Zala'
+GROUP BY telepules_nev;</code></pre>
+
+            <div class="alert-box">
+                <strong>🔥 Szűrési kisokos (WHERE vs. HAVING):</strong><br>
+                • <code>WHERE</code>: A csoportosítás <strong>ELŐTT</strong> szűr (egyedi rekordokra, pl.
+                <code>WHERE megye = 'Zala'</code>).<br>
+                • <code>HAVING</code>: A csoportosítás <strong>UTÁN</strong> szűr az aggregált értékre (pl.
+                <code>HAVING COUNT(diak_id) > 5</code> &rarr; csak ahol 5-nél több diák van).
+            </div>
+        </section>
+
+        <!-- 3. CSALÓLAP -->
+        <section class="card">
+            <h2>📌 Érettségi Szintaxis Cheatsheet</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Feladat / Szituáció</th>
+                        <th>Minta szintaxis (MS Access)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Névrészlet keresése</strong></td>
+                        <td><code>Like "*patak*"</code> vagy <code>Like "K*"</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Üres / Hiányzó mezők</strong></td>
+                        <td><code>Is Null</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kitöltött mezők</strong></td>
+                        <td><code>Is Not Null</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dátum megadása</strong></td>
+                        <td><code>#2026/07/20#</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nem egyenlő feltétel</strong></td>
+                        <td><code>&lt;&gt; "Érték"</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Aktuális év kiszámítása</strong></td>
+                        <td><code>Year(Now())</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Új számított mező (SQL)</strong></td>
+                        <td><code>[Kifejezés] AS "Oszlopnév"</code></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- 4. ÉRETTSÉGI MINTAFELADAT: HÍDLELTÁR -->
+        <section class="card">
+            <h2>📝 Érettségi Mintafeladat (Hídleltár) – SQL Megoldások</h2>
+            <p>
+                A középszintű érettségi <strong>Hídleltár (2022. május)</strong> feladatsorának hivatalos és hibátlan
+                SQL lekérdezései, magyarázatokkal.
+            </p>
+
+            <!-- 2. FELADAT -->
+            <h3>2. Feladat (2duna)</h3>
+            <p><em>Ábécérendben a Dunát átívelő hidak neve, hossza és átadási éve.</em></p>
+            <pre><code>SELECT nev, hossz, atadas
+FROM hid
+WHERE athidalas = "Duna"
+ORDER BY nev;</code></pre>
+
+            <!-- 3. FELADAT -->
+            <h3>3. Feladat (3patak)</h3>
+            <p><em>Hidak neve és áthidalása, ahol az áthidalás neve tartalmazza a „patak” szót.</em></p>
+            <pre><code>SELECT nev, athidalas
+FROM hid
+WHERE athidalas LIKE "*patak*";</code></pre>
+
+            <!-- 4. FELADAT -->
+            <h3>4. Feladat (4zala)</h3>
+            <p><em>Zala megye egyes településeihez hány híd tartozik? (Település neve és a hidak száma).</em></p>
+            <pre><code>SELECT telepules.nev, COUNT(hidaz) AS hidak_szama
+FROM hid, kapcsolo, telepules
+WHERE hid.az = kapcsolo.hidaz 
+  AND kapcsolo.telepulesaz = telepules.az
+  AND telepules.megye = "Zala"
+GROUP BY telepules.nev;</code></pre>
+            <div class="alert-box">
+                <strong>💡 SQL Tipp:</strong> Az összekapcsolási feltételeket
+                (<code>WHERE hid.az = kapcsolo.hidaz...</code>) kötelező megadni, különben az SQL mindent mindennel
+                összeköt (DeCarte-szorzat), és hibás eredményt ad!
+            </div>
+
+            <!-- 5. FELADAT -->
+            <h3>5. Feladat (5korok)</h3>
+            <p><em>Budapesti hidak neve és életkora, az utóbbi szerint csökkenő sorrendben. Az aktuális évet függvénnyel
+                    határozd meg!</em></p>
+            <pre><code>SELECT hid.nev, (YEAR(NOW()) - atadas) AS eletkor
+FROM hid, kapcsolo, telepules
+WHERE hid.az = kapcsolo.hidaz 
+  AND kapcsolo.telepulesaz = telepules.az
+  AND telepules.nev = "Budapest"
+ORDER BY (YEAR(NOW()) - atadas) DESC;</code></pre>
+            <p><em>Megjegyzés: Az <code>AS eletkor</code> segítségével az oszlop az érettségin szép, értelmezhető nevet
+                    kap a névtelen számított mező helyett.</em></p>
+
+            <!-- 6. FELADAT -->
+            <h3>6. Feladat (6pentele)</h3>
+            <p><em>Azoknak a hidaknak a neve és hossza, amelyek a „Pentele” névrészletet tartalmazó hídnál
+                    hosszabbak.</em></p>
+            <pre><code>SELECT nev, hossz
+FROM hid
+WHERE hossz > (
+    SELECT MAX(hossz) 
+    FROM hid 
+    WHERE nev LIKE "*Pentele*"
+);</code></pre>
+
+        </section>
+
+        <!-- INTERAKTÍV KVÍZ -->
+        <section class="card">
+            <h2>🧠 Interaktív Önellenőrző Kvíz</h2>
+            <form id="quizForm">
+
+                <!-- 1. KÉRDÉS -->
+                <h3>1. Hogyan szűrhetsz le azokra a rekordokra, ahol az Email mező NINCS kitöltve?</h3>
+                <label class="quiz-option"><input type="radio" name="q1" value="a"> <code>Email = ""</code></label>
+                <label class="quiz-option"><input type="radio" name="q1" value="b"> <code>Is Null</code></label>
+                <label class="quiz-option"><input type="radio" name="q1" value="c"> <code>Email = Null</code></label>
+
+                <!-- 2. KÉRDÉS -->
+                <h3>2. Milyen karakterek közé kell zárni a konkrét dátumokat az Access lekérdezésekben?</h3>
+                <label class="quiz-option"><input type="radio" name="q2" value="a"> Idézőjelek közé
+                    (<code>"2026/07/20"</code>)</label>
+                <label class="quiz-option"><input type="radio" name="q2" value="b"> Kettőskeresztek közé
+                    (<code>#2026/07/20#</code>)</label>
+                <label class="quiz-option"><input type="radio" name="q2" value="c"> Szögletes zárójelek közé
+                    (<code>[2026/07/20]</code>)</label>
+
+                <!-- 3. KÉRDÉS -->
+                <h3>3. Melyik operátor jelenti azt az SQL kifejezésekben, hogy "Nem egyenlő"?</h3>
+                <label class="quiz-option"><input type="radio" name="q3" value="a"> <code>!=</code></label>
+                <label class="quiz-option"><input type="radio" name="q3" value="b"> <code>NOT EQUAL</code></label>
+                <label class="quiz-option"><input type="radio" name="q3" value="c"> <code>&lt;&gt;</code></label>
+
+                <!-- 4. KÉRDÉS -->
+                <h3>4. Melyik kulcsszót használjuk, ha a lekérdezés eredményét CSÖKKENŐ sorrendbe szeretnénk rendezni?
+                </h3>
+                <label class="quiz-option"><input type="radio" name="q4" value="a"> <code>DOWN</code></label>
+                <label class="quiz-option"><input type="radio" name="q4" value="b"> <code>DESC</code></label>
+                <label class="quiz-option"><input type="radio" name="q4" value="c"> <code>ORDER LESS</code></label>
+
+                <!-- 5. KÉRDÉS -->
+                <h3>5. Melyik kifejezéssel tudod kiszűrni az ISMÉTLŐDŐ értékeket, hogy minden találat csak egyszer
+                    szerepeljen?</h3>
+                <label class="quiz-option"><input type="radio" name="q5" value="a"> <code>DISTINCT</code></label>
+                <label class="quiz-option"><input type="radio" name="q5" value="b"> <code>UNIQUE</code></label>
+                <label class="quiz-option"><input type="radio" name="q5" value="c"> <code>ONCE</code></label>
+
+                <!-- 6. KÉRDÉS -->
+                <h3>6. Melyik záradékkal tudod szűkíteni a találatokat CSAK A LEGKORÁBBI vagy LEGHOSSZABB (egyetlen)
+                    rekordra?</h3>
+                <label class="quiz-option"><input type="radio" name="q6" value="a"> <code>LIMIT FIRST</code></label>
+                <label class="quiz-option"><input type="radio" name="q6" value="b"> <code>FIRST 1</code></label>
+                <label class="quiz-option"><input type="radio" name="q6" value="c"> <code>TOP 1</code></label>
+
+                <!-- 7. KÉRDÉS -->
+                <h3>7. Mi a különbség a WHERE és a HAVING záradékok között?</h3>
+                <label class="quiz-option"><input type="radio" name="q7" value="a"> Nincs különbség, mindkettő pontosan
+                    ugyanazt csinálja.</label>
+                <label class="quiz-option"><input type="radio" name="q7" value="b"> A WHERE a csoportosítás ELŐTT szűr,
+                    a HAVING pedig a GROUP BY UTÁN, az aggregált értékekre (pl. COUNT, AVG).</label>
+                <label class="quiz-option"><input type="radio" name="q7" value="c"> A HAVING csak szöveges mezőkre
+                    működik, a WHERE pedig csak számokra.</label>
+
+                <!-- 8. KÉRDÉS -->
+                <h3>8. Milyen eredményt ad a <code>Now()</code> függvény?</h3>
+                <label class="quiz-option"><input type="radio" name="q8" value="a"> Csak az aktuális évet.</label>
+                <label class="quiz-option"><input type="radio" name="q8" value="b"> Az aktuális dátumot és a pontos
+                    időt.</label>
+                <label class="quiz-option"><input type="radio" name="q8" value="c"> Csak a mai dátumot (időpont
+                    nélkül).</label>
+
+                <button type="button" class="btn" onclick="checkQuiz()">Válaszok ellenőrzése</button>
+            </form>
+
+            <div id="quiz-result"></div>
+        </section>
+
+        <script>
+            function checkQuiz() {
+                // Helyes válaszok kulcsa
+                const answers = {
+                    q1: 'b', // Is Null
+                    q2: 'b', // #dátum#
+                    q3: 'c', // <>
+                    q4: 'b', // DESC
+                    q5: 'a', // DISTINCT
+                    q6: 'c', // TOP 1
+                    q7: 'b', // WHERE vs HAVING
+                    q8: 'b'  // Now()
+                };
+
+                let score = 0;
+                let total = Object.keys(answers).length;
+
+                const form = document.forms['quizForm'];
+
+                for (let q in answers) {
+                    const selected = form[q].value;
+                    if (selected === answers[q]) {
+                        score++;
+                    }
+                }
+
+                const resultDiv = document.getElementById('quiz-result');
+                resultDiv.style.display = 'block';
+
+                if (score === total) {
+                    resultDiv.style.backgroundColor = '#dcfce7';
+                    resultDiv.style.color = '#15803d';
+                    resultDiv.innerHTML = `🎉 Zseniális! ${score} / ${total} pontot értél el. Nyugodt szívvel mehetsz az érettségire!`;
+                } else if (score >= total / 2) {
+                    resultDiv.style.backgroundColor = '#fef3c7';
+                    resultDiv.style.color = '#92400e';
+                    resultDiv.innerHTML = `👍 Szép munka! ${score} / ${total} pont. Néhány apróság még hiányzik, futólag nézd át a csalólapot!`;
+                } else {
+                    resultDiv.style.backgroundColor = '#fee2e2';
+                    resultDiv.style.color = '#b91c1c';
+                    resultDiv.innerHTML = `⚠️ Elért eredmény: ${score} / ${total} pont. Ne csüggedj, olvasd át újra az SQL szintaxist és futtasd le újra a tesztet!`;
+                }
+            }
+        </script>
+
+        <footer>
+            <p>&copy; 2026 Digitális Kultúra Felkészítő | MS Access Adatbázis-kezelés</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function checkQuiz() {
+            const answers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'c',
+                q4: 'b'
+            };
+
+            let score = 0;
+            let total = 4;
+
+            const form = document.forms['quizForm'];
+
+            for (let q in answers) {
+                const selected = form[q].value;
+                if (selected === answers[q]) {
+                    score++;
+                }
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.style.display = 'block';
+
+            if (score === total) {
+                resultDiv.style.backgroundColor = '#dcfce7';
+                resultDiv.style.color = '#15803d';
+                resultDiv.innerHTML = `🎉 Gratulálunk! ${score} / ${total} pontot értél el. Ügyes vagy, így tovább!`;
+            } else {
+                resultDiv.style.backgroundColor = '#fee2e2';
+                resultDiv.style.color = '#b91c1c';
+                resultDiv.innerHTML = `⚠️ Elért eredmény: ${score} / ${total} pont. Nézd át újra a csalólapot és próbáld újra!`;
+            }
+        }
+    </script>
+</body>
+
+</html>
