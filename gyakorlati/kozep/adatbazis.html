@@ -46,6 +46,20 @@
                 <li>Állítsd be a mezők adattípusait (Szöveg, Szám, Dátum) és jelöld ki az elsődleges kulcsot.</li>
             </ol>
 
+            <!-- ÖSSZETETT KULCS IMPORTÁLÁSI TRÜKK (ÚJ) -->
+            <div class="alert-box">
+                <strong>⚠️ Összetett kulcs (két kulcs) importálása:</strong><br>
+                Az Access importálási varázslójában <strong>nem lehet egyszerre két kulcsot megadni</strong>! Ha egy
+                kapcsolótáblának két kulcsa van (pl. <code>hidaz</code> + <code>telepulesaz</code>):
+                <ol style="margin-top: 8px; margin-bottom: 0;">
+                    <li>Importáláskor válaszd a <em>„Ne legyen elsődleges kulcs”</em> opciót, és fejezd be az
+                        importálást.</li>
+                    <li>Nyisd meg a friss táblát <strong>Tervező nézetben</strong>.</li>
+                    <li>Tartsd nyomva a <code>CTRL</code> gombot, jelöld ki mindkét mezőt a bal szélső sávban, majd
+                        kattints a felső menüben az <strong>Elsődleges kulcs (Kulcs ikon)</strong> gombra!</li>
+                </ol>
+            </div>
+
             <h3>B) Új tábla építése leírás alapján (Táblatervező):</h3>
             <ul>
                 <li>Nyisd meg a <code>Létrehozás</code> &rarr; <code>Táblatervező</code> nézetet.</li>
