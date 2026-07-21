@@ -19,7 +19,6 @@
 
         <a href="index.html" class="nav-back">&larr; Vissza a modulokhoz</a>
 
-        <!-- EMBERI BEVEZETŐ DOBOS -->
         <div class="welcome-box">
             <h2>Pánikra semmi ok, jó helyen jársz! 💻</h2>
 
@@ -246,6 +245,17 @@ GROUP BY telepules_nev;</code></pre>
                 </tbody>
             </table>
         </section>
+
+        <div class="alert-box">
+            <strong>🔥 Haladó Érettségi Trükk: Önmagával vett táblakapcsolat (Self-Join)</strong><br>
+            Ha a feladat azt kéri, hogy keresd meg, mikor volt <strong>két különböző személy ugyanott</strong> (pl.
+            ugyanazon a meccsen, ugyanabban a hotelben, ugyanazon a járaton):
+            <ol style="margin-top: 8px; margin-bottom: 0;">
+                <li>Duplázd meg a táblákat a <code>FROM</code> záradékban álnévvel (<code>AS b1, AS b2</code>)!</li>
+                <li>Kutasd fel a közös kapcsolópontot: <code>WHERE b1.meccsid = b2.meccsid</code></li>
+                <li>Szűrj rá a két külön személyre: <code>n1.nev = "Dorina" AND n2.nev = "Zsolt"</code></li>
+            </ol>
+        </div>
 
         <!-- 4. ÉRETTSÉGI MINTAFELADAT: HÍDLELTÁR -->
         <section class="card">

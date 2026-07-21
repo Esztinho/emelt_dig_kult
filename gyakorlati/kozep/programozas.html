@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Programozás | Digitális Kultúra Érettségi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Középszintű Digitális Kultúra Érettségi</h1>
+        <p>Programozás Modul (Python)</p>
+    </header>
+
+    <div class="container">
+
+        <a href="index.html" class="nav-back">&larr; Vissza a modulokhoz</a>
+
+        <div class="welcome-box">
+            <h2>Pánikra semmi ok, jó helyen jársz! 💻</h2>
+            <p>A Python programozás vizsgafeladatoknál a gyorsaság és a rutin a kulcs. Az alábbiakban megtalálod az
+                összes kötelező kiíratási, formázási és adatfeldolgozási trükköt, amit
+                az érettségin számon kérhetnek!</p>
+        </div>
+
+        <!-- 1. VÁLTOZÓK ÉS ADATBEKÉRÉS -->
+        <section class="card">
+            <h2>1. Változók, Típusok és Adatbekérés</h2>
+            <p>
+                A Pythonban az <code>input()</code> függvény <strong>mindig sztringet (szöveget)</strong> ad vissza!
+                Ha számokkal szeretnénk műveletet végezni, kötelező a <strong>típuskonverzió</strong>
+                (<code>int()</code> vagy <code>float()</code>).
+            </p>
+
+            <h3>Kódminta:</h3>
+            <pre><code>nev = input("Hogy hívnak? ")                       # str (szöveg)
+kor = int(input("Hány éves vagy? "))                # int (egész szám)
+magassag = float(input("Hány méter magas vagy? ")) # float (tizedes szám)
+
+# Sztring formázás f-string segítségével
+print(f"Szia {nev}! Jövőre {kor + 1} éves leszel.")</code></pre>
+        </section>
+
+        <!-- 2. TIZEDESJEGY FORMÁZÁS -->
+        <section class="card">
+            <h2>2. Kiíratás és Számok Formázása (<code>round</code> vs <code>:.2f</code>)</h2>
+            <p>
+                Érettségin gyakori feladat az átlagok kerekítése 2 tizedesjegyre. Nem mindegy azonban, melyik módszert
+                használjuk!
+            </p>
+
+            <h3>Kódminta:</h3>
+            <pre><code>atlag = 12.5
+
+# 1. round() függvény (ha a végén 0 lenne, lecsapja)
+print(round(atlag, 2))  # Kimenet: 12.5
+
+# 2. Formázott sztring :.2f (FORSZÍROZZA a 2 tizedesjegyet!)
+print(f"Egy alkalommal átlagosan {atlag:.2f} l üzemanyagot vásároltak.") # Kimenet: 12.50</code></pre>
+
+            <div class="alert-box">
+                <p><strong>🔍 Melyiket mikor használjuk?</strong></p>
+                <p>
+                    A <code>{atlag:.2f}</code> formátumot akkor használd, ha a feladat szövege kifejezetten kéri, hogy
+                    <strong>mindig látszódjon a két tizedesjegy</strong> (például pénzösszegeknél vagy kiíratási
+                    mintáknál, ahol a <code>12.50</code> elvárás a <code>12.5</code> helyett).
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. SZTRINGEK ÉS SZELETELÉS (SLICING) -->
+        <section class="card">
+            <h2>3. Sztringek és Szeletelés (Slicing)</h2>
+            <p>
+                A szövegek karaktereit az indexük alapján érhetjük el (a számozás <code>0</code>-tól kezdődik).
+                A szeletelés (slicing) szintaxisa: <code>szoveg[start:stop]</code>.
+            </p>
+
+            <h3>Kódminta (Benzinkutas / Kódos feladat példa):</h3>
+            <pre><code>kod = "B20"  # B = Benzin, 20 = Literek száma
+
+tipus = kod[0]      # 'B'  -> Első karakter (0. index)
+liter = kod[1:]     # '20' -> Az 1. index-től a legvégéig!
+
+print(f"Típus: {tipus}, Mennyiség: {int(liter)} liter")</code></pre>
+        </section>
+
+        <!-- 4. LISTÁK ÉS ALAPVETŐ METÓDUSOK -->
+        <section class="card">
+            <h2>4. Listák, <code>append()</code>, <code>len()</code>, <code>sum()</code></h2>
+            <p>
+                A lista összetett adatszerkezet. Dinamikusan bővíthető az <code>append()</code> metódussal,
+                elemszáma a <code>len()</code>, összege pedig a <code>sum()</code> függvénnyel kérdezhető le.
+            </p>
+
+            <h3>Kódminta:</h3>
+            <pre><code>szamok = [12, 45, 8]
+
+# 1. Elem hozzáadása
+szamok.append(30)   # A lista tartalma: [12, 45, 8, 30]
+
+# 2. Elemszám (Lista hossza)
+db = len(szamok)    # 4
+
+# 3. Elemek összege
+osszeg = sum(szamok) # 95
+
+print(f"Összesen {db} adat van, összegük: {osszeg}")</code></pre>
+        </section>
+
+        <!-- 5. CIKLUSOK (FOR ÉS WHILE) -->
+        <section class="card">
+            <h2>5. Ciklusok (<code>for</code>, <code>range</code>, <code>while</code>)</h2>
+
+            <h3>A) <code>for</code> ciklus és a <code>range()</code></h3>
+            <p>Akkor használjuk, ha tudjuk a lépések számát, vagy végig akarunk menni egy lista elemein.</p>
+            <pre><code># 1. Lista elemeinek bejárása
+gyumolcsok = ["alma", "banán", "narancs"]
+for gyumolcs in gyumolcsok:
+    print(gyumolcs)
+
+# 2. Ismétlés N-szer (1-től 5-ig)
+for i in range(1, 6): # range(start, stop) -> a stop index már nincs benne!
+    print(f"{i}. próbálkozás")</code></pre>
+
+            <h3>B) <code>while</code> ciklus (Feltételes leállás)</h3>
+            <p>Akkor használjuk, ha nem tudjuk előre, hányszor kell lefutnia (pl. ENTER-re történő kilépésig).</p>
+            <pre><code>adatok = []
+
+while True:
+    be = input("Adj meg egy adatot (ENTER = vége): ")
+    if be == "": # Ha üres sztringet kapunk (csak ENTER-t nyomott)
+        break   # Azonnal kilépünk a ciklusból
+    adatok.append(be)
+
+print(f"Beolvasva: {len(adatok)} db adat.")</code></pre>
+        </section>
+
+        <!-- 6. VÉLETLENSZÁMOK -->
+        <section class="card">
+            <h2>6. Véletlenszámok (<code>import random</code>)</h2>
+            <p>
+                Véletlenszerű értékek generálásához az érettségin a <code>randint()</code> és a <code>choice()</code> a
+                két legfontosabb függvény.
+            </p>
+
+            <h3>Kódminta:</h3>
+            <pre><code>import random
+
+# 1. Véletlen egész szám 1 és 6 között (mindkét határ benne van!)
+kocka = random.randint(1, 6)
+
+# 2. Véletlen elem kiválasztása egy listából
+nyeremenyek = ["Póló", "Sapka", "Karszalag"]
+sorsolt = random.choice(nyeremenyek)
+
+print(f"Dobás: {kocka}, Nyeremény: {sorsolt}")</code></pre>
+        </section>
+    </div>
+
+</body>
+
+</html>
