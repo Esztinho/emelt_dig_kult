@@ -21,9 +21,9 @@
 
         <div class="welcome-box">
             <h2>Pánikra semmi ok, jó helyen jársz! 💻</h2>
-            <p>A Python programozás vizsgafeladatoknál a gyorsaság és a rutin a kulcs. Az alábbiakban megtalálod az
-                összes kötelező kiíratási, formázási és adatfeldolgozási trükköt, amit
-                az érettségin számon kérhetnek!</p>
+            <p>A Python érettségi feladatok 90%-a ugyanazokra a jól bevált építőelemekre épül: beolvasás, ciklus,
+                feltétel, formázás. Ha ezek a trükkök a kezedben vannak, semmilyen feladat nem érhet meglepetésként.
+                Szánd rá az időt, menj végig a példákon, és zsebeld be a maximális pontszámot! 🏆</p>
         </div>
 
         <!-- 1. VÁLTOZÓK ÉS ADATBEKÉRÉS -->
@@ -159,7 +159,90 @@ sorsolt = random.choice(nyeremenyek)
 
 print(f"Dobás: {kocka}, Nyeremény: {sorsolt}")</code></pre>
         </section>
+
+
+        <!-- INTERAKTÍV KVÍZ -->
+        <section class="card">
+            <h2>🧠 Interaktív Önellenőrző Kvíz</h2>
+            <form id="quizForm">
+
+                <!-- 1. KÉRDÉS -->
+                <h3>1. Milyen értéket ad vissza alapértelmezetten az <code>input()</code> függvény Pythonban?</h3>
+                <label class="quiz-option"><input type="radio" name="q1" value="a"> Egész számot
+                    (<code>int</code>)</label><br>
+                <label class="quiz-option"><input type="radio" name="q1" value="b"> Karakterláncot / Szöveget
+                    (<code>str</code>)</label><br>
+                <label class="quiz-option"><input type="radio" name="q1" value="c"> A megadott bemenettől függően
+                    automatikusan felismeri a típust</label><br>
+
+                <!-- 2. KÉRDÉS -->
+                <h3>2. Mi lesz a kimenete a <code>"B20"[1:]</code> kifejezésnek?</h3>
+                <label class="quiz-option"><input type="radio" name="q2" value="a"> <code>"B"</code></label><br>
+                <label class="quiz-option"><input type="radio" name="q2" value="b"> <code>"20"</code></label><br>
+                <label class="quiz-option"><input type="radio" name="q2" value="c"> <code>"2"</code></label><br>
+
+                <!-- 3. KÉRDÉS -->
+                <h3>3. Melyik formázás garantálja, hogy a <code>12.5</code> érték pontosan <code>12.50</code>-ként
+                    jelenjen meg?</h3>
+                <label class="quiz-option"><input type="radio" name="q3" value="a">
+                    <code>round(12.5, 2)</code></label><br>
+                <label class="quiz-option"><input type="radio" name="q3" value="b">
+                    <code>f"{12.5:.2f}"</code></label><br>
+                <label class="quiz-option"><input type="radio" name="q3" value="c">
+                    <code>float(12.5, 2)</code></label><br>
+
+                <!-- 4. KÉRDÉS -->
+                <h3>4. Hányszor fut le a <code>for i in range(1, 5):</code> ciklus?</h3>
+                <label class="quiz-option"><input type="radio" name="q4" value="a"> 5-ször</label><br>
+                <label class="quiz-option"><input type="radio" name="q4" value="b"> 4-szer</label><br>
+                <label class="quiz-option"><input type="radio" name="q4" value="c"> 6-szor</label><br>
+
+                <!-- 5. KÉRDÉS -->
+                <h3>5. Hogyan tudunk megszakítani és azonnal kilépni egy <code>while</code> ciklusból?</h3>
+                <label class="quiz-option"><input type="radio" name="q5" value="a"> <code>stop</code></label><br>
+                <label class="quiz-option"><input type="radio" name="q5" value="b"> <code>exit</code></label><br>
+                <label class="quiz-option"><input type="radio" name="q5" value="c"> <code>break</code></label><br>
+
+                <br>
+                <button type="button" onclick="checkQuiz()"
+                    style="background-color: #3498db; color: white; border: none; padding: 10px 20px; font-size: 1em; border-radius: 5px; cursor: pointer;">Kiértékelés</button>
+            </form>
+
+            <!-- EREDMÉNY KIJELZŐ -->
+            <div id="quizResult" style="margin-top: 20px; font-weight: bold; display: none;"></div>
+        </section>
+
+        <!-- JAVASCRIPT A KVÍZ KIÉRTÉKELÉSÉHEZ -->
+        <script>
+            function checkQuiz() {
+                // Helyes válaszok kulcsa: q1:b, q2:b, q3:b, q4:b, q5:c
+                const answers = {
+                    q1: 'b',
+                    q2: 'b',
+                    q3: 'b',
+                    q4: 'b',
+                    q5: 'c'
+                };
+
+                let score = 0;
+                let total = Object.keys(answers).length;
+
+                for (let key in answers) {
+                    let selected = document.querySelector(`input[name="${key}"]:checked`);
+                    if (selected && selected.value === answers[key]) {
+                        score++;
+                    }
+                }
+
+                let resultDiv = document.getElementById('quizResult');
+                resultDiv.style.display = 'block';
+                resultDiv.innerHTML = `Eredményed: ${score} / ${total} pont. ` +
+                    (score === total ? "🎉 Gratulálunk! Hibátlan!" : "💪 Gyakorolj még egy kicsit a fejezetek alapján!");
+                resultDiv.style.color = (score === total) ? '#27ae60' : '#e67e22';
+            }
+        </script>
     </div>
+
 
 </body>
 
