@@ -159,7 +159,106 @@ sorsolt = random.choice(nyeremenyek)
 
 print(f"Dobás: {kocka}, Nyeremény: {sorsolt}")</code></pre>
         </section>
+        <!-- 7. SZT RINGEK HASÍTÁSA ÉS RENDEZÉS (.split() ÉS sorted()) -->
+        <section class="card">
+            <h2>7. Szövegek Szétdarabolása (<code>.split()</code>) és Rendezés (<code>sorted()</code>)</h2>
+            <p>
+                Az érettségi feladatokban rendkívül gyakori, hogy egyetlen sorban kapunk több adatot vesszővel vagy
+                szóközzel elválasztva,
+                illetve a kapott elemeket növekvő vagy csökkenő sorrendbe kell állítanunk.
+            </p>
 
+            <!-- A) SPLIT METÓDUS -->
+            <h3>A) A <code>.split()</code> metódus – Szövegből Lista</h3>
+            <p>
+                A <code>.split(elválasztó)</code> a megadott karakter mentén <strong>darabokra vágja a
+                    szöveget</strong>, és az eredményt egy <strong>listaként</strong> adja vissza.
+            </p>
+
+            <h4>Kódminta:</h4>
+            <pre><code># 1. Alapértelmezett split() -> Szóközök mentén darabol
+szoveg = "alma körte szilva"
+szavak = szoveg.split() 
+# Eredmény: ['alma', 'körte', 'szilva']
+
+# 2. Vessző és szóköz mentén történő darabolás (Gyakori érettségi feladat!)
+beindat = "S2, Ü5, S1"
+elemek = beindat.split(", ")
+# Eredmény: ['S2', 'Ü5', 'S1']</code></pre>
+
+            <!-- B) SORTED FÜGGVÉNY -->
+            <h3>B) A <code>sorted()</code> függvény – Listák Rendezése</h3>
+            <p>
+                A <code>sorted()</code> függvény egy új, <strong>rendezett listát készít</strong>. Alapértelmezetten
+                növekvő sorrendbe rendez (számoknál értékszerint, szövegeknél ábécésorrendben).
+            </p>
+
+            <h4>Kódminta:</h4>
+            <pre><code>szamok = [45, 12, 89, 3]
+
+# 1. Növekvő sorrend (Alapértelmezett)
+novekvo = sorted(szamok)
+# Eredmény: [3, 12, 45, 89]
+
+# 2. Csökkenő sorrend (reverse=True paraméterrel)
+csokkeno = sorted(szamok, reverse=True)
+# Eredmény: [89, 45, 12, 3]</code></pre>
+
+            <!-- KÖZÉPSZINT / HALADÓBB TRÜKKÖK -->
+            <div class="alert-box">
+                <p><strong>💡 Középszintű Érettségi Trükk: Rendezés Hosszúság Szerint</strong></p>
+                <p>
+                    Szövegek rendezésekor használhatod a <code>key=len</code> paramétert, így nem ábécé, hanem
+                    <strong>szavak hossza alapján</strong> rendezhetsz:
+                </p>
+                <pre><code>szavak = ["ananasz", "alma", "eper"]
+hossz_szerint = sorted(szavak, key=len)
+# Eredmény: ['alma', 'eper', 'ananasz'] (a legrövidebbtől a leghosszabbig)</code></pre>
+            </div>
+        </section>
+        <!-- 8. ÖSSZEFOGLALÓ ÉRETTSÉGI MINITEST -->
+        <section class="card">
+            <h2>8. Összefoglaló Mintafeladat <span class="badge">Minden egyben</span></h2>
+            <p>Ez a kód egyben tartalmazza az összes fent tanult elemet (Slicing, While, Split, Sorted, Random,
+                Formázás):</p>
+            <pre><code>import random
+
+meresek = []
+
+# 1. Adatbekérés WHILE ciklussal (ENTER-ig) + SPLIT használata
+while True:
+    be = input("Adja meg a vásárlásokat vesszővel elválasztva (pl. S2, Ü5, S1) [ENTER = vége]: ")
+    if be == "":
+        break
+    
+    # .split(", ") segítségével elemeire bontjuk a beviteli sort
+    reszek = be.split(", ")
+    for elem in reszek:
+        meresek.append(elem)
+
+osszes_db = 0
+
+# 2. Feldolgozás és Slicing
+for elem in meresek:
+    db = int(elem[1:]) # Slicing: az 1. index-től a végéig
+    osszes_db += db
+
+# 3. Kiíratás, SORTED rendezés és Forszírozott 2 tizedesjegy formázás
+if len(meresek) > 0:
+    atlag = osszes_db / len(meresek)
+    print(f"Rögzített tranzakciók száma: {len(meresek)} db")
+    print(f"Egy vásárlásra jutó átlag: {atlag:.2f} db") # Pl. 2.50 db
+    
+    # Rögzített elemek ABC / érték szerinti rendezése
+    rendezett_meresek = sorted(meresek)
+    print(f"Rendezett vásárlások: {rendezett_meresek}")
+    
+    # 4. Random nyertes sorsolás
+    nyertes = random.choice(meresek)
+    print(f"A nyertes vásárlás: {nyertes}")
+else:
+    print("Nem történt adatrögzítés.")</code></pre>
+        </section>
 
         <!-- INTERAKTÍV KVÍZ -->
         <section class="card">
